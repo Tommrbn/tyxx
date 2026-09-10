@@ -18,7 +18,7 @@ Abrir `http://127.0.0.1:4180/`. El servidor publica únicamente `dist/` y permit
 - `dist/styles.css`: identidad visual, diseño adaptable y movimiento reducido.
 - `dist/app.js`: enlaces de contacto, menú móvil y entradas al recorrer la página.
 - `dist/config.js`: número de WhatsApp, mensaje general y enlace a la demo.
-- `dist/assets/`: fuentes con licencia y captura real de la demo.
+- `dist/assets/`: logos aportados por el usuario, fuentes con licencia y captura real de la demo. Procedencia y usos en `docs/assets.md`.
 - `.agents/product-marketing.md`: contexto comercial acordado.
 - `.scratch/web-agencia/discovery.md`: decisiones y cambios durante la entrevista.
 - `.scratch/web-agencia/spec.md`: alcance de este MVP.

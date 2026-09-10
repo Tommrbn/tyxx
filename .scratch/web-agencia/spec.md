@@ -34,7 +34,18 @@ Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las c
 
 ## Primera entrega
 
-Versión inicialmente privada para revisar, ampliada después a cualquier persona con el enlace por pedido explícito del usuario. Se conserva `noindex, nofollow`. La estructura, paleta marfil/grafito/naranja y marca tipográfica son elecciones reversibles del MVP. La web no recibe formularios ni procesa pagos. El seguimiento de consultas y propuestas comienza de forma manual.
+Versión inicialmente privada para revisar, ampliada después a cualquier persona con el enlace por pedido explícito del usuario. Se conserva `noindex, nofollow`. La web no recibe formularios ni procesa pagos. El seguimiento de consultas y propuestas comienza de forma manual.
+
+## Adaptación visual solicitada
+
+El usuario pidió conservar la base y adaptar la página a `https://ex-coders.com/php-template/xpovio/index.php?storefront=envato-elements`, utilizando las imágenes de `C:\Users\tomde\Downloads\TYXX`.
+
+- Fondo negro, naranja de marca y títulos grandes con contornos.
+- Portada tipográfica con imagen circular, líneas verticales, franjas tipográficas y botones circulares.
+- Logos reales del usuario en navegación, portada y presentación de TYXX.
+- Presentación de Tomás después de la portada; proyecto demostrativo destacado; servicios en filas numeradas.
+- Oferta, consulta sin cargo, FAQs, proceso, demo, número temporal y metadato de no indexación conservados.
+- Implementación propia a partir de la referencia visual; sin copiar código, fotos, logos ni afirmaciones comerciales de Xpovio.
 
 ## Criterios de comprobación
 

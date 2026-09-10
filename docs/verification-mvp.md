@@ -36,3 +36,14 @@ El sitio es estático, no procesa formularios, no guarda información de visitan
 El 2026-09-10 a las 17:52 UTC, a pedido explícito del usuario, se actualizó el acceso de Sites de `custom` a `public` (revisión 2). Este modo permite visitar el sitio a cualquier persona con la URL. Se conservaron los permisos de edición y no se agregaron invitados.
 
 Se verificaron la política mediante `get_site` y una petición HTTP sin credenciales: estado 200, URL final de TYXX sin redirección a inicio de sesión, contenido de la página y metadato `noindex, nofollow` presentes. No hizo falta cambiar archivos públicos ni desplegar otra versión.
+
+## Adaptación visual a Xpovio
+
+El 10 de septiembre de 2026 se implementó la dirección visual solicitada por el usuario y se integraron tres variantes de su logo. Se conservaron las cinco líneas de servicio, Taller Norte, proceso, FAQs, contacto temporal y `noindex, nofollow`. `dist/config.js` y `dist/app.js` no cambiaron.
+
+- `npm run check`: aprobado, con 15 IDs únicos, enlaces internos válidos y 10 recursos referenciados disponibles.
+- Los 12 archivos públicos respondieron HTTP 200 y coincidieron byte a byte con la fuente local.
+- Los tres logos copiados coinciden byte a byte con los originales aportados. Los recortes y la adaptación de contraste son estilos de presentación.
+- HTML y CSS formateados con Prettier; `git diff --check` sin errores.
+- Referencia Xpovio revisada visualmente. La página de TYXX se abrió como vista previa local; no se ejecutaron pruebas visuales ni interactivas del producto en navegador.
+- Acceso de Sites verificado: `public`, conserva la URL existente. La adaptación requiere una publicación posterior; la URL pública sigue mostrando la versión anterior hasta confirmar esa publicación.

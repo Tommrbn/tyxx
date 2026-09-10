@@ -1,6 +1,6 @@
 # Product Marketing Context
 
-**Document version:** v1
+**Document version:** v2
 **Last updated:** 2026-09-10
 
 ## Product Overview
@@ -45,7 +45,7 @@ Usar lenguaje de negocio y explicar términos técnicos con ejemplos. Consultar 
 
 ## Brand Voice
 
-Español rioplatense con voseo, profesional y cercano. Identidad del MVP: marca tipográfica TYXX, marfil y grafito, acento naranja y esquema de conexiones. La dirección visual es revisable sobre la primera versión visible.
+Español rioplatense con voseo, profesional y cercano. El usuario pidió adaptar el MVP a la referencia Xpovio y aportó variantes del logo TYXX. La identidad vigente usa negro, blanco y naranja, títulos de gran tamaño con contornos, líneas verticales, imágenes de marca y enlaces circulares. Se conserva la oferta comercial y el contacto directo; la referencia guía la composición visual, no aporta testimonios, clientes ni métricas de TYXX.
 
 ## Competitive Landscape
 
@@ -57,4 +57,5 @@ El usuario autorizó temporalmente su celular actual para ver el MVP. La configu
 
 ## Changelog
 
+- v2 (2026-09-10) — Dirección visual solicitada a partir de Xpovio e incorporación de logos aportados por el usuario en la carpeta TYXX. Se conserva la base comercial del MVP.
 - v1 (2026-09-10) — Contexto inicial con las dos rondas comerciales aceptadas y la instrucción de avanzar con el MVP usando el celular actual.

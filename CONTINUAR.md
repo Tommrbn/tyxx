@@ -4,7 +4,7 @@ Actualizado: 10 de septiembre de 2026.
 
 ## Pedido activo
 
-El usuario pidió construir una web para vender sus servicios de agencia con `grill-with-docs` y skills de marketing y ventas. Aceptó las recomendaciones de las dos primeras rondas. Después de preguntar por una línea empresarial, indicó: «por ahora agregarme mi celular para ir viendo el MVP de la pagina. Luego vemos eso».
+El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coders.com/php-template/xpovio/index.php?storefront=envato-elements`) e incorporar las imágenes de `C:\Users\tomde\Downloads\TYXX`. Indicó que la base comercial estaba bien. La adaptación está implementada y disponible en la vista local; se prepara una versión guardada antes de pedir autorización para actualizar el sitio con acceso público por enlace.
 
 ## Decisiones vigentes
 
@@ -14,7 +14,7 @@ El usuario pidió construir una web para vender sus servicios de agencia con `gr
 - Tomás dirige TYXX y es el contacto directo.
 - Taller Norte aparece como proyecto demostrativo, con captura real y enlace. No es un cliente ni acredita resultados de negocio.
 - Usar temporalmente el celular actual configurado en `dist/config.js`. La línea empresarial propia queda para después.
-- La estructura y la estética del MVP toman las recomendaciones de la tercera ronda como elecciones reversibles. La siguiente conversación puede ajustarlas sobre la página visible.
+- Dirección visual actual: negro, blanco y naranja, títulos grandes con contornos, líneas verticales, enlaces circulares y logos aportados por el usuario. La referencia Xpovio reemplaza la estética marfil del primer MVP.
 - Acceso vigente: cualquier persona con el enlace puede abrir el MVP sin iniciar sesión. El usuario pidió este cambio después de la primera entrega privada. Se conserva `noindex, nofollow`.
 
 ## Archivos para retomar
@@ -28,7 +28,7 @@ El usuario pidió construir una web para vender sus servicios de agencia con `gr
 
 ## Próximo paso
 
-Revisar el MVP con el usuario y ajustar textos, identidad o distribución. El acceso por enlace ya está habilitado; siguen pendientes el lanzamiento comercial con indexación y el futuro cambio a un número empresarial. No contactar prospectos desde herramientas sin autorización explícita.
+Completar el guardado de la adaptación y obtener autorización para publicarla con el acceso existente por enlace. Reutilizar la versión guardada y el mismo sitio; no crear otro. La versión publicada sigue siendo la primera hasta que la nueva publicación se confirme. El servidor local de la revisión se inicia con `npm run dev` en el puerto 4180. Siguen pendientes el lanzamiento comercial con indexación y el futuro cambio a un número empresarial. No contactar prospectos desde herramientas sin autorización explícita.
 
 ## Primera entrega privada
 
