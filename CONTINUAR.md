@@ -4,7 +4,7 @@ Actualizado: 10 de septiembre de 2026.
 
 ## Pedido activo
 
-El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coders.com/php-template/xpovio/index.php?storefront=envato-elements`) e incorporar las imágenes de `C:\Users\tomde\Downloads\TYXX`. Indicó que la base comercial estaba bien. La adaptación está implementada y disponible en la vista local; se prepara una versión guardada antes de pedir autorización para actualizar el sitio con acceso público por enlace.
+El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coders.com/php-template/xpovio/index.php?storefront=envato-elements`) e incorporar las imágenes de `C:\Users\tomde\Downloads\TYXX`. Indicó que la base comercial estaba bien. La adaptación está implementada, disponible en la vista local y guardada como versión 2. Falta autorización para actualizar el sitio con el acceso público por enlace existente.
 
 ## Decisiones vigentes
 
@@ -28,7 +28,17 @@ El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coder
 
 ## Próximo paso
 
-Completar el guardado de la adaptación y obtener autorización para publicarla con el acceso existente por enlace. Reutilizar la versión guardada y el mismo sitio; no crear otro. La versión publicada sigue siendo la primera hasta que la nueva publicación se confirme. El servidor local de la revisión se inicia con `npm run dev` en el puerto 4180. Siguen pendientes el lanzamiento comercial con indexación y el futuro cambio a un número empresarial. No contactar prospectos desde herramientas sin autorización explícita.
+Obtener autorización para publicar la versión 2 con el acceso existente por enlace. Reutilizar la versión guardada y el mismo sitio; no crear otro ni guardar de nuevo si no cambia el producto. La versión publicada sigue siendo la primera hasta que la nueva publicación se confirme. El servidor local de la revisión se inicia con `npm run dev` en el puerto 4180. Siguen pendientes el lanzamiento comercial con indexación y el futuro cambio a un número empresarial. No contactar prospectos desde herramientas sin autorización explícita.
+
+## Versión 2 preparada para publicar
+
+- Versión guardada: `appgprj_6aa2ea16da148191832000cf241f216c~appgver_d52e855decc08191aa9f0e7fe45dfc44`.
+- Fuente validada y enviada: `19cd962315e3bb683b7848df6662288a38686d57`.
+- Archivo validado: `C:\Users\tomde\AppData\Local\Temp\tyxx-xpovio-20260910-01.tar.gz`; 13 archivos, salida estática y manifiesto.
+- Acceso confirmado antes del guardado: `public`. Publicar con `deploy_site_version` cuando el usuario autorice; no cambiar la política de acceso.
+- Previsualización: `http://127.0.0.1:4180/`, servidor retenido para revisión. Pestaña de Sites: `f868fce3-a36d-46c3-856b-14169e349e02`.
+- Las comprobaciones estáticas y HTTP pasaron. No se hicieron pruebas de interacción o revisión visual del producto en navegador.
+- Tras la publicación: comprobar estado terminal, abrir la URL pública en la misma pestaña, registrar el resultado y detener el servidor local.
 
 ## Primera entrega privada
 
