@@ -39,6 +39,6 @@ Comprueba sintaxis de JavaScript, configuración, recursos, destinos internos, I
 
 ## Publicación
 
-Configurado como sitio estático de Sites, con `dist` como directorio público. La versión de revisión conserva `noindex, nofollow`; el acceso privado de Sites es el control de acceso, y el metadato robots no lo sustituye. Antes del lanzamiento público, confirmar alcance y contacto definitivos y actualizar la configuración de indexación.
+Configurado como sitio estático de Sites, con `dist` como directorio público. Por pedido del usuario, cualquier persona con la URL puede visitar la versión de revisión sin iniciar sesión. Se conserva `noindex, nofollow`; este metadato solicita no indexar y no es un control de acceso. Antes del lanzamiento comercial, confirmar alcance y contacto definitivos y revisar la configuración de indexación.
 
 El sitio no recibe formularios ni guarda datos del visitante. WhatsApp se abre en otra pestaña y el visitante decide si envía el mensaje. Taller Norte es una marca ficticia y se presenta como proyecto demostrativo, no como cliente.

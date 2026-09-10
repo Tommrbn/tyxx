@@ -1,6 +1,6 @@
 # MVP del sitio comercial de TYXX
 
-Estado: implementado a partir de las bases comerciales aceptadas y la instrucción del usuario de avanzar para ver el MVP con su celular actual. La revisión visual y el lanzamiento público siguen abiertos.
+Estado: implementado a partir de las bases comerciales aceptadas y la instrucción del usuario de avanzar para ver el MVP con su celular actual. El usuario habilitó después el acceso para cualquiera con el enlace. La revisión visual y el lanzamiento comercial con indexación siguen abiertos.
 
 ## Objetivo
 
@@ -34,7 +34,7 @@ Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las c
 
 ## Primera entrega
 
-Versión privada para revisar. La estructura, paleta marfil/grafito/naranja y marca tipográfica son elecciones reversibles del MVP. La web no recibe formularios ni procesa pagos. El seguimiento de consultas y propuestas comienza de forma manual.
+Versión inicialmente privada para revisar, ampliada después a cualquier persona con el enlace por pedido explícito del usuario. Se conserva `noindex, nofollow`. La estructura, paleta marfil/grafito/naranja y marca tipográfica son elecciones reversibles del MVP. La web no recibe formularios ni procesa pagos. El seguimiento de consultas y propuestas comienza de forma manual.
 
 ## Criterios de comprobación
 

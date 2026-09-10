@@ -19,7 +19,7 @@ Configuración temporal autorizada: `5492304514378`. El código prepara enlaces 
 
 No se ejecutaron pruebas interactivas de navegador ni revisión visual en distintos tamaños para esta entrega. El diseño contiene reglas adaptables, estados de foco, menú accesible y soporte de movimiento reducido; esas implementaciones no constituyen por sí solas una auditoría de accesibilidad o compatibilidad.
 
-El sitio es estático, no procesa formularios, no guarda información de visitantes y no incorpora analítica. La revisión conserva `noindex, nofollow` y se prepara con acceso privado en Sites. La publicación pública queda pendiente.
+El sitio es estático, no procesa formularios, no guarda información de visitantes y no incorpora analítica. La revisión conserva `noindex, nofollow`. Se entregó inicialmente con acceso privado y luego se habilitó el acceso por enlace por pedido del usuario, como se registra abajo.
 
 ## Entrega privada confirmada
 
@@ -30,3 +30,9 @@ El sitio es estático, no procesa formularios, no guarda información de visitan
 - El envoltorio Bash de empaquetado no encontró Node en su entorno de Windows. Se utilizó el preparador oficial `prepare-site-build.cjs` con una carpeta temporal nueva validada y `tar` nativo; se comprobó el contenido antes de guardar la versión.
 - Sites confirmó estado `succeeded` el 2026-09-10 a las 17:47 UTC mediante la operación de publicación privada, que exige acceso exclusivo del propietario.
 - El acceso no se amplió al público ni se enviaron mensajes de WhatsApp.
+
+## Cambio posterior a acceso por enlace
+
+El 2026-09-10 a las 17:52 UTC, a pedido explícito del usuario, se actualizó el acceso de Sites de `custom` a `public` (revisión 2). Este modo permite visitar el sitio a cualquier persona con la URL. Se conservaron los permisos de edición y no se agregaron invitados.
+
+Se verificaron la política mediante `get_site` y una petición HTTP sin credenciales: estado 200, URL final de TYXX sin redirección a inicio de sesión, contenido de la página y metadato `noindex, nofollow` presentes. No hizo falta cambiar archivos públicos ni desplegar otra versión.
