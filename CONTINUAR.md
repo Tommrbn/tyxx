@@ -29,4 +29,12 @@ El usuario pidió construir una web para vender sus servicios de agencia con `gr
 
 Revisar el MVP con el usuario y ajustar textos, identidad o distribución. La publicación pública y el futuro cambio a un número empresarial siguen pendientes. No contactar prospectos desde herramientas sin autorización explícita.
 
+## Primera entrega privada
+
+- URL de revisión: https://tyxx-agencia.novartech.chatgpt.site
+- Sites confirmó la publicación privada de la versión 1 el 10 de septiembre de 2026, a las 17:47 UTC.
+- Fuente de esa entrega: `630c40925eb3144934f7e2b0cc97557cdc036005`.
+- Se abrió la URL en la pestaña de vista previa de esta tarea. El sitio permanece privado para el propietario.
+- Las comprobaciones ejecutadas fueron estáticas y de recursos HTTP locales; no se realizaron pruebas interactivas o visuales de navegador.
+
 Al retomar, comprobar el estado real de archivos y publicación antes de editar. Actualizar este documento si cambian decisiones, verificaciones o pendientes.
