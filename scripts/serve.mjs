@@ -29,7 +29,9 @@ const server = createServer(async (request, response) => {
     response.writeHead(400).end("Solicitud inválida");
     return;
   }
-  if (pathname === "/") pathname = "/index.html";
+  // The local entry point follows the current design. The previous version
+  // remains directly available at /index.html for comparison.
+  if (pathname === "/") pathname = "/strand.html";
   const filename = resolve(directory, `.${pathname}`);
   if (!filename.startsWith(resolve(directory) + sep)) {
     response.writeHead(403).end();
@@ -41,6 +43,7 @@ const server = createServer(async (request, response) => {
       "Content-Type":
         contentTypes[extname(filename)] ?? "application/octet-stream",
       "Cache-Control": "no-store",
+      "X-TYXX-Preview": "strand",
       "X-Content-Type-Options": "nosniff",
     });
     response.end(request.method === "HEAD" ? undefined : content);
@@ -53,5 +56,5 @@ server.on("error", (error) => {
   process.exitCode = 1;
 });
 server.listen(4180, "127.0.0.1", () =>
-  console.log("TYXX: http://127.0.0.1:4180/"),
+  console.log("TYXX actual: http://127.0.0.1:4180/strand.html"),
 );

@@ -5,7 +5,7 @@ Vocabulario del negocio que presenta el sitio comercial de la agencia.
 ## Language
 
 **TYXX**:
-Agencia de servicios digitales dirigida por Tomás, con contacto directo con él. Su oferta declarada comprende webs, automatizaciones, agentes de IA, sistemas de IA e infraestructura.
+Empresa de Tomás enfocada en automatización de procesos, sistemas y asistentes de IA, integraciones e infraestructura. Las webs forman parte de sus soluciones cuando el proceso necesita una interfaz.
 
 **Infraestructura**:
 Entorno donde funcionan las herramientas digitales del negocio, junto con su configuración y mantenimiento.
@@ -25,3 +25,12 @@ Oferta de trabajo preparada para una necesidad concreta, con alcance, entregable
 
 **Consulta calificada**:
 Consulta de un interesado que expresa una necesidad concreta de su negocio. Es una señal comercial inicial; los criterios adicionales de calificación se definirán con la experiencia de ventas.
+
+**Asistente de TYXX**:
+Demostración orientadora que ayuda al visitante a describir una tarea repetitiva y preparar una ficha para conversar con Tomás. No confirma contrataciones ni sustituye la evaluación de una implementación.
+
+**Ficha de proceso**:
+Resumen editable del proceso actual, la dificultad descrita, las herramientas, la frecuencia informada, una mejora propuesta y los aspectos pendientes de conocer. Es material para una consulta inicial que puede compartirse aun incompleto, con sus pendientes explícitos; no es un presupuesto.
+
+**Mejora propuesta**:
+Posible cambio que podría ayudar con el proceso descrito, pendiente de evaluar con Tomás. No constituye una propuesta comercial ni acredita la viabilidad de una integración.

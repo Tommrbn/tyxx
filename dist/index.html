@@ -6,27 +6,26 @@
     <meta name="theme-color" content="#080808" />
     <meta
       name="description"
-      content="Webs, automatizaciones e inteligencia artificial para mejorar cómo tu negocio vende y trabaja. Conocé TYXX y contanos tu proyecto."
+      content="Automatizaciones, sistemas de IA e infraestructura para simplificar el trabajo de tu empresa. Conocé TYXX y contame qué proceso querés mejorar."
     />
     <meta name="robots" content="noindex, nofollow" />
     <title>TYXX — Tecnología que trabaja con vos</title>
     <link rel="icon" href="assets/tyxx-orange.png" type="image/png" />
     <link
       rel="preload"
-      href="assets/thicccboi-900.woff2"
+      href="assets/thicccboi-400.woff2"
       as="font"
       type="font/woff2"
       crossorigin
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="assistant.css" />
     <script src="config.js" defer></script>
     <script src="app.js" defer></script>
+    <script src="assistant-loader.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#contenido">Saltar al contenido</a>
-    <div class="page-grid" aria-hidden="true">
-      <i></i><i></i><i></i><i></i><i></i>
-    </div>
     <header class="site-header section-shell">
       <a class="brand-logo" href="#inicio" aria-label="TYXX, inicio"
         ><img
@@ -36,8 +35,8 @@
           height="1081"
       /></a>
       <nav class="desktop-nav" aria-label="Navegación principal">
-        <a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a
-        ><a href="#proceso">Cómo trabajamos</a>
+        <a href="#asistente">Asistente</a><a href="#servicios">Soluciones</a
+        ><a href="#proyectos">Demos</a><a href="#proceso">Cómo trabajamos</a>
       </nav>
       <a class="header-contact" data-contact href="#contacto"
         >Hablemos <span aria-hidden="true">↗</span></a
@@ -57,8 +56,9 @@
         aria-label="Navegación móvil"
         hidden
       >
-        <a href="#servicios">Servicios</a><a href="#proyectos">Proyectos</a
-        ><a href="#proceso">Cómo trabajamos</a><a href="#contacto">Contacto</a>
+        <a href="#asistente">Asistente</a><a href="#servicios">Soluciones</a
+        ><a href="#proyectos">Demos</a><a href="#proceso">Cómo trabajamos</a
+        ><a href="#contacto">Contacto</a>
       </nav>
     </header>
     <main id="contenido">
@@ -67,272 +67,315 @@
         id="inicio"
         aria-labelledby="hero-title"
       >
-        <div class="hero-topline">
-          <span class="eyebrow">AGENCIA DE SOLUCIONES DIGITALES</span
-          ><span class="hero-location">ARGENTINA / TRABAJAMOS CON VOS</span>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <img
-            src="assets/tyxx-orange.png"
-            alt=""
-            width="1455"
-            height="1081"
-            fetchpriority="high"
-          /><span class="art-caption">IDEAS QUE SE PONEN A TRABAJAR.</span>
-        </div>
-        <h1 id="hero-title">
-          <span class="hero-line">Tu negocio.</span
-          ><span class="hero-line hero-line-bottom"
-            ><span class="hero-arrow" aria-hidden="true">↗</span
-            ><span><span class="outline">Próxima</span> versión.</span></span
+        <img
+          class="hero-backdrop"
+          src="assets/tyxx-hero-ribbons.png"
+          alt=""
+          width="1672"
+          height="941"
+          fetchpriority="high"
+        />
+        <div class="hero-content">
+          <span class="hero-pill"
+            ><span aria-hidden="true"></span> Automatización · IA ·
+            Infraestructura</span
           >
-        </h1>
-        <div class="hero-bottom">
-          <div class="hero-copy">
-            <p class="hero-description">
-              Webs, automatizaciones e IA para mejorar cómo tu negocio vende y
-              trabaja.
-            </p>
-            <a class="text-link" data-contact href="#contacto"
-              >Contame tu proyecto <span aria-hidden="true">↗</span></a
+          <h1 id="hero-title">
+            Menos tareas repetitivas.<br /><span>Más posibilidades.</span>
+          </h1>
+          <p class="hero-description">
+            Conectamos tus herramientas y creamos sistemas<br
+              class="desktop-break"
+            />
+            para que tu empresa trabaje mejor.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#asistente"
+              >Contame qué proceso querés mejorar
+              <span aria-hidden="true">↗</span></a
             >
-            <p class="small-note">
-              Contacto directo con Tomás.<br />Primera consulta sin cargo.
-            </p>
+            <a class="button button-secondary" href="#proyectos"
+              >Ver demostraciones <span aria-hidden="true">↓</span></a
+            >
           </div>
-          <a class="circle-link" href="#servicios"
-            ><span>EXPLORÁ<br />LO QUE HACEMOS</span
-            ><span class="circle-arrow" aria-hidden="true">↓</span></a
-          >
-        </div>
-        <div class="hero-foot">
-          <span>TECNOLOGÍA CON UN PROPÓSITO.</span
-          ><span
-            >DESLIZÁ PARA CONOCERNOS <span aria-hidden="true">↓</span></span
-          >
+          <p class="hero-note">
+            Trabajás directamente con Tomás. Primera consulta sin cargo.
+          </p>
         </div>
       </section>
       <section
-        class="about section-shell"
-        id="nosotros"
-        aria-labelledby="about-title"
+        class="solutions section-shell"
+        id="servicios"
+        aria-labelledby="solutions-title"
       >
-        <div class="about-visual">
-          <img
-            src="assets/tyxx-on-white.png"
-            alt="Identidad de TYXX en naranja sobre blanco, con sus tres flechas ascendentes."
-            width="1455"
-            height="1081"
-            loading="lazy"
-            decoding="async"
-          />
-          <div class="about-image-caption">
-            <span>ENTENDER PRIMERO.</span><span>CONSTRUIR DESPUÉS.</span>
-          </div>
-          <span class="visual-corner" aria-hidden="true">↗</span>
+        <div class="section-heading">
+          <span class="eyebrow">LO QUE CONSTRUIMOS</span>
+          <h2 id="solutions-title">Tu próxima mejora.</h2>
         </div>
-        <div class="about-statement">
-          <span class="eyebrow">BIENVENIDO A TYXX</span>
-          <h2 id="about-title">
-            Buenas ideas.<br />Soluciones <span class="outline">reales.</span>
-          </h2>
-          <p>
-            Soy Tomás, fundador de TYXX. Trabajo con pymes de servicios que
-            quieren dar un paso más con su presencia digital y sus procesos.
-          </p>
-          <p>
-            Mi propuesta empieza por escucharte: entender qué necesitás, definir
-            una solución posible y construirla con vos, paso a paso.
-          </p>
-          <ul class="about-principles">
-            <li>Contacto directo con quien lleva tu proyecto</li>
-            <li>Entregables y costos claros desde el inicio</li>
-            <li>Documentación para tu negocio</li>
-          </ul>
-          <a class="text-link" data-contact href="#contacto"
-            >Conversemos <span aria-hidden="true">↗</span></a
-          >
+        <div class="service-grid">
+          <article class="service-card">
+            <div
+              class="service-diagram workflow"
+              aria-label="Ejemplo de automatización: una consulta pasa al registro y luego al seguimiento"
+            >
+              <span class="diagram-label">UN PROCESO, CONECTADO</span>
+              <div class="workflow-node">
+                <span class="node-icon" aria-hidden="true">↙</span> Consulta
+              </div>
+              <span class="flow-connector" aria-hidden="true">↓</span>
+              <div class="workflow-node">
+                <span class="node-icon" aria-hidden="true">≡</span> Registro
+              </div>
+              <span class="flow-connector" aria-hidden="true">↓</span>
+              <div class="workflow-node node-accent">
+                <span class="node-icon" aria-hidden="true">↗</span> Seguimiento
+              </div>
+            </div>
+            <div class="service-copy">
+              <span class="card-number">01 / CONECTAR</span>
+              <h3>Automatizaciones</h3>
+              <p>Menos copiar y pegar. Más conexión entre tus herramientas.</p>
+            </div>
+          </article>
+          <article class="service-card service-featured">
+            <div
+              class="service-diagram intelligence"
+              aria-label="Un sistema de IA conecta documentos y herramientas para asistir al equipo"
+            >
+              <span class="diagram-label">INFORMACIÓN QUE SIRVE</span>
+              <div class="source-nodes">
+                <span>Documentos</span><span>Herramientas</span>
+              </div>
+              <div class="join-lines" aria-hidden="true"></div>
+              <div class="ai-node">IA<span>Contexto de tu negocio</span></div>
+              <span class="flow-connector" aria-hidden="true">↓</span>
+              <div class="output-node">
+                Asistencia para tu equipo <span aria-hidden="true">↗</span>
+              </div>
+            </div>
+            <div class="service-copy">
+              <span class="card-number">02 / POTENCIAR</span>
+              <h3>Sistemas de IA</h3>
+              <p>
+                Agentes y asistentes conectados con la información de tu
+                empresa.
+              </p>
+            </div>
+          </article>
+          <article class="service-card">
+            <div
+              class="service-diagram infrastructure"
+              aria-label="Las aplicaciones se apoyan en conexiones e infraestructura"
+            >
+              <span class="diagram-label">UNA BASE PARA CRECER</span>
+              <div class="infra-layer">
+                <span>01</span> Aplicaciones <i aria-hidden="true"></i>
+              </div>
+              <div class="infra-layer">
+                <span>02</span> Conexiones <i aria-hidden="true"></i>
+              </div>
+              <div class="infra-layer infra-base">
+                <span>03</span> Infraestructura <i aria-hidden="true"></i>
+              </div>
+              <span class="infra-caption"
+                >Configuración · Integración · Mantenimiento</span
+              >
+            </div>
+            <div class="service-copy">
+              <span class="card-number">03 / SOSTENER</span>
+              <h3>Infraestructura</h3>
+              <p>
+                El entorno y las conexiones que tus sistemas necesitan para
+                funcionar.
+              </p>
+            </div>
+          </article>
         </div>
+        <p class="complement-note">
+          ¿Hace falta una web? La sumamos como parte de la solución.
+        </p>
       </section>
       <section
-        class="portfolio"
+        class="portfolio section-shell"
         id="proyectos"
         aria-labelledby="portfolio-title"
       >
-        <div class="section-marquee" aria-hidden="true">
-          <span
-            >Del concepto <b>↘</b> <em>a la pantalla</em> <b>↘</b> Del concepto
-            <b>↘</b></span
-          >
-        </div>
-        <div class="section-shell portfolio-content">
-          <div class="portfolio-intro">
-            <div>
-              <span class="eyebrow">01 / UN PROYECTO PARA EXPLORAR</span>
-              <h2 id="portfolio-title">
-                Mirá lo que<br />podemos <span class="outline">crear.</span>
-              </h2>
-            </div>
-            <p>Un ejemplo que podés recorrer<br />y probar por tu cuenta.</p>
+        <div class="section-heading section-heading-split">
+          <div>
+            <span class="eyebrow">DE LA IDEA A LA PRÁCTICA</span>
+            <h2 id="portfolio-title">Explorá lo que es posible.</h2>
           </div>
-          <div class="project-layout">
-            <a
-              class="portfolio-preview"
-              data-demo
-              href="https://tyxx-chapas.pages.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Abrir el proyecto demostrativo Taller Norte en una pestaña nueva"
-              ><img
+          <p>Dos demostraciones para empezar.</p>
+        </div>
+        <div class="demo-grid">
+          <a class="demo-card assistant-demo" href="#asistente">
+            <div class="demo-visual assistant-preview">
+              <div class="preview-top">
+                <span class="preview-dot" aria-hidden="true"></span> Asistente
+                de TYXX <span>DEMO</span>
+              </div>
+              <div class="preview-message">
+                Copio pedidos de WhatsApp a una planilla.
+              </div>
+              <div class="preview-reply">
+                <span aria-hidden="true">↳</span>
+                <p>
+                  Una tarea cotidiana.<br /><strong
+                    >Un punto de partida.</strong
+                  >
+                </p>
+              </div>
+              <div class="preview-bottom">
+                <span>Tu proceso</span><span>Tu ficha</span
+                ><span>Tu próximo paso ↗</span>
+              </div>
+            </div>
+            <div class="demo-caption">
+              <div>
+                <h3>De una tarea a una ficha.</h3>
+                <p>Asistente guiado por reglas, sin IA real.</p>
+              </div>
+              <span class="round-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
+          <a
+            class="demo-card"
+            data-demo
+            href="https://tyxx-chapas.pages.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explorar Taller Norte, demostración en una pestaña nueva"
+          >
+            <div class="demo-visual workshop-preview">
+              <img
                 src="assets/taller-norte-desktop.png"
-                alt="Página demostrativa de Taller Norte: portada de chapa y pintura con una camioneta azul y accesos a servicios y consulta."
+                alt="Página demostrativa de Taller Norte con consulta de vehículo y daño."
                 width="1440"
                 height="1000"
                 loading="lazy"
                 decoding="async"
-              /><span class="preview-label"
-                >VER DEMO <span aria-hidden="true">↗</span></span
-              ></a
-            >
-            <div class="project-caption">
-              <span class="project-index">/ 01</span
-              ><span class="outline-tag">PROYECTO DEMOSTRATIVO</span>
-              <h3>Taller <span>Norte.</span></h3>
-              <p class="project-type">Diseño y desarrollo web</p>
-              <p>
-                Una web para un taller de chapa y pintura: servicios claros,
-                diseño adaptable a celulares y contacto por WhatsApp.
-              </p>
-              <a
-                class="text-link"
-                data-demo
-                href="https://tyxx-chapas.pages.dev/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Recorré el proyecto <span aria-hidden="true">↗</span></a
+              /><span class="demo-badge"
+                >PROYECTO DEMOSTRATIVO <span aria-hidden="true">↗</span></span
               >
-              <p class="portfolio-note">
-                Marca ficticia creada para mostrar el trabajo. La consulta de
-                reparación es una simulación; no envía datos ni confirma turnos.
-              </p>
             </div>
-          </div>
+            <div class="demo-caption">
+              <div>
+                <h3>Consultas mejor organizadas.</h3>
+                <p>Taller Norte · Marca ficticia. Vista previa sin envío.</p>
+              </div>
+              <span class="round-arrow" aria-hidden="true">↗</span>
+            </div>
+          </a>
         </div>
       </section>
       <section
-        class="services section-shell"
-        id="servicios"
-        aria-labelledby="services-title"
+        class="assistant section-shell"
+        id="asistente"
+        aria-label="Asistente de TYXX"
       >
-        <div class="section-heading">
-          <div>
-            <span class="eyebrow">02 / QUÉ HACEMOS</span>
-            <h2 id="services-title">
-              Tu desafío.<br />Nuestra
-              <span class="outline">próxima idea.</span>
-            </h2>
-          </div>
+        <div class="assistant-heading">
+          <span class="eyebrow">PROBÁ UNA IDEA</span>
+          <h2>Empecemos por tu proceso.</h2>
           <p>
-            Partimos de lo que necesitás mejorar. Después elegimos las
-            herramientas y definimos juntos hasta dónde llegar.
+            Contame qué te lleva tiempo. Prepará una ficha para conversar
+            conmigo.
           </p>
         </div>
-        <div class="services-list">
-          <article class="service-row">
-            <span class="service-number">01 /</span>
-            <div class="service-name">
-              <span class="service-tag">PRESENCIA Y CONSULTAS</span>
-              <h3>Desarrollo web</h3>
-            </div>
-            <p>
-              Una presencia clara para que tus futuros clientes entiendan tu
-              propuesta, conozcan tu trabajo y sepan cómo contactarte.
-            </p>
-            <a
-              href="#contacto"
-              data-contact
-              data-service="una web"
-              aria-label="Consultar por una web"
-              >↗</a
-            >
-          </article>
-          <article class="service-row">
-            <span class="service-number">02 /</span>
-            <div class="service-name">
-              <span class="service-tag">PROCESOS Y CONEXIONES</span>
-              <h3>Automatizaciones</h3>
-            </div>
-            <p>
-              Conectamos pasos repetitivos entre tus herramientas: registrar
-              consultas, mover información o preparar notificaciones.
-            </p>
-            <a
-              href="#contacto"
-              data-contact
-              data-service="automatizaciones"
-              aria-label="Consultar por automatizaciones"
-              >↗</a
-            >
-          </article>
-          <article class="service-row">
-            <span class="service-number">03 /</span>
-            <div class="service-name">
-              <span class="service-tag">ASISTENCIA INTELIGENTE</span>
-              <h3>Agentes de IA</h3>
-            </div>
-            <p>
-              Asistentes para consultar información y ayudar en tareas
-              definidas, con límites y puntos de revisión acordados.
-            </p>
-            <a
-              href="#contacto"
-              data-contact
-              data-service="agentes de IA"
-              aria-label="Consultar por agentes de IA"
-              >↗</a
-            >
-          </article>
-          <article class="service-row">
-            <span class="service-number">04 /</span>
-            <div class="service-name">
-              <span class="service-tag">SOLUCIONES A MEDIDA</span>
-              <h3>Sistemas de IA</h3>
-            </div>
-            <p>
-              Soluciones a medida que reúnen datos, herramientas e inteligencia
-              artificial dentro de un proceso de tu negocio.
-            </p>
-            <a
-              href="#contacto"
-              data-contact
-              data-service="un sistema de IA"
-              aria-label="Consultar por sistemas de IA"
-              >↗</a
-            >
-          </article>
-          <article class="service-row">
-            <span class="service-number">05 /</span>
-            <div class="service-name">
-              <span class="service-tag">BASE Y CONTINUIDAD</span>
-              <h3>Infraestructura</h3>
-            </div>
-            <p>
-              Configuración del entorno donde viven tus herramientas, con
-              documentación y opciones de mantenimiento según el alcance.
-            </p>
-            <a
-              href="#contacto"
-              data-contact
-              data-service="infraestructura"
-              aria-label="Consultar por infraestructura"
-              >↗</a
-            >
-          </article>
-        </div>
-        <p class="section-note">
-          Cada implementación se define después de evaluar tu negocio, tus
-          herramientas y el alcance del proyecto.
+        <p id="assistant-fallback" role="status">
+          El asistente no está disponible. Necesita JavaScript para funcionar.
+          Podés seguir recorriendo la página y
+          <a href="#contacto">contactar a Tomás</a>.
         </p>
+        <details class="assistant-disclosure" id="assistant-disclosure">
+          <summary>
+            <span>Describir mi proceso</span
+            ><span class="disclosure-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="assistant-body">
+            <div class="assistant-mode">
+              <strong
+                >Demostración guiada: funciona con reglas, no con IA
+                real.</strong
+              >
+              <p>
+                La conversación queda en tu navegador. No necesitás dejar tus
+                datos. Esta versión no conserva la ficha al recargar.
+              </p>
+            </div>
+            <div id="assistant-workspace" class="assistant-grid" hidden>
+              <div
+                class="assistant-conversation"
+                role="region"
+                aria-label="Conversación"
+              >
+                <h3>Tu proceso, con tus palabras.</h3>
+                <p id="assistant-start-help" class="assistant-help">
+                  Elegí un ejemplo o escribí tu caso. Después podés editar la
+                  ficha.
+                </p>
+                <div
+                  class="assistant-starters"
+                  aria-label="Ejemplos para empezar"
+                >
+                  <button type="button">Copio pedidos a una planilla</button>
+                  <button type="button">Me llegan consultas incompletas</button>
+                  <button type="button">
+                    Pierdo tiempo buscando información
+                  </button>
+                </div>
+                <p id="assistant-history-note" class="assistant-help" hidden>
+                  Podés corregir tus respuestas o editar la ficha.
+                </p>
+                <ol
+                  id="assistant-history"
+                  aria-label="Respuestas de la conversación"
+                ></ol>
+                <form id="assistant-form" novalidate>
+                  <p id="assistant-question" class="assistant-question">
+                    ¿Qué tarea de tu negocio querés mejorar?
+                  </p>
+                  <label for="assistant-answer">Tu respuesta</label>
+                  <textarea
+                    id="assistant-answer"
+                    rows="3"
+                    aria-describedby="assistant-question assistant-error"
+                    placeholder="Por ejemplo: copio pedidos de WhatsApp a Excel todos los días."
+                  ></textarea>
+                  <p id="assistant-error" class="assistant-error"></p>
+                  <button class="assistant-primary" type="submit">
+                    Agregar respuesta <span aria-hidden="true">↗</span>
+                  </button>
+                  <button id="assistant-skip" type="button">
+                    Dejar este dato pendiente
+                  </button>
+                </form>
+                <p
+                  id="assistant-finish"
+                  class="assistant-question"
+                  tabindex="-1"
+                  hidden
+                ></p>
+                <p
+                  id="assistant-status"
+                  class="assistant-status"
+                  role="status"
+                  aria-live="polite"
+                  aria-atomic="true"
+                ></p>
+              </div>
+              <section class="process-sheet" aria-label="Ficha de proceso">
+                <span class="eyebrow">TU CASO, A LA VISTA</span>
+                <h3>Ficha de proceso</h3>
+                <p id="sheet-completeness" class="sheet-completeness"></p>
+                <dl id="sheet-fields"></dl>
+                <p class="assistant-help">
+                  La mejora es una posibilidad para evaluar con Tomás. Esta
+                  ficha no es un presupuesto ni confirma una contratación.
+                </p>
+              </section>
+            </div>
+          </div>
+        </details>
       </section>
       <section
         class="process section-shell"
@@ -340,177 +383,107 @@
         aria-labelledby="process-title"
       >
         <div class="section-heading">
-          <div>
-            <span class="eyebrow">03 / CÓMO TRABAJAMOS</span>
-            <h2 id="process-title">
-              De esa idea<br />al <span class="outline">primer paso.</span>
-            </h2>
-          </div>
-          <p>
-            Contacto directo, decisiones compartidas y un alcance claro desde el
-            principio.
-          </p>
+          <span class="eyebrow">SIMPLE, DESDE EL INICIO</span>
+          <h2 id="process-title">Una idea. Un plan. En marcha.</h2>
+          <p>Soy Tomás. Trabajás conmigo de principio a fin.</p>
         </div>
         <ol class="process-steps">
           <li>
             <span class="step-number">01</span>
-            <h3>Nos contás.</h3>
-            <p>
-              Conversamos sobre tu negocio, lo que hoy te frena y lo que querés
-              mejorar.
-            </p>
-            <span class="step-detail">CONSULTA INICIAL SIN CARGO</span>
+            <h3>Entendemos</h3>
+            <p>Vemos cómo trabajás y qué querés mejorar.</p>
           </li>
           <li>
             <span class="step-number">02</span>
-            <h3>Lo definimos.</h3>
-            <p>
-              Preparamos una propuesta con entregables, etapas, inversión y
-              responsabilidades.
-            </p>
-            <span class="step-detail">ALCANCE Y PRESUPUESTO</span>
+            <h3>Definimos</h3>
+            <p>Acordamos alcance, etapas e inversión.</p>
           </li>
           <li>
             <span class="step-number">03</span>
-            <h3>Lo construimos.</h3>
-            <p>
-              Avanzamos por etapas. Revisás el trabajo y acordamos los ajustes
-              del alcance.
-            </p>
-            <span class="step-detail">ENTREGAS Y REVISIÓN</span>
+            <h3>Construimos</h3>
+            <p>Desarrollamos y probamos la solución con vos.</p>
           </li>
           <li>
             <span class="step-number">04</span>
-            <h3>Lo ponés a trabajar.</h3>
-            <p>
-              Recibís la solución y su documentación. Definimos el
-              acompañamiento que necesitás.
-            </p>
-            <span class="step-detail">ENTREGA Y CONTINUIDAD</span>
+            <h3>Entregamos</h3>
+            <p>Documentación y acompañamiento para empezar.</p>
           </li>
         </ol>
       </section>
       <section class="faq section-shell" aria-labelledby="faq-title">
-        <div class="faq-intro">
-          <span class="eyebrow">04 / ANTES DE EMPEZAR</span>
-          <h2 id="faq-title">
-            Hablemos<br /><span class="outline">claro.</span>
-          </h2>
-          <p>Algunas respuestas para<br />dar el primer paso.</p>
+        <div>
+          <span class="eyebrow">ANTES DE EMPEZAR</span>
+          <h2 id="faq-title">Lo esencial.</h2>
         </div>
-        <div class="faq-list">
+        <div class="faq-items">
           <details>
             <summary>
-              ¿Necesito saber de tecnología?<span aria-hidden="true">+</span>
+              ¿Mi negocio necesita IA?<span aria-hidden="true">+</span>
             </summary>
             <p>
-              No. Empezamos por lo que pasa en tu negocio: cómo llegan las
-              consultas, qué tareas repetís y qué te gustaría mejorar. Te
-              explicamos la propuesta para que puedas decidir con claridad.
+              Depende del proceso. Puede alcanzar con una automatización o una
+              mejor conexión entre herramientas. Lo evaluamos juntos; no
+              necesitás conocimientos técnicos.
             </p>
           </details>
           <details>
             <summary>
-              ¿Cuánto cuesta un proyecto?<span aria-hidden="true">+</span>
+              ¿Cuánto cuesta y cuánto tarda?<span aria-hidden="true">+</span>
             </summary>
             <p>
-              Depende del alcance. Después de conocer tu necesidad, recibís una
-              propuesta que distingue implementación, costos de herramientas
-              externas y mantenimiento opcional. La primera consulta es sin
-              cargo.
+              La consulta inicial es sin cargo. Después definimos una propuesta
+              con alcance, etapas y plazos. La inversión separa implementación,
+              herramientas externas y mantenimiento opcional.
             </p>
           </details>
           <details>
             <summary>
-              ¿Tengo que cambiar las herramientas que ya uso?<span
+              ¿Podemos usar las herramientas que ya tengo?<span
                 aria-hidden="true"
                 >+</span
               >
             </summary>
             <p>
-              Primero revisamos lo que ya tenés. Evaluamos las posibilidades de
-              conexión y te explicamos cuándo conviene conservar una herramienta
-              o considerar un cambio.
-            </p>
-          </details>
-          <details>
-            <summary>
-              ¿Cuánto tarda y cómo sigo el avance?<span aria-hidden="true"
-                >+</span
-              >
-            </summary>
-            <p>
-              Los tiempos se definen en la propuesta según el alcance y la
-              información disponible. Trabajamos con etapas y puntos de revisión
-              acordados para que sepas qué se está entregando.
-            </p>
-          </details>
-          <details>
-            <summary>
-              ¿Qué pasa después de la entrega?<span aria-hidden="true">+</span>
-            </summary>
-            <p>
-              Recibís la documentación del proyecto. Si necesitás
-              acompañamiento, podemos acordar mantenimiento con tareas, tiempos
-              y costos definidos en una propuesta.
-            </p>
-          </details>
-          <details>
-            <summary>
-              ¿Todo proyecto necesita inteligencia artificial?<span
-                aria-hidden="true"
-                >+</span
-              >
-            </summary>
-            <p>
-              No. Puede que una web clara o una automatización basada en reglas
-              resuelva tu necesidad. Evaluamos la IA cuando tiene un propósito
-              concreto dentro de la solución.
+              Primero revisamos qué usás y qué conexiones permite. Si hace falta
+              cambiar algo, lo conversamos antes de construir.
             </p>
           </details>
         </div>
       </section>
-      <section class="contact" id="contacto" aria-labelledby="contact-title">
-        <div class="section-marquee contact-marquee" aria-hidden="true">
-          <span
-            >Hagámoslo <b>↗</b> <em>posible.</em> Hagámoslo <b>↗</b>
-            <em>posible.</em></span
-          >
-        </div>
-        <div class="section-shell contact-content">
-          <span class="eyebrow">TODO EMPIEZA CON UNA CONVERSACIÓN</span>
-          <div class="contact-grid">
-            <h2 id="contact-title">
-              Contame qué<br />querés hacer <span class="outline">mejor.</span>
-            </h2>
-            <a class="circle-link contact-circle" data-contact href="#contacto"
-              ><span>CONTAME<br />TU PROYECTO</span
-              ><span class="circle-arrow" aria-hidden="true">↗</span></a
-            >
-          </div>
-          <div class="contact-bottom">
-            <p>
-              Una primera conversación para entender tu negocio<br />y ver si
-              podemos ayudarte. <strong>Sin cargo. Sin compromiso.</strong>
-            </p>
-            <p class="contact-note">
-              Se abre WhatsApp.<br />Vos decidís cuándo enviar el mensaje.
-            </p>
-          </div>
-        </div>
+      <section
+        class="contact section-shell"
+        id="contacto"
+        aria-labelledby="contact-title"
+      >
+        <span class="eyebrow">TU PRÓXIMO PASO</span>
+        <h2 id="contact-title">Hagamos espacio<br />para lo que sigue.</h2>
+        <p>Empecemos por esa tarea que te gustaría simplificar.</p>
+        <a
+          class="button button-primary contact-button"
+          data-contact
+          href="https://wa.me/5492304514378"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Hablemos por WhatsApp <span aria-hidden="true">↗</span></a
+        >
+        <a class="phone-link" data-phone href="tel:+5492304514378"
+          >+54 9 230 451 4378</a
+        >
       </section>
     </main>
     <footer class="site-footer section-shell">
-      <a class="brand-logo" href="#inicio" aria-label="TYXX, volver al inicio"
+      <a class="brand-logo" href="#inicio" aria-label="TYXX, inicio"
         ><img
           src="assets/tyxx-monochrome.png"
           alt="TYXX"
           width="1455"
           height="1081"
-          loading="lazy" /></a
-      ><span>Tecnología que trabaja con vos.</span
-      ><span>ARGENTINA · <span data-year>2026</span></span
-      ><a class="back-top" href="#inicio" aria-label="Volver arriba">↑</a>
+          loading="lazy"
+      /></a>
+      <p>© <span data-year>2026</span> TYXX · Argentina</p>
+      <a class="back-top" href="#inicio" aria-label="Volver arriba"
+        >Volver arriba <span aria-hidden="true">↑</span></a
+      >
     </footer>
   </body>
 </html>

@@ -1,0 +1,11 @@
+{
+  "index.html": "ee0333cc08b23e85a2010cb133554e280d27b7c1a91c4e36aad046ebc12b1dc1",
+  "styles.css": "8b29f12b3b8e18bc81836bc77a4e2b2dd0e325977ad59afd9523f3798f9f61e3",
+  "app.js": "db1dc38dbfc5e21fae9fd6006d951ac3a31ea0018ea1eb0901118d098be5d57d",
+  "assistant.css": "e1db685ddf93a3b20049a93c98f8ea80b81df09514fb58332f930aa7b627b500",
+  "assistant-loader.js": "a7e6f9293a62f22c7842a8243bd2f7389f30b33eff99fc207be4ab3a1c62e167",
+  "assistant-view.js": "a916cfe62cb2b12a14870c9aedbd3f49527d87b875c96067804f1942d2c5d86a",
+  "assistant-model.js": "ee32f884c6117719414612b49d0fbf66c74c27ca965deb0d617781b5c306a695",
+  "assistant-simulator.js": "671e0ea9a6aa5dc0c70fd94380420adf61c4cd73f9687cd66ae77c2f1c411a43",
+  "config.js": "6ba2a62067f8e55fe2220384f23b438ff10a7fb3c54c3d93c2fb29dc65cf1b4e"
+}

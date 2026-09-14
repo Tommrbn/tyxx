@@ -1,12 +1,62 @@
 # Continuar el sitio de TYXX
 
-Actualizado: 10 de septiembre de 2026.
+Actualizado: 14 de septiembre de 2026.
 
-## Pedido activo
+## Acceso local recuperado y consulta sobre GitHub
 
-El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coders.com/php-template/xpovio/index.php?storefront=envato-elements`) e incorporar las imágenes de `C:\Users\tomde\Downloads\TYXX`. Indicó que la base comercial estaba bien. La adaptación está implementada, disponible en la vista local y guardada como versión 2. Falta autorización para actualizar el sitio con el acceso público por enlace existente.
+El usuario indicó que la página no cargaba o mostraba el diseño anterior. Se reprodujo el rechazo de conexión en `127.0.0.1:4180`: el servidor estaba apagado. Además, el servidor local dirigía `/` a Portfolite. Ahora `/` sirve Strand, igual que `/strand.html`, y Portfolite permanece intacta en `/index.html`. No se cambió el contenido de ninguno de los diseños para esta corrección.
 
-## Decisiones vigentes
+Se añadió `Abrir TYXX.cmd`, que usa `scripts/open-preview.ps1` para iniciar el servidor oculto si hace falta y abrir la URL actual. La ejecución repetida comprueba la respuesta y reutiliza el proceso. Los logs y el PID se guardan en `.sites-runtime/`, ignorado por Git. El servidor se dejó funcionando con este acceso, independiente de una terminal retenida; después de reiniciar Windows hay que volver a abrirlo. No es un servicio de inicio automático ni permite acceso desde otros dispositivos.
+
+La vista actual se abrió y reconoció en el navegador integrado. La URL pública conserva la versión publicada anterior; no se publicó ni se guardó una versión nueva en Sites. El usuario todavía no respondió desde qué dispositivo/enlace estaba intentando verla, por lo que no se atribuye su intento concreto a un enlace determinado.
+
+Validación del 14 de septiembre: inicio con el acceso de Windows correcto; segunda ejecución reutilizó el mismo PID; HTTP 200, ausencia de caché y `/` idéntica a `/strand.html`; los nueve archivos originales siguen intactos. Pasaron las comprobaciones estáticas y 29 de 30 pruebas en la primera ejecución. La comparación exacta de píxeles entre dos animaciones independientes era inestable por el avance de las ondas; se ajustó esa prueba para esperar las fuentes y comparar el aumento de luz cerca del puntero, con luz exterior estable. Pasó su ejecución dirigida (18,8 s), sin cambios en la animación de producción. No se repitió el resto de la suite después de ese ajuste de prueba.
+
+El usuario preguntó si la página tenía repositorio en GitHub. Se comprobó `git remote -v`: existe únicamente `origin` en `git.chatgpt-team.site`, correspondiente a Sites. No hay un remoto GitHub configurado. Los últimos cambios permanecen locales; no se creó repositorio ni se hizo push.
+
+## Pedido activo completado: segunda versión inspirada en Strand
+
+El 2026-09-12 el usuario pidió otra versión como https://strand.framer.website/, incluyendo su animación. Se implementó como página independiente en `dist/strand.html`, con `dist/strand.css` y `dist/strand-motion.js`. La versión de Portfolite sigue intacta en `dist/index.html`; no se reemplazó ni se editó su código. Ambas comparten la configuración de contacto y los módulos originales del asistente.
+
+- Nueva versión: `http://127.0.0.1:4180/strand.html`.
+- Portfolite anterior: `http://127.0.0.1:4180/index.html` (también enlazada desde el pie de Strand). Desde el 14 de septiembre, `/` abre Strand.
+- Estilo Strand: portada a la izquierda, bordes verticales finos, negro cálido, títulos grandes de peso fuerte, hilos/partículas a la derecha y escenas que acompañan los tres servicios al desplazarse.
+- La animación es una recreación propia en Canvas del efecto observado, no el componente original del template. Tiene movimiento continuo, respuesta suave al puntero, cambios de forma entre escenas y pausa. Respeta movimiento reducido. En móvil, las escenas se pueden elegir con 01/02/03.
+- Corrección posterior del mismo día: el usuario aclaró que faltaba el efecto original. Se reemplazó la superficie genérica por una silueta plegada con filamentos independientes, estelas curvas, pulsos y puntas luminosas con matices ámbar/azul. La interacción ahora empuja e ilumina las fibras cercanas con retorno elástico. Se inspeccionó el comportamiento público de Strand; el código, las curvas y el dibujo de TYXX siguen siendo propios.
+- Se conservan tres servicios principales, web complementaria, demostraciones identificadas, asistente plegable, contacto de Tomás y FAQs. Sigue siendo una simulación guiada por reglas, sin persistencia ni exportación nueva.
+- La entrega sigue local. No se publicó, no se hicieron commits ni push, no se guardaron versiones en Sites y no se modificó ni inició Taller Norte. La solicitud de panel de vista previa respondió `queued`; la revisión visual se realizó en una pestaña de Chrome.
+
+La corrección de movimiento pasó las 28 pruebas existentes (18,6 s). Tras el ajuste visual final, pasaron las nueve pruebas específicas de Strand (26,0 s), incluida una prueba nueva de deformación localizada; el total de pruebas disponibles ahora es 29. La verificación estática recorre ambos HTML y sus recursos. El registro de comprobaciones y límites está en `docs/verification-strand.md`. Se volvió a contrastar la preservación de los nueve archivos originales por SHA-256 contra `docs/strand-preserved-files.json`, sin cambios. Los tickets 03/04 y los criterios restantes de 05 continúan pendientes; este pedido es una alternativa visual, no una elección definitiva entre los diseños.
+
+## Versión Portfolite conservada
+
+El usuario pidió menos texto, automatizaciones, sistemas de IA e infraestructura como oferta principal y webs como complemento. Confirmó explícitamente que la referencia es Portfolite, la página que abre https://portfolite.framer.website/, no Optirise. Este pedido posterior reemplaza la dirección Xpovio en los puntos visuales y de densidad de texto.
+
+La adaptación está implementada localmente: portada centrada con imagen abstracta propia, tres tarjetas de servicios, dos demostraciones, proceso breve, tres preguntas frecuentes plegadas y contacto. Se conservaron los logos propios y la paleta negro/blanco/naranja. El asistente se muestra al abrir «Describir mi proceso», cualquiera de sus enlaces o `#asistente`. Cerrarlo no borra la ficha; recargar todavía sí. El modo simulado y sus límites se muestran antes de escribir.
+
+Pasaron las comprobaciones estáticas y las 20 pruebas de navegador. Se revisaron portada, servicios y demos en escritorio y portada/apertura del asistente a 390 px. La suite comprueba también 360, 768 y 1440 px, teclado, texto al 200%, movimiento reducido y fallos de JavaScript. Se corrigió un desborde de la cabecera con texto ampliado. Evidencia y alcance en `docs/verification-portfolite.md`.
+
+Entrega local en `http://127.0.0.1:4180/`, con el servidor abierto. El primer intento de mostrar la vista previa mediante el panel respondió `queued`; la revisión posterior sí abrió y observó una pestaña local mediante el navegador integrado. No se publicó, no se hicieron commits ni push y no se modificó ni inició Taller Norte. El teléfono autorizado sigue en `dist/config.js`.
+
+El pedido directo adelanta parte comercial/visual de 05, sin registrar ni cerrar ese ticket como completo: falta reconciliar sus criterios de configuración/indisponibilidad de demo y detalles de contenido con la nueva brevedad solicitada. 03 (recuperación/borrado) y 04 (copia/WhatsApp con ficha) siguen pendientes. No se implementó persistencia ni exportación.
+
+## Entrega anterior: tickets 01 y 02
+
+El usuario invocó `implement` para los tickets 01 y 02 el 2026-09-12. Ambos están registrados individualmente en `.scratch/asistente-tyxx/issues/`, implementados, revisados y cerrados. Funcionan tres ejemplos, caso libre, ficha de seis campos, preguntas guiadas, omisiones, corrección de respuestas, edición directa y revisión de sugerencias. El modo es una simulación explícita mediante reglas, sin IA real. Ver `docs/asistente-tyxx.md`.
+
+Las dos revisiones independientes y las evidencias de esa entrega se conservan en `docs/review-asistente-01-02.md` y `docs/verification-asistente-01-02.md`. El rediseño posterior conserva su comportamiento y vuelve a pasar las 20 pruebas.
+
+La adaptación anterior a Xpovio se guardó como versión 2 sin publicar. Esa versión histórica no contiene el asistente ni el nuevo diseño Portfolite: no publicarla como si fuera esta entrega. La URL pública continúa en su versión anterior.
+
+## Acuerdos de la nueva entrevista
+
+El 2026-09-12 el usuario aceptó las cuatro recomendaciones de la primera ronda: pymes de servicios de Argentina; logos y paleta de Xpovio con portada ajustada; ficha progresiva junto a la conversación y debajo en móvil; borrador durante la sesión de la pestaña que resiste recargas, con borrado y sin historial permanente.
+
+También aceptó las dos decisiones finales: proceso y dificultad como base útil, con herramientas y frecuencia opcionales y posibilidad de copiar una ficha incompleta identificada; ante casos abiertos, conservar lo escrito, pedir una aclaración concreta y dejar la mejora «Pendiente de evaluar con Tomás» cuando no exista fundamento. No quedan preguntas abiertas de la entrevista. Ver `.scratch/asistente-tyxx/discovery.md`.
+
+La investigación confirmó la ubicación actual de los proyectos y no encontró IA configurada en TYXX. El nuevo documento prevé una simulación identificada en ese caso. Taller Norte tiene dos estados distintos: su enlace público conserva la vista previa simulada anterior; su copia local actual ya incluye recepción, registro, bandeja y persistencia SQLite, también con asistente simulado. La implementación nueva del taller no se publicó. La descripción comercial debe corresponder al destino realmente enlazado.
+
+## Base del MVP anterior (histórica)
 
 - Público: dueños de pymes de servicios de Argentina.
 - Oferta visible: webs, automatizaciones, agentes de IA, sistemas de IA e infraestructura; cada proyecto requiere evaluar el alcance.
@@ -14,13 +64,17 @@ El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coder
 - Tomás dirige TYXX y es el contacto directo.
 - Taller Norte aparece como proyecto demostrativo, con captura real y enlace. No es un cliente ni acredita resultados de negocio.
 - Usar temporalmente el celular actual configurado en `dist/config.js`. La línea empresarial propia queda para después.
-- Dirección visual actual: negro, blanco y naranja, títulos grandes con contornos, líneas verticales, enlaces circulares y logos aportados por el usuario. La referencia Xpovio reemplaza la estética marfil del primer MVP.
+- Dirección visual de esa entrega: Xpovio, con contornos, líneas verticales y enlaces circulares. Fue reemplazada por Portfolite en el pedido activo completado.
 - Acceso vigente: cualquier persona con el enlace puede abrir el MVP sin iniciar sesión. El usuario pidió este cambio después de la primera entrega privada. Se conserva `noindex, nofollow`.
 
 ## Archivos para retomar
 
 - `README.md`: ejecución, estructura y cambio de número.
 - `.agents/product-marketing.md`: contexto comercial.
+- `.scratch/asistente-tyxx/spec.md`: especificación vigente completa; se implementaron únicamente 01 y 02.
+- `.scratch/asistente-tyxx/desglose.md`: cinco entregas y dependencias; 01 y 02 cerradas, 03–05 pendientes.
+- `.scratch/asistente-tyxx/ticket-drafts/`: borradores originales; 03–05 pendientes. Los registros vigentes de 01 y 02 están en `issues/`.
+- `.scratch/asistente-tyxx/discovery.md`: entrevista cerrada del nuevo enfoque y asistente; prevalece sobre el alcance anterior en los puntos modificados.
 - `.scratch/web-agencia/discovery.md`: entrevista y cambios de decisión.
 - `.scratch/web-agencia/spec.md`: alcance implementado.
 - `docs/verification-mvp.md`: comprobaciones y límites de la entrega.
@@ -28,7 +82,9 @@ El usuario pidió adaptar la web existente al template Xpovio (`https://ex-coder
 
 ## Próximo paso
 
-Obtener autorización para publicar la versión 2 con el acceso existente por enlace. Reutilizar la versión guardada y el mismo sitio; no crear otro ni guardar de nuevo si no cambia el producto. La versión publicada sigue siendo la primera hasta que la nueva publicación se confirme. El servidor local de la revisión se inicia con `npm run dev` en el puerto 4180. Siguen pendientes el lanzamiento comercial con indexación y el futuro cambio a un número empresarial. No contactar prospectos desde herramientas sin autorización explícita.
+El bloque 01 + 02 y el rediseño Portfolite solicitado están completos. Cuando el usuario solicite los siguientes tickets, registrar e implementar 03 + 04 y reconciliar el alcance pendiente de 05 con el rediseño ya realizado, conservando sus registros individuales. 03 y 04 dependen de 02, ya resuelta; 05 depende de 01, ya resuelta. No volver a consultar el enfoque de pruebas ni las seis decisiones de producto aceptadas. No cambiar ni cerrar la especificación padre como si los cinco tickets estuvieran completos.
+
+El servidor local se inicia con `npm run dev`; las pruebas con `npm test` usan dependencias de desarrollo propias de TYXX y Chrome. La página sigue siendo estática y no requiere compilación ni dependencias de producción. Si se solicita publicar en el futuro, preparar una nueva versión del estado final autorizado; la versión 2 guardada es anterior al asistente. El número empresarial sigue pendiente.
 
 ## Versión 2 preparada para publicar
 

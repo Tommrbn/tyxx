@@ -6,3 +6,6 @@ node_modules/
 *.tar.gz
 *.zip
 *.log
+test-results/
+playwright-report/
+.sites-runtime/
