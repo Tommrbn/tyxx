@@ -101,11 +101,9 @@ test("Strand: el puntero ilumina las fibras cercanas sin iluminar toda la figura
       if (pointer)
         await page.mouse.move(bounds.x + pointer.x, bounds.y + pointer.y);
       await page.clock.runFor(600);
-      return await canvas.evaluate((element) => {
+      return await canvas.evaluate((element, baselineTip) => {
         const { width, height } = element;
-        const pixels = Array.from(
-          element.getContext("2d").getImageData(0, 0, width, height).data,
-        );
+        const pixels = element.getContext("2d").getImageData(0, 0, width, height).data;
         let strongest = 0;
         let tip = { x: width / 2, y: height / 2 };
         for (let y = Math.floor(height * 0.3); y < height * 0.6; y++) {
@@ -117,29 +115,33 @@ test("Strand: el puntero ilumina las fibras cercanas sin iluminar toda la figura
             }
           }
         }
-        return { pixels, width, tip };
-      });
+        // Both renders measure the same regions around the baseline tip.
+        tip = baselineTip ?? tip;
+        let near = 0;
+        let far = 0;
+        for (let i = 3; i < pixels.length; i += 4) {
+          const pixel = (i - 3) / 4;
+          const distance = Math.hypot(
+            (pixel % width) - tip.x,
+            Math.floor(pixel / width) - tip.y,
+          );
+          if (distance < 110) near += pixels[i];
+          else far += pixels[i];
+        }
+        return { near, far, width, height, tip };
+      }, pointer);
     } finally {
       await page.close();
     }
   };
   const baseline = await render();
   const hovered = await render(baseline.tip);
-  const light = { nearBefore: 0, nearAfter: 0, farBefore: 0, farAfter: 0 };
-  for (let i = 3; i < baseline.pixels.length; i += 4) {
-    const pixel = (i - 3) / 4;
-    const distance = Math.hypot(
-      (pixel % baseline.width) - baseline.tip.x,
-      Math.floor(pixel / baseline.width) - baseline.tip.y,
-    );
-    if (distance < 110) {
-      light.nearBefore += baseline.pixels[i];
-      light.nearAfter += hovered.pixels[i];
-    } else {
-      light.farBefore += baseline.pixels[i];
-      light.farAfter += hovered.pixels[i];
-    }
-  }
+  const light = {
+    nearBefore: baseline.near,
+    nearAfter: hovered.near,
+    farBefore: baseline.far,
+    farAfter: hovered.far,
+  };
   // Waves keep moving between page instances. Compare regional light, not
   // exact pixel positions, to isolate the pointer's proximity highlight.
   expect(light.nearBefore).toBeGreaterThan(0);

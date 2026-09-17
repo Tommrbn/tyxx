@@ -1,0 +1,132 @@
+schema: spec-driven
+project: tyxx
+artifact_id: sdd-init/tyxx
+
+# Contexto factual SDD; CONTEXT.md sigue siendo la fuente única del dominio.
+context: |
+  TYXX es el sitio comercial de Tomás para pymes de servicios de Argentina.
+  Fuente del dominio: CONTEXT.md; instrucciones: AGENTS.md y docs/agents/domain.md.
+  No existe docs/adr/ al inicializar. openspec/ tampoco existía antes de este archivo.
+  Contexto previo revisado: CONTINUAR.md, README.md y .agents/product-marketing.md.
+  Stack: HTML, CSS y JavaScript nativo; módulos ES para el asistente.
+  dist/ contiene fuentes editables versionadas, no una salida que deba recompilarse.
+  No hay framework, backend, dependencias de producción ni paso de compilación.
+  package.json: tyxx-agencia 0.1.0, privado, type=module; npm y package-lock.json v3.
+  scripts/serve.mjs sirve solo dist/ en 127.0.0.1:4180, con Cache-Control: no-store.
+  La entrada / sirve strand.html; Portfolite sigue disponible en /index.html.
+  Strand usa strand.html, strand.css y strand-motion.js, con animación Canvas propia.
+  Ambas páginas comparten app.js, config.js y los módulos/estilos del asistente.
+  assistant-loader.js carga assistant-view.js y ofrece alternativa ante fallo.
+  assistant-model.js y assistant-simulator.js separan ficha/conversación e interpretación por reglas.
+  La demostración prepara una ficha editable sin IA real, persistencia ni exportación.
+  El contacto se configura en dist/config.js; app.js genera enlaces de WhatsApp.
+  La documentación describe entrega local; no se verificó publicación ni disponibilidad actual.
+  Convenciones: documentación y nombres de pruebas en español; textos rioplatenses con voseo.
+  Issues históricos en .scratch/<feature>/; leer docs/agents/issue-tracker.md antes de acceder.
+  .atl/skill-registry.md existe y se conserva sin regenerar.
+
+approved_renewal:
+  source: "Instrucción actual del usuario transmitida por el orquestador; descubrimiento completo."
+  direction: "Evolucionar Strand estático con posicionamiento comercial desde procesos."
+  primary_contact: "WhatsApp para una consulta de diagnóstico con Tomás."
+  secondary_demonstration: "Asistente existente, guiado por reglas y explícitamente sin IA real."
+  include:
+    - "Mejoras móviles y de accesibilidad."
+    - "Intervención humana explícita y separación entre flujos hipotéticos y demo implementada."
+    - "Mantenimiento según alcance acordado, sin SLA ni promesas ilimitadas."
+  preserve:
+    - "Portfolite, sin migración de stack."
+    - "Modificación preexistente de .gitignore y archivos .pi/ sin seguimiento."
+  exclude:
+    - "Backend, IA real, CRM, agenda conectada y automatización de WhatsApp."
+    - "Persistencia, exportación y catálogo de siete servicios."
+    - "Clientes, resultados, testimonios o integraciones inventados."
+  historical_drift:
+    - "El CTA principal actual de Strand apunta al asistente; WhatsApp principal es el cambio aprobado, aún no implementado."
+    - "El contexto comercial histórico prioriza el asistente y contiene direcciones visuales anteriores."
+    - "Los tickets históricos de persistencia/exportación no autorizan ampliar esta renovación."
+    - "No se inspeccionó Chapas ni Taller Norte ni se verificaron sus enlaces externos."
+
+# Decisión explícita limitada a este cambio y seams; no política global del harness.
+strict_tdd: true
+delivery_decision:
+  change: renovacion-tyxx-sistemas-ia
+  source: "Elección explícita del usuario hoy, en esta sesión: Revisión amplia."
+  acceptance: "Aceptar size:exception: mantener alcance aprobado, implementarlo en tres partes y revisar acumulado >400, sin commits/PRs/publicación."
+  delivery_strategy: exception-ok
+  chain_strategy: size-exception
+  review_budget: 400
+  budget_risk: High
+  actual_pr_chain_selected: false
+  supersedes: "Pendientes históricos de revisión/TDD en los artefactos anteriores; no amplía alcance."
+testing:
+  policy_status: approved-change-scoped
+  source: "Elección explícita del usuario hoy, en esta sesión."
+  user_request: "Sí, pruebas primero"
+  applicability:
+    change: renovacion-tyxx-sistemas-ia
+    seams:
+      - "Contacto: flujos públicos nuevos/modificados, con y sin JavaScript."
+      - "Ejemplo: recorrido público nuevo/modificado por enlaces accesibles."
+      - "Navegación móvil: flujos nuevos/modificados, teclado y fallback sin JavaScript."
+    test_command: "npm test -- tests/strand.spec.js"
+    sequence: "RED → GREEN → TRIANGULATE → REFACTOR, un comportamiento por ciclo."
+    regressions: "Ejecutar regresiones existentes de asistente/fallback y rutas/Portfolite sin convertir pruebas sin cambios en evidencia RED/GREEN nueva."
+    visual_checks: "La revisión visual, teclado y lector de pantalla complementan las pruebas automatizadas."
+    limit: "No decide política de cambios futuros no relacionados ni política global del harness."
+  evidence:
+    - "No había openspec/config.yaml; .pi/gentle-ai/sdd-preflight.json no contiene política TDD."
+    - "AGENTS.md, package.json y playwright.config.js no activan strict_tdd."
+    - "CONTINUAR.md y .scratch/asistente-tyxx/spec.md registran aprobación del enfoque integrado histórico."
+    - "docs/verification-asistente-01-02.md documenta TDD aplicado a comportamientos concretos anteriores, no una política estricta global."
+    - "La presencia del runner, las pruebas y la skill TDD no activa strict_tdd por sí sola."
+  before_implementation: "Decisión TDD/seams confirmada por el usuario; antes de fuentes comprobar base y disponibilidad según tarea 2. Esta actualización es planificación, sin ejecución ni evidencia RED/GREEN actual."
+  runner: "@playwright/test"
+  declared_version: "^1.63.0"
+  locked_version: "1.63.0"
+  node_requirement: ">=20 según package-lock.json; entorno instalado no verificado en init."
+  commands:
+    dev: "npm run dev (node scripts/serve.mjs)"
+    static_check: "npm run check (node scripts/check.mjs)"
+    test: "npm test (playwright test)"
+    strand: "npm test -- tests/strand.spec.js"
+  config_file: playwright.config.js
+  test_dir: tests
+  files:
+    - tests/assistant.spec.js
+    - tests/assistant-quality.spec.js
+    - tests/strand.spec.js
+    - tests/preview.spec.js
+  browser: "chromium, channel chrome; requiere Google Chrome local."
+  base_url: "http://127.0.0.1:4180"
+  fully_parallel: true
+  workers: 2
+  viewport: { width: 1440, height: 1000 }
+  reduced_motion: reduce
+  trace: retain-on-failure
+  web_server: { command: "npm run dev", reuse_existing_server: true }
+  existing_coverage: "Interfaz del asistente, ausencia de envío de datos, teclado, tamaños móviles, texto al 200%, movimiento, pausa, contacto y rutas Strand/Portfolite."
+  static_check_scope: "Sintaxis JS, configuración de contacto, recursos, importaciones, anclas, IDs, H1 y atributos de imágenes en ambos HTML."
+  init_execution: "No se ejecutaron tests, comprobaciones estáticas, servidor ni instalaciones. No se certifica un resultado actual de la suite."
+
+rules:
+  proposal:
+    - "Usar el alcance actual aprobado, no reactivar pendientes históricos excluidos."
+    - "Distinguir capacidades existentes, hipótesis de proceso y trabajo propuesto."
+  specs:
+    - "Definir criterios observables de contacto, demo secundaria, móvil y accesibilidad."
+    - "Conservar vocabulario de CONTEXT.md y no duplicar el modelo de dominio."
+  design:
+    - "Mantener stack estático y preservar Portfolite; evaluar impacto de archivos compartidos."
+    - "Reutilizar interfaces existentes y evitar abstracciones especulativas."
+  tasks:
+    - "Aplicar decisión TDD explícita únicamente a las seams de contacto/ejemplo/nav de renovacion-tyxx-sistemas-ia."
+    - "Revisión amplia con size:exception aceptada explícitamente: tres unidades locales y revisión acumulada >400, sin cadena de PRs seleccionada."
+  apply:
+    - "La restricción de init a este config fue histórica. El apply de la renovación aprobada se limita a dist/strand.html, dist/strand.css, IIFE local de nav en dist/strand-motion.js, tests/strand.spec.js y documentación aprobada en tasks.md. Esta actualización de planificación no ejecuta apply."
+    - "Pruebas primero solo en seams nuevas/modificadas de contacto/ejemplo/nav; ejecutar regresiones existentes de asistente/Portfolite y complementar con revisión visual."
+    - "Preservar Portfolite, módulos compartidos, noindex y cambios preexistentes; no ampliar exclusiones de approved_renewal ni editar superficies externas al alcance."
+    - "Sin instalaciones, comprobaciones externas, commits, PRs, push, publicación ni despliegue; no inferir permisos de entrega de size:exception. Ante necesidad fuera del alcance, volver al usuario."
+  verify:
+    - "Registrar comandos realmente ejecutados y separar resultados actuales de evidencia histórica."
+    - "Verificar preservación de Portfolite y regresiones compartidas cuando se autorice implementación."
