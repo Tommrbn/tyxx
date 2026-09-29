@@ -3,14 +3,14 @@ import { test, expect } from "@playwright/test";
 test("señala una descripción manual que todavía menciona una herramienta corregida y permite revisarla", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(
     page,
     "Proceso: Copio pedidos en Excel.\nHerramientas: Excel\nDificultad: Cometo errores.",
   );
   await editField(page, "Herramientas mencionadas", "Papel");
   await expect(sheet(page)).toContainText("Revisar proceso actual");
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
   await editField(page, "Proceso actual", "Copio los pedidos en papel.");
   await expect(sheet(page)).not.toContainText("Revisar proceso actual");
   await expect(sheet(page)).not.toContainText("Excel");
@@ -19,7 +19,7 @@ test("señala una descripción manual que todavía menciona una herramienta corr
 test("conserva las continuaciones de campos etiquetados con acentos, saltos y puntuación", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(
     page,
     'Proceso: registro pedidos.\nLos agrupo por cliente; reviso las cantidades.\nDificultad: pierdo tiempo\nBusco "códigos" & <referencias>.',
@@ -43,7 +43,7 @@ test("conserva las continuaciones de campos etiquetados con acentos, saltos y pu
 test("al editar herramientas y frecuencia no deja esos datos anteriores dentro del proceso", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(page, "Copio pedidos de WhatsApp a Excel todos los días.");
   await reply(page, "Cometo errores al copiar.");
   await editField(page, "Herramientas mencionadas", "Papel y lápiz");
@@ -57,7 +57,7 @@ test("al editar herramientas y frecuencia no deja esos datos anteriores dentro d
 test("permite omitir el proceso desde la primera pregunta sin repetirla", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await page
     .getByRole("button", { name: "Dejar este dato pendiente", exact: true })
     .click();
@@ -84,7 +84,7 @@ function sheet(page) {
 test("reconoce cuatro datos afirmativos juntos sin volver a preguntarlos", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(
     page,
     "Copio pedidos de WhatsApp a Excel todos los días y cometo errores al copiar.",
@@ -100,7 +100,7 @@ test("reconoce cuatro datos afirmativos juntos sin volver a preguntarlos", async
 test("conserva un caso abierto como texto y admite la vía manual sin inventar una mejora", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   const original =
     "Quiero mejorar todo.\n<script>window.intrusion = true</script>\nÁrbol & gestión <equipo>";
   await reply(page, original);
@@ -113,7 +113,7 @@ test("conserva un caso abierto como texto y admite la vía manual sin inventar u
     }),
   ).toBeVisible();
   await expect(sheet(page)).toContainText("Ficha incompleta");
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
   await editField(
     page,
     "Proceso actual",
@@ -127,7 +127,7 @@ test("conserva un caso abierto como texto y admite la vía manual sin inventar u
   await expect(sheet(page)).toContainText(
     'Organizo guardias.\n<equipo> & "turnos"',
   );
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
   expect(await page.evaluate(() => window.intrusion)).toBeUndefined();
   await expect(page.locator("equipo")).toHaveCount(0);
 });
@@ -141,7 +141,7 @@ test("un fallo de interpretación conserva el texto y permite completar la ficha
       body: 'export function simulateTurn() { return { facts: { invented: "no" }, unknowns: [], suggestion: null }; }',
     }),
   );
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(page, "Copio pedidos a Excel.");
   await expect(page.getByLabel("Tu respuesta", { exact: true })).toHaveValue(
     "Copio pedidos a Excel.",
@@ -157,7 +157,7 @@ test("un fallo de interpretación conserva el texto y permite completar la ficha
   await editField(page, "Proceso actual", "Copio pedidos a Excel.");
   await editField(page, "Dificultad descrita", "Cometo errores.");
   await expect(sheet(page)).toContainText("Base para conversar");
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
 });
 
 async function editField(page, label, value) {
@@ -173,7 +173,7 @@ async function editField(page, label, value) {
 test("corrige una respuesta, conserva ediciones y retira una mejora incompatible", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(page, "Copio pedidos de WhatsApp a Excel todos los días.");
   await reply(page, "Cometo errores al copiar.");
   await page
@@ -195,7 +195,7 @@ test("corrige una respuesta, conserva ediciones y retira una mejora incompatible
     "Coordino las guardias de un equipo.",
   );
   await expect(sheet(page)).not.toContainText("pasar los pedidos");
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
   await editField(
     page,
     "Mejora propuesta",
@@ -232,13 +232,13 @@ test("corrige una respuesta, conserva ediciones y retira una mejora incompatible
   await editField(page, "Mejora propuesta", "");
   await editField(page, "Proceso actual", "Copio pedidos a una planilla.");
   await editField(page, "Dificultad descrita", "Cometo errores al copiar.");
-  await expect(sheet(page)).toContainText("Pendiente de evaluar con Tomás");
+  await expect(sheet(page)).toContainText("Pendiente de evaluar con TYXX");
 });
 
 test("aprovecha herramientas y frecuencia claras y permite dejarlas pendientes", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await reply(page, "Copio pedidos de WhatsApp a Excel todos los días.");
   await expect(sheet(page)).toContainText("WhatsApp, Excel");
   await expect(sheet(page)).toContainText("todos los días");
@@ -284,7 +284,7 @@ test("aprovecha herramientas y frecuencia claras y permite dejarlas pendientes",
 test("describe un proceso desde la portada y completa una ficha sin exigir datos personales", async ({
   page,
 }) => {
-  await page.goto("/");
+  await page.goto("/index.html");
   await page
     .getByRole("link", { name: "Contame qué proceso querés mejorar" })
     .click();

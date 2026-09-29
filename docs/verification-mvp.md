@@ -1,5 +1,7 @@
 # Verificación del MVP de TYXX
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Fecha: 10 de septiembre de 2026.
 
 ## Comprobaciones realizadas
@@ -13,7 +15,7 @@ Fecha: 10 de septiembre de 2026.
 
 ## Contacto
 
-Configuración temporal autorizada: `5492304514378`. El código prepara enlaces `wa.me` con mensajes editables y contexto específico para los cinco servicios. No se enviaron mensajes ni se comprobó actividad de la cuenta remota.
+Configuración temporal autorizada: `[contacto personal retirado]`. El código prepara enlaces `wa.me` con mensajes editables y contexto específico para los cinco servicios. No se enviaron mensajes ni se comprobó actividad de la cuenta remota.
 
 ## Límites
 

@@ -1,15 +1,15 @@
 # Product Marketing Context
 
-**Document version:** v8
-**Last updated:** 2026-09-12
+**Document version:** v16
+**Last updated:** 2026-09-23
 
 ## Product Overview
 
-TYXX es la empresa de Tomás centrada en automatizaciones de procesos, sistemas de IA, asistentes conectados, integraciones e infraestructura. Las páginas web forman parte de una solución cuando se necesita una interfaz. El alcance se define después de evaluar cada negocio.
+Strand presenta oportunidades de crecimiento del negocio con IA: atender mejor consultas, seguir oportunidades y reducir tareas repetitivas. TYXX evalúa agentes de IA, automatizaciones, integraciones y sistemas a medida según cada proceso; no promete resultados ni presupone que todo negocio necesita IA.
 
-**Mensaje central del nuevo documento:** Automatización e inteligencia artificial aplicada a tu empresa. Analizar el trabajo actual y desarrollar soluciones para reducir tareas manuales, organizar información y conectar herramientas.
+**Mensaje central de Strand:** Hacé crecer tu negocio con IA. El alcance de cada proyecto se acuerda después del relevamiento; no todo negocio necesita IA.
 
-La página local ya presenta tres áreas principales: automatizaciones, sistemas de IA e infraestructura. Las webs aparecen en una sola nota como complemento. Los tickets 01 y 02 aportan el asistente y su ficha editable; la adaptación visual y comercial posterior adelanta parte de 05 sin cerrar sus criterios pendientes.
+Strand es la entrada local en `/` y `/strand.html`. El recorrido renovado se organiza en seis bloques: portada, problemas reconocibles, ejemplo hipotético, forma de trabajo, demostraciones y FAQ/contacto. Portfolite permanece en `/index.html` con su oferta anterior de tres áreas, sin trasladarle esta renovación. Los tickets 01 y 02 del asistente se conservan; no se cierran pendientes históricos por este cambio.
 
 **Modelo comercial:** propuesta por proyecto, distinguiendo implementación, herramientas externas y mantenimiento opcional. La primera consulta es sin cargo. No se publican importes fijos.
 
@@ -23,25 +23,31 @@ Aplicaciones a evaluar: recibir consultas completas, evitar copiar datos entre h
 
 ## Differentiation
 
-Compromisos de servicio aceptados: trato directo con Tomás, relevamiento antes de proponer, entregas por etapas y documentación para el cliente. Presentarlos como forma de trabajo, sin atribuirles resultados o antigüedad no documentados.
+Compromisos de servicio aceptados: trato directo con TYXX, relevamiento antes de proponer, entregas por etapas y documentación para el cliente. Presentarlos como forma de trabajo, sin atribuirles resultados o antigüedad no documentados.
 
 ## Proof Points
 
-Taller Norte es una marca ficticia y una demostración de recepción de consultas. Su URL pública respondió al HTML de Taller Norte el 2026-09-12 y conserva la versión de vehículo/daño, validación y vista previa simulada editable, sin envío al taller; esa comprobación HTTP no verificó interacciones. El responsable del taller tiene un recorrido comercial en esa versión.
+Strand muestra a Novartech como cliente, no a Taller Norte. El usuario informa que trabaja hace varios años con Novartech en sitios web, agentes de IA y visión por computadora para detectar armazones y lentes y obtener medidas para laboratorio. La sección oficial https://novar-tech.com/#team lista a Tomás Desia como Developer: acredita el vínculo profesional, no autoría del sitio completo ni de todos sus productos. No hay métricas, precisión óptica verificada ni testimonio del cliente. El enlace externo de la tarjeta no usa `data-demo` porque `app.js` reemplaza ese destino con `config.demoUrl`. Vision Latina es el segundo cliente: el usuario informa haber desarrollado su sitio https://www.myopialatam.com/, identificado en su página como MYOPIALATAM / Congreso Latinoamericano de Miopía. No se atribuyen años, asistencia, resultados ni testimonios.
 
-La copia local se actualizó posteriormente: ahora incluye recepción guiada, ficha, registro, bandeja y persistencia SQLite. La continuidad, API, almacén y pruebas se contrastaron durante `to-spec`; esta revisión no ejecutó la nueva suite. Esa entrega no se publicó y su asistente sigue siendo simulado. Los textos de TYXX deben describir la versión accesible en el enlace configurado: no anunciar la bandeja local como disponible en el enlace público anterior.
+Taller Norte es un proyecto demostrativo ficticio, no un cliente ni un caso de éxito. Su aparición anterior en Strand con una captura histórica local y advertencia de disponibilidad externa es historia, no estado actual.
 
-El Asistente de TYXX está implementado y verificado localmente para conversar y preparar una ficha editable, con correcciones y tratamiento explícito de casos ambiguos. Se identifica como demostración guiada por reglas, sin IA real. La persistencia, copia y preparación de WhatsApp con ficha siguen pendientes. No se publicó esta entrega.
+Evidencia histórica, no certificación actual: su URL pública respondió al HTML de Taller Norte el 2026-09-12 con la versión de vehículo/daño, validación y vista previa simulada editable, sin envío al taller; esa comprobación HTTP no verificó interacciones. El responsable del taller tiene un recorrido comercial en esa versión.
 
-El proceso actual y la dificultad descrita son la información mínima útil para iniciar una conversación. Herramientas y frecuencia pueden quedar pendientes; también se puede compartir una ficha incompleta, identificada y con sus dudas visibles. Ante un caso que no permita fundamentar una mejora, se conservará lo escrito, se pedirá una aclaración concreta y se indicará «Pendiente de evaluar con Tomás».
+La copia local se actualizó posteriormente: ahora incluye recepción guiada, ficha, registro, bandeja y persistencia SQLite. La continuidad, API, almacén y pruebas se contrastaron durante `to-spec`; esta revisión no ejecutó la nueva suite. Esa entrega no se publicó y su asistente sigue siendo simulado. No trasladar esas capacidades locales a la presentación del destino externo: su disponibilidad y funcionalidad actuales no se comprobaron en esta renovación.
+
+La demo de Strand responde sobre aplicaciones posibles de IA al negocio sin garantizar ventas o ahorros. Vision Latina acredita un proyecto digital, no una implementación de IA. El asistente de ficha de procesos permanece exclusivamente en Portfolite. Strand muestra dos tarjetas de clientes, Novartech y Vision Latina, sin tarjeta de asistente. La demo se abre solo desde el botón flotante. Strand muestra una demo local flotante de consultas sobre TYXX, con preguntas sugeridas o libres y respuestas deterministas sobre servicios, proyectos y forma de trabajo. No es IA conectada: no envía conversaciones, realiza reservas ni consulta datos reales. Véase `docs/agent-demo.md`. Históricamente, el asistente de ficha también aparecía en Strand, pero ya fue retirado. Antes de escribir, Portfolite declara reglas, ausencia de IA real y pérdida de la ficha al recargar; cerrar/reabrir conserva la memoria.
+
+Históricamente, antes de este reemplazo, el asistente de procesos en Strand era accesible por `#asistente`. Antes de escribir declara reglas, ausencia de IA real y pérdida de la ficha al recargar; cerrar/reabrir conserva la memoria. Las sugerencias requieren evaluación humana, no confirman viabilidad. Ante fallo de carga sigue disponible contacto. La persistencia, copia y exportación de la ficha por correo siguen pendientes. No se publicó esta entrega.
+
+El proceso actual y la dificultad descrita son la información mínima útil para iniciar una conversación. Herramientas y frecuencia pueden quedar pendientes; también se puede compartir una ficha incompleta, identificada y con sus dudas visibles. Ante un caso que no permita fundamentar una mejora, se conservará lo escrito, se pedirá una aclaración concreta y se indicará «Pendiente de evaluar con TYXX».
 
 No se aportaron otros casos, testimonios o métricas. Las descripciones de IA e infraestructura expresan áreas de servicio a evaluar por proyecto, no implementaciones anteriores acreditadas.
 
 ## Sales Motion & Goals
 
-Objetivo principal: que el visitante describa un proceso que quiere mejorar. CTA previsto: «Contame qué proceso querés mejorar», hacia el asistente; acción secundaria «Ver demostraciones». Recorrido previsto: descripción del proceso, ficha revisable, preparación voluntaria de un mensaje o contacto directo con Tomás y consulta inicial. El número autorizado sigue disponible y configurable.
+Objetivo principal de Strand: iniciar una consulta sobre una necesidad concreta. «Conversemos sobre tu negocio» lleva a contacto interno; solo «Escribir por correo» ofrece la salida externa. Abrir la aplicación no envía ni entrega un mensaje ni reserva un turno. «Ver un ejemplo» lleva al flujo hipotético y el asistente queda como demostración secundaria; la ficha no es presupuesto ni confirma viabilidad o contratación.
 
-Medir consultas con una necesidad concreta y propuestas enviadas, inicialmente mediante registro manual. Los clics de WhatsApp no equivalen a consultas recibidas ni ventas. No se acordó una meta numérica.
+Medir consultas con una necesidad concreta y propuestas enviadas, inicialmente mediante registro manual. Los clics de correo no equivalen a consultas recibidas ni ventas. No se acordó una meta numérica.
 
 ## Objections
 
@@ -55,7 +61,7 @@ Usar lenguaje de negocio y explicar términos técnicos con ejemplos. Consultar 
 
 Español rioplatense con voseo, profesional y cercano. En el pedido posterior del 2026-09-12 el usuario confirmó Portfolite (https://portfolite.framer.website/) como nueva referencia, reemplazando Xpovio. Se conservan los logos propios y negro, blanco y naranja; se usan títulos centrados de peso regular, espacio libre, tarjetas redondeadas y textos breves. La portada dice «Menos tareas repetitivas. Más posibilidades.». El asistente se despliega al usar su CTA, navegación, demo o enlace directo, y las respuestas frecuentes quedan plegadas. La referencia visual no aporta testimonios, clientes ni métricas de TYXX.
 
-El pedido posterior del mismo día suma una alternativa inspirada en Strand, sin reemplazar la versión Portfolite. Se presenta en `strand.html`, con portada lateral («Tu empresa, mejor conectada.»), títulos de peso fuerte y animación de hilos/partículas. El foco comercial se mantiene. No se eligió todavía una versión definitiva ni se autorizó publicarla.
+El pedido posterior del mismo día suma una alternativa inspirada en Strand, sin reemplazar la versión Portfolite. Se presenta en `strand.html`, con portada lateral (antes «Tu empresa, mejor conectada.»; ahora «Organizá tus consultas, desde el primer mensaje hasta el seguimiento.»), títulos de peso fuerte y animación de hilos/partículas. El foco comercial se mantiene. No se eligió todavía una versión definitiva ni se autorizó publicarla.
 
 ## Competitive Landscape
 
@@ -63,9 +69,26 @@ No se investigaron competidores para este MVP. Evitar superioridad comparativa o
 
 ## Contact
 
-El usuario autorizó temporalmente su celular actual para ver el MVP. La configuración activa está en `dist/config.js`. La línea exclusiva para TYXX se evaluará después.
+El contacto autorizado es tyxxsolve@gmail.com y la identidad pública de contacto es TYXX; Tomás Desia aparece únicamente como evidencia profesional en el caso Novartech, no como contacto. La configuración activa está en `dist/config.js`; ambas páginas conservan enlaces mailto estáticos y dirección visible. Se retira el contacto telefónico anterior. Abrir el correo no envía mensajes ni exporta la ficha.
 
 ## Changelog
+
+- v16 (2026-09-23) — Strand orienta la oferta a oportunidades de negocio con IA, sin presentar desarrollo web como servicio principal ni atribuir IA al proyecto digital de Vision Latina. Sin garantías comerciales.
+
+- v15 (2026-09-23) — Vision Latina se suma como segundo cliente con su sitio MYOPIALATAM; se retira la tarjeta del asistente y la frase bajo el correo, conservando el botón flotante y el contacto estático.
+
+- v14 (2026-09-23) — La demo flotante pasa de escenarios por rubro a consultas sobre TYXX; sigue siendo una simulación local sin IA conectada.
+
+- v13 (2026-09-23) — Strand reemplaza el asistente integrado por una demo de agentes local, sin IA real ni acciones; Portfolite mantiene la ficha legada.
+
+- v12 (2026-09-23) — Strand prioriza sitios web y agentes de IA y presenta a Novartech como cliente con vínculo profesional enlazado; reemplaza la tarjeta ficticia sin alterar Portfolite ni el asistente secundario pendiente de reemplazo.
+
+- v11 (2026-09-23) — Identidad de marca y correo tyxxsolve@gmail.com en ambas versiones, configuración y asistente. Fallback estático sin JavaScript y borrador codificado; sin envío ni exportación de ficha. El canal telefónico citado en versiones anteriores es histórico y está retirado.
+
+
+- v10 (2026-09-21) — Estado local reconciliado: Strand conserva el recorrido v9 y ahora dispone de composición compacta y comprobaciones automatizadas de texto ampliado, teclado y contraste. Revisión humana con lector de pantalla pendiente; no afirmar accesibilidad certificada ni publicación. Evidencia en `docs/verification-renovacion-tyxx.md`.
+
+- v9 (2026-09-18) — Renovación local de Strand desde procesos: seis bloques, consulta interna antes de WhatsApp y ejemplo independiente. Portfolite conservada; sin publicación. Asistente secundario en demos con memoria solo mientras no se recarga; Taller Norte ficticio con captura histórica y disponibilidad externa no verificada.
 
 - v8 (2026-09-12) — Segunda versión solicitada con Strand y su efecto animado. Se conserva Portfolite en la ruta principal y se agrega `strand.html`; oferta, contacto y capacidades del asistente compartidos. Sin decisión de reemplazo ni publicación.
 

@@ -1,5 +1,7 @@
 # Diseño — renovación TYXX: sistemas e IA
 
+> Actualización autorizada de contacto (2026-09-23): la marca pública es TYXX y el destinatario vigente es tyxxsolve@gmail.com. Se revisan referencias editoriales del cambio existente; no se ejecutan fases SDD ni se alteran estados de tareas, resultados históricos o pendientes de aceptación.
+
 ## Estado, autoridad y evidencia
 - Diseño únicamente; implementación y verificaciones no ejecutadas. Backend `openspec`, proyecto `tyxx`, alcance exclusivo de este repositorio.
 - Entradas leídas directamente: `proposal.md`, `specs/landing-comercial/spec.md`, `exploration.md`, `openspec/config.yaml`, `CONTINUAR.md`, `CONTEXT.md` y `.agents/product-marketing.md`.
@@ -24,7 +26,7 @@ Seis `section` hijas directas de `main#contenido`, en este orden; cada una usa `
 | `#ejemplo` | `example-title`: «Una consulta, paso a paso.» | «Ejemplo hipotético · sin sistemas conectados». Secuencia completa descrita debajo. |
 | `#proceso` | `process-title`: «Primero entendemos. Después construimos.» | Relevamos el proceso; acordamos alcance; implementamos y probamos; documentamos y mantenemos según acuerdo. |
 | `#proyectos` | `portfolio-title`: «Demostraciones, no promesas.» | Asistente de TYXX y proyecto ficticio Taller Norte, con límites junto a cada presentación. |
-| `#contacto` | `contact-title`: «Conversemos sobre tu negocio» | «Consulta inicial sin cargo con Tomás. Contame qué querés mejorar; evaluamos juntos el próximo paso.» FAQ y salida explícita. |
+| `#contacto` | `contact-title`: «Conversemos sobre tu negocio» | «Consulta inicial sin cargo con TYXX. Contame qué querés mejorar; evaluamos juntos el próximo paso.» FAQ y salida explícita. |
 
 - Conservar hero lateral, logos, fuentes THICCCBOI, paleta y partículas propias, no el titular anterior. Permitir el salto natural del H1 aprobado sin reducir tipografía ni recortarlo. El anuncio puede decir «Software · Automatización · IA»; no implica integraciones ya realizadas.
 - Hero: enlace primario «Conversemos sobre tu negocio» → `#contacto`; secundario «Ver un ejemplo» → `#ejemplo`. Iconos decorativos `aria-hidden`, sin reemplazar esos nombres.
@@ -34,7 +36,7 @@ Seis `section` hijas directas de `main#contenido`, en este orden; cada una usa `
 - Conservar aquí la nota «La web acompaña cuando tu proceso necesita una interfaz». No añadir catálogo ni promesas de ahorro.
 - FAQ: tres `details` nativos, bajo un H3 «Antes de empezar», dentro de contacto; sin otro landmark con nombre duplicado.
 - Respuestas: IA no siempre necesaria; presupuesto a medida y plazos según alcance; implementación, herramientas externas y mantenimiento opcional separados; conexiones actuales sujetas a evaluación.
-- Cierre: «Abrir WhatsApp» y «Vos decidís si enviás el mensaje. Abrir WhatsApp no envía una consulta ni reserva un turno». Mantener teléfono alternativo.
+- Cierre: «Escribir por correo» y «Vos decidís si enviás el mensaje. Abrir tu aplicación de correo no envía una consulta ni reserva un turno». Mantener la dirección de correo visible y copiable.
 - Título de documento: «TYXX — Organizá tus consultas y su seguimiento»; descripción: «Evaluamos tu proceso de consultas, desde el primer mensaje hasta el seguimiento, y acordamos una solución con supervisión humana.» Sin claims adicionales. Conservar `noindex, nofollow` literalmente; no equivale a privacidad.
 
 ## Flujo ilustrativo y tres escenas existentes
@@ -54,9 +56,9 @@ Un resumen textual previo explicita «Consulta → organización de información
 
 ## Contacto, datos y dependencias
 1. HTML ofrece `href="#contacto"` en cada CTA interno, sin `data-contact`, `data-service`, `target` ni manejador de salida.
-2. Solo «Abrir WhatsApp» en contacto conserva `data-contact` y `href="https://wa.me/5492304514378"`, `target="_blank"`, `rel="noopener noreferrer"` como fallback útil sin JS.
-3. Con JS, `config.js` → `app.js` sustituye ese href por número y mensaje general codificado; no adjunta ficha ni agrega envío desde TYXX. `data-phone` permanece intacto.
-4. No cambiar `dist/config.js`: número autorizado y mensaje continúan siendo la fuente runtime. Documentar que el href estático también debe actualizarse si cambia el número para mantener el fallback.
+2. Solo «Escribir por correo» en contacto conserva `data-contact` y `href="mailto:tyxxsolve@gmail.com"`, sin `target` ni `rel` para ese enlace, como fallback útil sin JS.
+3. Con JS, `config.js` → `app.js` añade asunto y cuerpo codificados por separado; no adjunta ficha ni agrega envío desde TYXX. `data-email` muestra la dirección y mantiene un mailto simple.
+4. `dist/config.js` centraliza `contactEmail`, `contactSubject` y `contactBody`; el correo es tyxxsolve@gmail.com. Documentar que los href estáticos y direcciones visibles de ambas páginas también deben actualizarse si cambia el destinatario para mantener el fallback.
 5. Ejemplo y FAQ son locales; el asistente mantiene datos solo en memoria del navegador. No añadir fetch, almacenamiento, telemetría, exportación, agenda ni IA real.
 
 ## Navegación Strand por mejora progresiva
@@ -110,7 +112,7 @@ No editar Portfolite, archivos compartidos, assets, runner, scripts, dependencia
 - `rules.apply` contiene «Init solo autoriza este archivo»: es alcance histórico de init, no veto perpetuo. Cuando el padre registre la decisión TDD autorizada debe acotar esa redacción a init y registrar el alcance aprobado de apply; no editar config en diseño.
 - Automatización existente: `npm run check`, después `npm test -- tests/strand.spec.js`, después `npm test`; Chrome local/instalación aún no comprobados. Playwright puede iniciar/reutilizar servidor: ejecutar solo con autorización de verificación, sin instalar implícitamente.
 - Matriz nueva: 360/390/768/1440 px × texto 100/200%, más contenedor estrecho con viewport ancho; medir overflow y alturas decorativas, no igualdad exacta de píxeles animados.
-- Contacto con/sin JS: click primario cambia hash a contacto, sin popup; secundario lleva a ejemplo; verificar href externo/número y mensaje configurado sin visitar WhatsApp ni atribuir envío.
+- Contacto con/sin JS: click primario cambia hash a contacto, sin popup; secundario lleva a ejemplo; verificar href mailto, asunto y cuerpo configurados sin abrir el cliente de correo ni atribuir envío.
 - Nav a 360/390 con/sin JS y script de movimiento bloqueado: una sola navegación accesible, fallback visible, botón ausente sin mejora; teclado, Escape/foco, cierre por enlace/fuera y resize. Inyectar fallo Canvas para comprobar independencia.
 - Ejemplo: cuatro pasos/rótulo visibles, índices 0–2/nombres/pressed, scroll sticky y selección móvil; movimiento reducido/pausa/puntero conservan pruebas existentes.
 - Asistente: acceso por demo y hash, caso libre/ejemplo, omisiones/correcciones, edición de campo, cierre/reapertura, pérdida al recargar declarada y fallo del import con alternativa útil. Reutilizar cobertura existente sin duplicarla indiscriminadamente.

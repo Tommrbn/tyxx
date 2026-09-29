@@ -1,7 +1,9 @@
 # Landing comercial Specification
 
+> Actualización autorizada de contacto (2026-09-23): la marca pública es TYXX y el destinatario vigente es tyxxsolve@gmail.com. Se revisan referencias editoriales del cambio existente; no se ejecutan fases SDD ni se alteran estados de tareas, resultados históricos o pendientes de aceptación.
+
 ## Purpose
-Definir el recorrido comercial de Strand desde procesos hacia una consulta inicial con Tomás, distinguiendo oferta, ejemplo ilustrativo y demostraciones reales.
+Definir el recorrido comercial de Strand desde procesos hacia una consulta inicial con TYXX, distinguiendo oferta, ejemplo ilustrativo y demostraciones reales.
 
 ## Requirements
 
@@ -17,22 +19,22 @@ Strand MUST presentar a TYXX como quien diseña, implementa y mantiene sistemas 
 - THEN no encuentra un catálogo ampliado, clientes, testimonios, integraciones, garantías ni métricas comerciales inventados.
 
 ### Requirement: Evaluación humana y alcance de la propuesta
-La forma de trabajo MUST distinguir relevamiento, acuerdo de alcance, implementación y mantenimiento según acuerdo. FAQ/contacto MUST aclarar consulta inicial sin cargo con Tomás, presupuesto a medida, costos de herramientas externas, plazos según alcance, mantenimiento opcional y evaluación de la necesidad de IA, sin SLA ni acompañamiento ilimitado. Toda mejora propuesta MUST quedar sujeta a evaluación humana; la ficha de proceso MUST NOT presentarse como presupuesto, contratación o confirmación de viabilidad.
+La forma de trabajo MUST distinguir relevamiento, acuerdo de alcance, implementación y mantenimiento según acuerdo. FAQ/contacto MUST aclarar consulta inicial sin cargo con TYXX, presupuesto a medida, costos de herramientas externas, plazos según alcance, mantenimiento opcional y evaluación de la necesidad de IA, sin SLA ni acompañamiento ilimitado. Toda mejora propuesta MUST quedar sujeta a evaluación humana; la ficha de proceso MUST NOT presentarse como presupuesto, contratación o confirmación de viabilidad.
 
 #### Scenario: Comprensión de condiciones y sugerencias
 - GIVEN una persona interesada en una solución o que consulta una mejora propuesta.
 - WHEN lee la forma de trabajo, FAQ y límites de la ficha.
-- THEN distingue orientación de propuesta comercial y reconoce qué debe evaluar Tomás, qué se acuerda y qué costos o mantenimiento son separados y opcionales.
+- THEN distingue orientación de propuesta comercial y reconoce qué debe evaluar TYXX, qué se acuerda y qué costos o mantenimiento son separados y opcionales.
 
 ### Requirement: Consulta inicial mediante contacto interno y salida explícita
-El CTA principal «Conversemos sobre tu negocio» MUST llevar a contacto dentro de la página mediante un ancla interna, con y sin JavaScript. La salida de ese recorrido MUST requerir la acción explícita «Abrir WhatsApp», dirigida al número autorizado 5492304514378. El sitio MUST NOT afirmar que abrir WhatsApp envió o entregó un mensaje ni reservó un turno.
+El CTA principal «Conversemos sobre tu negocio» MUST llevar a contacto dentro de la página mediante un ancla interna, con y sin JavaScript. La salida de ese recorrido MUST requerir la acción explícita «Escribir por correo», dirigida al correo tyxxsolve@gmail.com. El sitio MUST NOT afirmar que abrir el correo envió o entregó un mensaje ni reservó un turno.
 
 #### Scenario: Recorrido principal con y sin JavaScript
 - GIVEN Strand con JavaScript habilitado o deshabilitado.
 - WHEN la persona activa «Conversemos sobre tu negocio».
-- THEN llega a FAQ/contacto sin abrir un destino externo y encuentra la consulta inicial sin cargo con Tomás.
-- WHEN activa «Abrir WhatsApp».
-- THEN el enlace ofrece la salida externa al número autorizado, sin confirmación ficticia de envío, recepción o reserva.
+- THEN llega a FAQ/contacto sin abrir un destino externo y encuentra la consulta inicial sin cargo con TYXX.
+- WHEN activa «Escribir por correo».
+- THEN el enlace ofrece la salida externa al correo tyxxsolve@gmail.com, sin confirmación ficticia de envío, recepción o reserva.
 
 ### Requirement: Ejemplo ilustrativo independiente de funciones conectadas
 El CTA secundario «Ver un ejemplo» MUST llevar al flujo ilustrativo, sin exigir el asistente. El flujo MUST mostrar consulta → organización de información → revisión humana → próximo paso, rotulado como hipotético y sin sistemas conectados. MUST distinguirse de capacidades implementadas y MUST NOT simular envíos o reservas exitosos.
@@ -55,7 +57,7 @@ El asistente de TYXX MUST seguir siendo una demostración secundaria accesible d
 #### Scenario: Fallo de carga del asistente
 - GIVEN que el asistente no puede cargarse.
 - WHEN la persona intenta acceder a la demostración.
-- THEN encuentra una explicación y una alternativa útil para contactar a Tomás; el contenido esencial y el recorrido de contacto siguen disponibles sin depender del asistente, JavaScript ni Canvas.
+- THEN encuentra una explicación y una alternativa útil para contactar a TYXX; el contenido esencial y el recorrido de contacto siguen disponibles sin depender del asistente, JavaScript ni Canvas.
 
 ### Requirement: Navegación móvil con mejora progresiva
 A 360 y 390 px, la navegación MUST ofrecer enlaces utilizables sin JavaScript. Con JavaScript, el menú MUST poder operarse por teclado, comunicar correctamente su estado expandido y cerrarse con Escape devolviendo el foco al control de apertura.
@@ -94,7 +96,7 @@ Strand MUST conservar orden de lectura significativo, nombres accesibles y foco 
 - THEN la pausa detiene el movimiento y la preferencia evita la animación continua no esencial; los textos, escenas y acciones siguen comprensibles y utilizables.
 
 ### Requirement: Preservación de Portfolite y límites de datos
-`/` y `/strand.html` MUST conservar Strand; `/index.html` MUST conservar contenido y comportamiento de Portfolite sin trasladarle el rediseño. Contacto y asistente compartidos MUST conservar su comportamiento y número autorizado. La renovación MUST permanecer estática, conservar `noindex, nofollow` sin tratarlo como control de acceso y MUST NOT añadir backend, IA real, CRM, agenda conectada, automatización de WhatsApp, integraciones, telemetría, almacenamiento, exportación ni envío de datos desde el sitio.
+`/` y `/strand.html` MUST conservar Strand; `/index.html` MUST conservar contenido y comportamiento de Portfolite sin trasladarle el rediseño. Contacto y asistente compartidos MUST conservar su comportamiento y el correo autorizado. La renovación MUST permanecer estática, conservar `noindex, nofollow` sin tratarlo como control de acceso y MUST NOT añadir backend, IA real, CRM, agenda conectada, automatización de WhatsApp, integraciones, telemetría, almacenamiento, exportación ni envío de datos desde el sitio.
 
 #### Scenario: Regresión de rutas y módulos compartidos
 - GIVEN una visita a cada una de las tres rutas.
@@ -121,4 +123,4 @@ Tras implementar, `CONTINUAR.md`, `.agents/product-marketing.md` y `README.md` M
 - Dominio `landing-comercial` inferido de las superficies de la propuesta, que no contiene `Capabilities`; no se encontró especificación canónica, cambio concurrente del dominio ni spec plana heredada. Estos requisitos son íntegramente nuevos.
 - Evidencia actual de ejecución: no disponible; esta fase no ejecutó servidor, pruebas ni comprobaciones. Los resultados históricos no certifican el cambio.
 - `strict_tdd: null` continúa sin resolver. Antes de apply se debe confirmar dónde corresponde TDD y los seams nuevos, sin reabrir el alcance aprobado ni fijar aquí una política global.
-- Seams públicos candidatos, solo para confirmación posterior: recorrido contacto/WhatsApp y ejemplo por enlaces accesibles; navegación móvil con/sin JS; asistente/fallback y ficha; rutas Strand/Portfolite y sus controles accesibles.
+- Seams públicos candidatos, solo para confirmación posterior: recorrido contacto/correo y ejemplo por enlaces accesibles; navegación móvil con/sin JS; asistente/fallback y ficha; rutas Strand/Portfolite y sus controles accesibles.

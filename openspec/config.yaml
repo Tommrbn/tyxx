@@ -1,10 +1,11 @@
+# Contacto actualizado el 2026-09-23; conserva política TDD y estados históricos.
 schema: spec-driven
 project: tyxx
 artifact_id: sdd-init/tyxx
 
 # Contexto factual SDD; CONTEXT.md sigue siendo la fuente única del dominio.
 context: |
-  TYXX es el sitio comercial de Tomás para pymes de servicios de Argentina.
+  TYXX es el sitio comercial de TYXX para pymes de servicios de Argentina.
   Fuente del dominio: CONTEXT.md; instrucciones: AGENTS.md y docs/agents/domain.md.
   No existe docs/adr/ al inicializar. openspec/ tampoco existía antes de este archivo.
   Contexto previo revisado: CONTINUAR.md, README.md y .agents/product-marketing.md.
@@ -19,7 +20,7 @@ context: |
   assistant-loader.js carga assistant-view.js y ofrece alternativa ante fallo.
   assistant-model.js y assistant-simulator.js separan ficha/conversación e interpretación por reglas.
   La demostración prepara una ficha editable sin IA real, persistencia ni exportación.
-  El contacto se configura en dist/config.js; app.js genera enlaces de WhatsApp.
+  El contacto se configura en dist/config.js; app.js genera enlaces mailto con asunto y cuerpo codificados por separado.
   La documentación describe entrega local; no se verificó publicación ni disponibilidad actual.
   Convenciones: documentación y nombres de pruebas en español; textos rioplatenses con voseo.
   Issues históricos en .scratch/<feature>/; leer docs/agents/issue-tracker.md antes de acceder.
@@ -28,7 +29,7 @@ context: |
 approved_renewal:
   source: "Instrucción actual del usuario transmitida por el orquestador; descubrimiento completo."
   direction: "Evolucionar Strand estático con posicionamiento comercial desde procesos."
-  primary_contact: "WhatsApp para una consulta de diagnóstico con Tomás."
+  primary_contact: "Correo tyxxsolve@gmail.com para una consulta de diagnóstico con TYXX."
   secondary_demonstration: "Asistente existente, guiado por reglas y explícitamente sin IA real."
   include:
     - "Mejoras móviles y de accesibilidad."
@@ -42,7 +43,7 @@ approved_renewal:
     - "Persistencia, exportación y catálogo de siete servicios."
     - "Clientes, resultados, testimonios o integraciones inventados."
   historical_drift:
-    - "El CTA principal actual de Strand apunta al asistente; WhatsApp principal es el cambio aprobado, aún no implementado."
+    - "Al inicializar, el CTA de Strand apuntaba al asistente y el contacto propuesto era WhatsApp. Registro histórico: hoy el CTA lleva a contacto interno y el destinatario vigente es el correo autorizado."
     - "El contexto comercial histórico prioriza el asistente y contiene direcciones visuales anteriores."
     - "Los tickets históricos de persistencia/exportación no autorizan ampliar esta renovación."
     - "No se inspeccionó Chapas ni Taller Norte ni se verificaron sus enlaces externos."

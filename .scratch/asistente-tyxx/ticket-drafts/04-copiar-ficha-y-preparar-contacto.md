@@ -1,6 +1,8 @@
-# 04: Copiar la ficha y preparar el contacto con Tomás
+# 04: Copiar la ficha y preparar el contacto con TYXX
 
-**What to build:** Una persona revisa su Ficha de proceso, la copia o prepara un mensaje de WhatsApp con el contenido actual. Puede compartir información parcial, recuperarse de un fallo de copia y contactar directamente a Tomás sin que el asistente envíe nada por su cuenta.
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
+**What to build:** Una persona revisa su Ficha de proceso, la copia o prepara un mensaje de WhatsApp con el contenido actual. Puede compartir información parcial, recuperarse de un fallo de copia y contactar directamente a TYXX sin que el asistente envíe nada por su cuenta.
 
 **Blocked by:** 02 — Corregir la ficha y aclarar casos sin inventar soluciones.
 
@@ -18,7 +20,7 @@
 - [ ] Si el contacto está ausente o es inválido, no se genera un enlace roto: se explica el estado y sigue disponible la copia. El cambio de número se realiza en un único lugar.
 - [ ] El contacto directo de la página sigue disponible con la configuración autorizada, sin exigir completar el asistente. Su estado sin configuración también es coherente.
 - [ ] Copia, alternativa manual, mensajes de estado y acceso a contacto funcionan con teclado y en móvil, con nombres accesibles y foco comprensible.
-- [ ] Las pruebas inspeccionan o interceptan el destino preparado y el portapapeles; nunca envían mensajes reales ni contactan a Tomás. Incluyen cambios recientes, ficha parcial, rechazo de copia y contacto sin configurar.
+- [ ] Las pruebas inspeccionan o interceptan el destino preparado y el portapapeles; nunca envían mensajes reales ni contactan a TYXX. Incluyen cambios recientes, ficha parcial, rechazo de copia y contacto sin configurar.
 - [ ] La documentación explica cómo revisar, copiar y preparar el mensaje, cómo cambiar el contacto y qué acciones dependen del visitante.
 
 ## Alcance y verificación

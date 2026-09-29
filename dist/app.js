@@ -1,18 +1,14 @@
 (() => {
   const config = window.TYXX_CONFIG;
-  if (config && /^\d{8,15}$/.test(config.whatsappNumber)) {
-    document.querySelectorAll("[data-phone]").forEach((link) => {
-      link.href = `tel:+${config.whatsappNumber}`;
-      link.textContent = `+${config.whatsappNumber}`;
+  if (config && /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(config.contactEmail)) {
+    document.querySelectorAll("[data-email]").forEach((link) => {
+      link.href = `mailto:${config.contactEmail}`;
+      link.textContent = config.contactEmail;
     });
     document.querySelectorAll("[data-contact]").forEach((link) => {
-      const service = link.dataset.service;
-      const message = service
-        ? `Hola, Tomás. Quiero consultar por ${service} para mi negocio.\n\nMi negocio es: \nMe gustaría mejorar: `
-        : config.whatsappMessage;
-      link.href = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(message)}`;
-      link.target = "_blank";
-      link.rel = "noopener noreferrer";
+      link.href = `mailto:${config.contactEmail}?subject=${encodeURIComponent(config.contactSubject)}&body=${encodeURIComponent(config.contactBody)}`;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
     });
   }
   document.querySelectorAll("[data-demo]").forEach((link) => {

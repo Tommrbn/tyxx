@@ -1,6 +1,8 @@
 # 01: Describir un proceso y ver la Ficha de proceso
 
-**What to build:** Una persona entra al Asistente de TYXX desde la página existente, elige uno de los tres ejemplos o escribe su caso, responde una pregunta por vez y ve una Ficha de proceso que se completa con lo informado. La conversación es una simulación declarada y utilizable localmente; la ficha no confirma una contratación ni una recepción por Tomás.
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
+**What to build:** Una persona entra al Asistente de TYXX desde la página existente, elige uno de los tres ejemplos o escribe su caso, responde una pregunta por vez y ve una Ficha de proceso que se completa con lo informado. La conversación es una simulación declarada y utilizable localmente; la ficha no confirma una contratación ni una recepción por TYXX.
 
 **Blocked by:** None (can start immediately).
 
@@ -16,7 +18,7 @@
 - [x] Antes de escribir se explica el propósito y se identifica una demostración guiada que funciona con reglas, no con IA real; la conversación permanece en el navegador.
 - [x] Funcionan los inicios «Copio pedidos a una planilla», «Me llegan consultas incompletas» y «Pierdo tiempo buscando información», además de la entrada libre.
 - [x] Se pregunta una sola cosa relevante por turno sobre proceso, dificultad, herramientas o frecuencia. Un dato reconocido inequívocamente no se vuelve a solicitar; los datos dudosos no se inventan.
-- [x] La ficha visible contiene proceso actual, dificultad, herramientas, frecuencia, Mejora propuesta y aspectos pendientes. Los valores ausentes aparecen como «Todavía no informado»; la mejora puede quedar «Pendiente de evaluar con Tomás».
+- [x] La ficha visible contiene proceso actual, dificultad, herramientas, frecuencia, Mejora propuesta y aspectos pendientes. Los valores ausentes aparecen como «Todavía no informado»; la mejora puede quedar «Pendiente de evaluar con TYXX».
 - [x] El proceso y la dificultad constituyen la base útil. Herramientas y frecuencia pueden quedar pendientes y se permite indicar desconocimiento sin bloquear el avance.
 - [x] No se exige nombre, contacto, presupuesto ni cuenta para probar el asistente. Los envíos vacíos y repetidos no crean turnos vacíos o duplicados.
 - [x] La ficha y la conversación usan una representación coherente de los datos; se preservan acentos, saltos y caracteres como texto, sin ejecutar marcado aportado por el visitante.

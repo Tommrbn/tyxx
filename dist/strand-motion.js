@@ -1,3 +1,60 @@
+// Progressive navigation is independent of the Canvas engine below.
+(() => {
+  const toggle = document.querySelector(".strand-menu-toggle");
+  const navigation = document.querySelector("#strand-navigation");
+  if (!toggle || !navigation) return;
+  const mobile = matchMedia("(max-width: 760px)");
+  function setOpen(open) {
+    navigation.hidden = mobile.matches && !open;
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+  }
+  function syncLayout() {
+    const active = document.activeElement;
+    if (mobile.matches) {
+      toggle.hidden = false;
+      if (navigation.contains(active)) toggle.focus();
+      setOpen(false);
+    } else {
+      setOpen(false);
+      if (active === toggle) navigation.querySelector("a")?.focus();
+      toggle.hidden = true;
+    }
+  }
+  toggle.addEventListener("click", () => {
+    setOpen(toggle.getAttribute("aria-expanded") !== "true");
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobile.matches && !navigation.hidden) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+  navigation.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", () => {
+      const destination = document.getElementById(link.hash.slice(1));
+      if (destination) {
+        destination.setAttribute("tabindex", "-1");
+        destination.focus({ preventScroll: true });
+      }
+      setOpen(false);
+      // Keep the anchor's native hash navigation and scrolling.
+    });
+  });
+  document.addEventListener("click", (event) => {
+    if (
+      mobile.matches && !navigation.hidden &&
+      !navigation.contains(event.target) && !toggle.contains(event.target)
+    ) {
+      if (navigation.contains(document.activeElement)) toggle.focus();
+      setOpen(false);
+    }
+  });
+  mobile.addEventListener("change", syncLayout);
+  document.documentElement.classList.add("strand-nav-ready");
+  syncLayout();
+})();
+
 (() => {
   const reduce = matchMedia("(prefers-reduced-motion: reduce)");
   let paused = reduce.matches;
@@ -7,103 +64,85 @@
   const segments = 22;
   const strandCount = 320;
   const tau = Math.PI * 2;
-  // A closed, folded silhouette, drawn independently for TYXX. Each sample
-  // grows a separate filament; it is not a mesh stretched across the figure.
-  const contour = [
-    [
-      [0.1, -0.28],
-      [0.18, -0.35],
-      [0.12, -0.56],
-      [0.3, -0.55],
-    ],
-    [
-      [0.3, -0.55],
-      [0.51, -0.53],
-      [0.44, -0.32],
-      [0.28, -0.25],
-    ],
-    [
-      [0.28, -0.25],
-      [0.18, -0.2],
-      [0.36, -0.17],
-      [0.45, -0.08],
-    ],
-    [
-      [0.45, -0.08],
-      [0.62, 0.07],
-      [0.46, 0.22],
-      [0.29, 0.19],
-    ],
-    [
-      [0.29, 0.19],
-      [0.14, 0.18],
-      [0.1, 0.3],
-      [0.01, 0.41],
-    ],
-    [
-      [0.01, 0.41],
-      [-0.16, 0.61],
-      [-0.36, 0.46],
-      [-0.25, 0.3],
-    ],
-    [
-      [-0.25, 0.3],
-      [-0.17, 0.18],
-      [0, 0.24],
-      [0.09, 0.16],
-    ],
-    [
-      [0.09, 0.16],
-      [0.16, 0.11],
-      [-0.32, 0.01],
-      [-0.4, -0.13],
-    ],
-    [
-      [-0.4, -0.13],
-      [-0.52, -0.32],
-      [-0.16, -0.3],
-      [0, -0.28],
-    ],
-    [
-      [0, -0.28],
-      [0.07, -0.26],
-      [0.1, -0.25],
-      [0.1, -0.28],
-    ],
+  const alphaLevels = 24;
+  const strokeColors = Array.from(
+    { length: alphaLevels },
+    (_, level) => `rgba(205,201,190,${(level + 0.5) / alphaLevels})`,
+  );
+  // Segment geometry never changes. Cache it once rather than repeating
+  // powers, division and trigonometry for every node of every frame.
+  const segmentGeometry = Array.from({ length: segments + 1 }, (_, j) => {
+    const u = j / segments;
+    const tail = 1 - u;
+    return {
+      u,
+      tail,
+      curl: tail * tail,
+      sinX: Math.sin(tail * 3.8),
+      cosX: Math.cos(tail * 3.8),
+      sinY: Math.sin(tail * 4.2),
+      cosY: Math.cos(tail * 4.2),
+    };
+  });
+  // Each component has its own closed outline: no filaments bridge the
+  // negative space between the head, body and arms. All samples are cached.
+  const robotParts = [
+    { x: 0, y: -0.29, width: 0.46, height: 0.30, radius: 0.065, count: 128 },
+    { x: 0, y: 0.17, width: 0.40, height: 0.38, radius: 0.055, count: 96 },
+    { x: -0.30, y: 0.10, width: 0.075, height: 0.28, radius: 0.03, count: 24 },
+    { x: 0.30, y: 0.10, width: 0.075, height: 0.28, radius: 0.03, count: 24 },
+    { x: 0, y: -0.075, width: 0.09, height: 0.065, radius: 0.015, count: 12 },
+    { x: -0.115, y: 0.425, width: 0.12, height: 0.065, radius: 0.02, count: 14 },
+    { x: 0.115, y: 0.425, width: 0.12, height: 0.065, radius: 0.02, count: 14 },
+    { x: 0, y: -0.49, width: 0.012, height: 0.065, radius: 0.006, count: 8 },
   ];
   function random(seed) {
     const value = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
     return value - Math.floor(value);
   }
-  function sampleContour() {
-    const samples = [];
-    let length = 0;
-    for (const curve of contour) {
-      for (let i = 0; i < 80; i++) {
-        const t = i / 80;
-        const v = 1 - t;
-        const point = [0, 1].map(
-          (axis) =>
-            v ** 3 * curve[0][axis] +
-            3 * v * v * t * curve[1][axis] +
-            3 * v * t * t * curve[2][axis] +
-            t ** 3 * curve[3][axis],
-        );
-        const previous = samples.at(-1);
-        if (previous)
-          length += Math.hypot(point[0] - previous.x, point[1] - previous.y);
-        samples.push({ x: point[0], y: point[1], length });
-      }
-    }
-    let cursor = 0;
-    return Array.from({ length: strandCount }, (_, i) => {
-      const distance = ((i + random(i) * 0.8) / strandCount) * length;
-      while (cursor < samples.length - 1 && samples[cursor].length < distance)
-        cursor++;
-      return samples[cursor];
+  function sampleRobot() {
+    return robotParts.flatMap(({ x, y, width, height, radius, count }) => {
+      const left = -width / 2;
+      const right = width / 2;
+      const top = -height / 2;
+      const bottom = height / 2;
+      const horizontal = width - radius * 2;
+      const vertical = height - radius * 2;
+      const corner = (Math.PI * radius) / 2;
+      const edges = [
+        { length: horizontal, x: left + radius, y: top, dx: 1, dy: 0 },
+        { length: corner, x: right - radius, y: top + radius, angle: -Math.PI / 2 },
+        { length: vertical, x: right, y: top + radius, dx: 0, dy: 1 },
+        { length: corner, x: right - radius, y: bottom - radius, angle: 0 },
+        { length: horizontal, x: right - radius, y: bottom, dx: -1, dy: 0 },
+        { length: corner, x: left + radius, y: bottom - radius, angle: Math.PI / 2 },
+        { length: vertical, x: left, y: bottom - radius, dx: 0, dy: -1 },
+        { length: corner, x: left + radius, y: top + radius, angle: Math.PI },
+      ];
+      const perimeter = horizontal * 2 + vertical * 2 + corner * 4;
+      return Array.from({ length: count }, (_, i) => {
+        let distance = (i / count) * perimeter;
+        let edge = edges[0];
+        for (const candidate of edges) {
+          edge = candidate;
+          if (distance <= edge.length) break;
+          distance -= edge.length;
+        }
+        if (edge.angle !== undefined) {
+          const angle = edge.angle + distance / radius;
+          return {
+            x: x + edge.x + Math.cos(angle) * radius,
+            y: y + edge.y + Math.sin(angle) * radius,
+          };
+        }
+        return {
+          x: x + edge.x + edge.dx * distance,
+          y: y + edge.y + edge.dy * distance,
+        };
+      });
     });
   }
-  const outline = sampleContour();
+  const outline = sampleRobot();
   const scenes = [...document.querySelectorAll("[data-particle-scene]")]
     .map((host) => {
       const canvas = host.querySelector("canvas");
@@ -128,6 +167,7 @@
             vx: 0,
             vy: 0,
             glow: 0,
+            moving: false,
           })),
         })),
       };
@@ -181,9 +221,9 @@
     ];
   }
   function tipPosition(scene, i) {
-    if (scene.host.dataset.particleScene === "ribbon") {
+    if (scene.host.dataset.particleScene === "robot") {
       const { x, y } = outline[i];
-      return [x, y, 0.045 * Math.sin((i / strandCount) * tau * 3)];
+      return [x, y + Math.sin(time * 0.85) * 0.004, 0];
     }
     const t = -Math.PI + (i / strandCount) * tau;
     const from = Math.floor(scene.current);
@@ -202,6 +242,12 @@
     const scale = Math.min(width * 0.83, height * 0.7);
     const radius = scale * 0.19;
     const step = width < 420 ? 2 : 1;
+    const robot = scene.host.dataset.particleScene === "robot";
+    const damping = Math.exp(-delta * 7);
+    const glowBlend = 1 - Math.exp(-delta * 9);
+    // Two widths and a small alpha palette preserve fine strands while
+    // batching thousands of segments into at most 48 Canvas strokes.
+    const paths = new Array(alphaLevels * 2);
     ctx.lineCap = "round";
     for (let i = 0; i < strandCount; i += step) {
       const fiber = scene.fibers[i];
@@ -210,87 +256,145 @@
       const reveal = paused
         ? 1
         : Math.min(1, Math.max(0, (time - seed * 0.55) / 1.3));
-      let previous;
+      const wave = time * (0.48 + seed * 0.3);
+      const sinX = Math.sin(tip[1] * 14 + wave);
+      const cosX = Math.cos(tip[1] * 14 + wave);
+      const sinY = Math.sin(tip[0] * 13 - wave * 0.8);
+      const cosY = Math.cos(tip[0] * 13 - wave * 0.8);
+      const pulseAt = (time * (0.13 + seed * 0.09) + seed) % 1;
+      const widthBand = brightness < 0.5 ? 0 : 1;
+      let previousX = 0;
+      let previousY = 0;
       for (let j = 0; j <= segments; j++) {
-        const u = j / segments;
-        const tail = 1 - u;
-        const wave = time * (0.48 + seed * 0.3);
+        const geometry = segmentGeometry[j];
+        const { u, tail, curl } = geometry;
         // Correlated waves keep adjacent fibers flowing together; each fiber
         // also bends independently along its length, like a fine optic cable.
-        const rippleX = Math.sin(tip[1] * 14 + wave + tail * 3.8);
-        const rippleY = Math.cos(tip[0] * 13 - wave * 0.8 + tail * 4.2);
-        const curl = tail * tail;
+        const rippleX = sinX * geometry.cosX + cosX * geometry.sinX;
+        const rippleY = cosY * geometry.cosY - sinY * geometry.sinY;
         const x =
-          tip[0] * (1 - tail * 0.08) +
-          rippleX * (0.013 + curl * 0.052) +
-          curl * (seed - 0.5) * 0.07;
-        const y = tip[1] + tail * 0.065 + rippleY * (0.008 + curl * 0.034);
-        const z = tip[2] + tail * 0.24;
+          tip[0] * (1 - tail * (robot ? 0.03 : 0.08)) +
+          rippleX * (robot ? 0.003 + curl * 0.012 : 0.013 + curl * 0.052) +
+          curl * (seed - 0.5) * (robot ? 0.015 : 0.07);
+        const y =
+          tip[1] + tail * (robot ? 0.045 : 0.065) +
+          rippleY * (robot ? 0.003 + curl * 0.009 : 0.008 + curl * 0.034);
+        const z = tip[2] + tail * (robot ? 0.025 : 0.24);
         const perspective = 1.8 / (1.8 - z);
         const baseX = width * 0.48 + x * scale * perspective;
         const baseY = height * 0.47 + y * scale * perspective;
         const node = nodes[j];
-        if (delta) {
-          const dx = baseX + node.x * scale - scene.pointer.x;
-          const dy = baseY + node.y * scale - scene.pointer.y;
-          const distance = Math.hypot(dx, dy);
-          const influence = scene.pointer.active
-            ? Math.max(0, 1 - distance / radius)
-            : 0;
-          const force = influence * influence * 3.8 * (0.3 + u * 0.7);
+        if (delta && (scene.pointer.active || node.moving)) {
+          let influence = 0;
+          let forceX = 0;
+          let forceY = 0;
+          if (scene.pointer.active) {
+            const dx = baseX + node.x * scale - scene.pointer.x;
+            const dy = baseY + node.y * scale - scene.pointer.y;
+            const distance = Math.hypot(dx, dy);
+            influence = Math.max(0, 1 - distance / radius);
+            const force = influence * influence * 3.8 * (0.3 + u * 0.7);
+            forceX = (dx / Math.max(distance, 1)) * force;
+            forceY = (dy / Math.max(distance, 1)) * force;
+          }
           // Damped springs give the pointer a local push and let fibers settle
           // back naturally. Bounded timesteps keep a resumed tab stable.
-          node.vx =
-            (node.vx +
-              ((dx / Math.max(distance, 1)) * force - node.x * 48) * delta) *
-            Math.exp(-delta * 7);
-          node.vy =
-            (node.vy +
-              ((dy / Math.max(distance, 1)) * force - node.y * 48) * delta) *
-            Math.exp(-delta * 7);
+          node.vx = (node.vx + (forceX - node.x * 48) * delta) * damping;
+          node.vy = (node.vy + (forceY - node.y * 48) * delta) * damping;
           node.x += node.vx * delta;
           node.y += node.vy * delta;
-          node.glow += (influence - node.glow) * (1 - Math.exp(-delta * 9));
+          node.glow += (influence - node.glow) * glowBlend;
+          node.moving =
+            Math.abs(node.x) + Math.abs(node.y) + Math.abs(node.vx) +
+              Math.abs(node.vy) + node.glow > 0.00001;
         }
-        const p = { x: baseX + node.x * scale, y: baseY + node.y * scale };
-        if (previous && u <= reveal) {
-          const pulseAt = (time * (0.13 + seed * 0.09) + seed) % 1;
-          const pulse = Math.exp(-(((u - pulseAt) * 19) ** 2));
+        const px = baseX + node.x * scale;
+        const py = baseY + node.y * scale;
+        if (j > 0 && u <= reveal) {
+          const pulse = Math.max(0, 1 - Math.abs(u - pulseAt) * 12);
           const alpha =
             (0.035 +
               u * u * (0.09 + brightness * 0.08) +
-              pulse * 0.28 +
+              pulse * pulse * 0.28 +
               node.glow * 0.56) *
             reveal;
-          ctx.beginPath();
-          ctx.moveTo(previous.x, previous.y);
-          ctx.lineTo(p.x, p.y);
-          ctx.strokeStyle = `rgba(205,201,190,${alpha})`;
-          ctx.lineWidth = 0.48 + brightness * 0.25;
-          ctx.stroke();
+          const level = Math.min(alphaLevels - 1, Math.floor(alpha * alphaLevels));
+          const bucket = widthBand * alphaLevels + level;
+          const path = (paths[bucket] ??= new Path2D());
+          path.moveTo(previousX, previousY);
+          path.lineTo(px, py);
         }
-        previous = p;
+        previousX = px;
+        previousY = py;
         if (j === segments) {
-          const shimmer = 0.7 + Math.sin(time * 0.8 + seed * tau) * 0.15;
-          const alpha =
-            (0.4 + brightness * 0.7 + node.glow * 0.5) *
-            shimmer *
-            (0.38 + reveal * 0.62);
-          const size =
-            Math.max(0.55, Math.min(1.45, scale * 0.0022)) *
-            (0.5 + brightness * 0.8);
-          // Small warm/blue fringes create the refracted tip seen in the reference.
-          ctx.fillStyle = `rgba(111,154,247,${alpha * 0.45})`;
-          ctx.fillRect(p.x + size, p.y - size * 0.4, size * 1.5, size);
-          ctx.fillStyle = `rgba(225,166,106,${alpha * 0.35})`;
-          ctx.fillRect(p.x - size * 2, p.y, size * 1.6, size);
-          ctx.fillStyle = `rgba(245,242,231,${alpha})`;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, size * (1 + node.glow * 0.45), 0, tau);
-          ctx.fill();
+          fiber.tipX = px;
+          fiber.tipY = py;
+          fiber.reveal = reveal;
         }
       }
     }
+    paths.forEach((path, bucket) => {
+      ctx.strokeStyle = strokeColors[bucket % alphaLevels];
+      ctx.lineWidth = bucket < alphaLevels ? 0.54 : 0.69;
+      ctx.stroke(path);
+    });
+    for (let i = 0; i < strandCount; i += step) {
+      const fiber = scene.fibers[i];
+      const { seed, brightness, tipX, tipY, reveal } = fiber;
+      const glow = fiber.nodes[segments].glow;
+      const shimmer = 0.7 + Math.sin(time * 0.8 + seed * tau) * 0.15;
+      const alpha =
+        (0.4 + brightness * 0.7 + glow * 0.5) *
+        shimmer * (0.38 + reveal * 0.62);
+      const size =
+        Math.max(0.55, Math.min(1.45, scale * 0.0022)) *
+        (0.5 + brightness * 0.8);
+      // Keep the warm/blue fringes without allocating per-tip RGBA strings.
+      ctx.fillStyle = "rgb(111,154,247)";
+      ctx.globalAlpha = Math.min(1, alpha * 0.45);
+      ctx.fillRect(tipX + size, tipY - size * 0.4, size * 1.5, size);
+      ctx.fillStyle = "rgb(225,166,106)";
+      ctx.globalAlpha = Math.min(1, alpha * 0.35);
+      ctx.fillRect(tipX - size * 2, tipY, size * 1.6, size);
+      ctx.fillStyle = "rgb(245,242,231)";
+      ctx.globalAlpha = Math.min(1, alpha);
+      ctx.beginPath();
+      ctx.arc(tipX, tipY, size * (1 + glow * 0.45), 0, tau);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+    if (robot) drawRobotFace(scene, scale);
+  }
+  function drawRobotFace(scene, scale) {
+    const { ctx, width, height } = scene;
+    const centerX = width * 0.48;
+    const centerY = height * 0.47 + Math.sin(time * 0.85) * scale * 0.004;
+    for (const side of [-1, 1]) {
+      const x = centerX + side * scale * 0.1;
+      const y = centerY - scale * 0.29;
+      // Small solid cores make the eyes legible even with motion disabled.
+      // The surrounding fine strands still provide the local pointer response.
+      ctx.fillStyle = "rgba(111,154,247,0.16)";
+      ctx.beginPath();
+      ctx.ellipse(x, y, scale * 0.043, scale * 0.026, 0, 0, tau);
+      ctx.fill();
+      ctx.fillStyle = "rgba(224,237,250,0.86)";
+      ctx.beginPath();
+      ctx.roundRect(
+        x - scale * 0.026,
+        y - scale * 0.014,
+        scale * 0.052,
+        scale * 0.028,
+        scale * 0.01,
+      );
+      ctx.fill();
+    }
+    ctx.strokeStyle = "rgba(225,166,106,0.55)";
+    ctx.lineWidth = Math.max(1, scale * 0.003);
+    ctx.beginPath();
+    ctx.moveTo(centerX - scale * 0.052, centerY - scale * 0.205);
+    ctx.lineTo(centerX + scale * 0.052, centerY - scale * 0.205);
+    ctx.stroke();
   }
   function tick(now) {
     animationFrame = 0;

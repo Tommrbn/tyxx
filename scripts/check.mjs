@@ -23,7 +23,9 @@ new Script(appSource, { filename: "app.js" });
 new Script(configSource, { filename: "config.js" });
 const context = createContext({ window: {} });
 runInContext(configSource, context);
-assert.match(context.window.TYXX_CONFIG.whatsappNumber, /^\d{8,15}$/);
+assert.match(context.window.TYXX_CONFIG.contactEmail, /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/);
+assert.equal(typeof context.window.TYXX_CONFIG.contactSubject, "string");
+assert.equal(typeof context.window.TYXX_CONFIG.contactBody, "string");
 assert.equal(new URL(context.window.TYXX_CONFIG.demoUrl).protocol, "https:");
 
 for (const filename of (await readdir(root)).filter((name) =>

@@ -1,6 +1,8 @@
 # 05: Presentar la oferta y las demostraciones de TYXX
 
-**What to build:** Una persona entiende la oferta de automatización e IA de TYXX, reconoce procesos que podría mejorar, conoce a Tomás y su forma de trabajo, y accede al asistente o a una demostración descrita con precisión. El diseño mantiene la identidad propia y funciona en escritorio, móvil y con teclado.
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
+**What to build:** Una persona entiende la oferta de automatización e IA de TYXX, reconoce procesos que podría mejorar, conoce a TYXX y su forma de trabajo, y accede al asistente o a una demostración descrita con precisión. El diseño mantiene la identidad propia y funciona en escritorio, móvil y con teclado.
 
 **Blocked by:** 01 — Describir un proceso y ver la Ficha de proceso.
 
@@ -15,7 +17,7 @@
 - [ ] Se muestran dos demostraciones diferenciadas: Taller Norte y el Asistente de TYXX, con su carácter ficticio o simulado explícito y sin presentarlas como clientes o resultados comerciales.
 - [ ] La tarjeta de Taller Norte explica el problema y los papeles del conductor y del responsable, y describe lo accesible en el destino configurado. En la URL pública actual, el recorrido es vehículo/daño, validación y vista previa simulada editable, sin envío al taller; no se anuncia allí la bandeja que existe solo localmente.
 - [ ] Dirección y descripción de la demo quedan configurables y coherentes. Si no existe un destino válido o está declarado no disponible, se explica y se evita un botón hacia un destino inexistente.
-- [ ] Se presenta a Tomás como responsable, sin inventar equipo, trayectoria, certificaciones, clientes, cifras, testimonios ni precios.
+- [ ] Se presenta a TYXX como responsable, sin inventar equipo, trayectoria, certificaciones, clientes, cifras, testimonios ni precios.
 - [ ] Se explican las cuatro etapas acordadas, la posibilidad de comenzar por un proceso acotado, la consulta inicial sin cargo y la diferencia entre implementación, costos externos y mantenimiento opcional.
 - [ ] Las preguntas frecuentes existentes se adaptan al nuevo enfoque y siguen respondiendo sobre conocimientos técnicos, presupuesto por alcance, herramientas, plazos, mantenimiento y necesidad real de IA. El contacto directo existente continúa disponible.
 - [ ] Se conservan los logos aportados, negro, blanco y naranja, títulos expresivos y animaciones discretas; la portada deja espacio para entender la oferta y acceder al asistente. Se mantiene la indicación de no indexar.

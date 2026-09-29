@@ -1,6 +1,8 @@
 # 02: Corregir la ficha y aclarar casos sin inventar soluciones
 
-**What to build:** Una persona puede volver sobre lo que contó, editar todos los campos de su Ficha de proceso y seguir conversando sin perder las correcciones. Ante un caso ambiguo, la simulación conserva sus palabras, pide una aclaración concreta y reconoce cuándo una mejora necesita evaluación de Tomás.
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
+**What to build:** Una persona puede volver sobre lo que contó, editar todos los campos de su Ficha de proceso y seguir conversando sin perder las correcciones. Ante un caso ambiguo, la simulación conserva sus palabras, pide una aclaración concreta y reconoce cuándo una mejora necesita evaluación de TYXX.
 
 **Blocked by:** 01 — Describir un proceso y ver la Ficha de proceso.
 
@@ -19,7 +21,7 @@
 - [x] Se conservan texto, acentos, saltos y caracteres aportados, sin ejecutar marcado ni reinterpretar entradas como instrucciones del sistema.
 - [x] Un caso que no encaja en los ejemplos se puede completar mediante preguntas relevantes o edición de la ficha. Si no se identifica suficiente contexto, se pide una aclaración concreta y se permite mantener información pendiente.
 - [x] Toda Mejora propuesta se identifica como condicional y se basa en información aportada. Puede sugerir evaluar una alternativa sin IA; no promete conectores disponibles, ahorros, precios, plazos o contrataciones.
-- [x] Cuando no exista fundamento para proponer una mejora, se muestra «Pendiente de evaluar con Tomás». No se crea una solución genérica presentada como conclusión.
+- [x] Cuando no exista fundamento para proponer una mejora, se muestra «Pendiente de evaluar con TYXX». No se crea una solución genérica presentada como conclusión.
 - [x] La ficha se identifica como incompleta cuando falta proceso o dificultad. Herramientas y frecuencia pueden seguir pendientes sin descalificar una consulta inicial; se muestran los aspectos que habría que aclarar.
 - [x] Los controles de corrección, campos, errores y avisos funcionan con teclado y en móvil; los cambios no desplazan el foco de forma imprevisible ni releen toda la conversación.
 - [x] Las pruebas recorren un caso con varios datos iniciales, una corrección posterior, una edición directa, un cambio que invalida una sugerencia y un caso abierto. Se comprueba fidelidad y ausencia de invenciones desde la interfaz local.

@@ -1,5 +1,7 @@
 # Exploración — renovación TYXX: sistemas e IA
 
+> Actualización autorizada de contacto (2026-09-23): la marca pública es TYXX y el destinatario vigente es tyxxsolve@gmail.com. Se revisan referencias editoriales del cambio existente; no se ejecutan fases SDD ni se alteran estados de tareas, resultados históricos o pendientes de aceptación.
+
 ## Estado y autoridad
 - Cambio nuevo iniciado por instrucción explícita del usuario; no continuación automática de tickets históricos.
 - Único entregable de esta fase: esta exploración. No se implementó ni se crearon propuesta, especificaciones, diseño, tareas o marcador nativo.
@@ -11,19 +13,19 @@
 - Se contrastaron `dist/strand.html`, `dist/strand.css`, `dist/app.js`, `dist/config.js`, selectores de `dist/strand-motion.js`, `tests/strand.spec.js`, `tests/preview.spec.js`, `package.json` y `playwright.config.js`.
 - Stack estático HTML/CSS/JavaScript, sin compilación. `dist/` contiene las fuentes editables; no hace falta incorporar framework ni dependencias.
 - Strand presenta hoy tres áreas de servicio; el CTA principal abre el asistente y el secundario lleva a demos. El recorrido aprobado todavía no está implementado.
-- `app.js` transforma todos los enlaces `[data-contact]` en enlaces externos a WhatsApp, incluido el actual enlace de cabecera cuyo HTML apunta a `#contacto`.
+- Hecho inicial histórico: `app.js` transformaba todos los enlaces `[data-contact]` en enlaces externos a WhatsApp, incluido el actual enlace de cabecera cuyo HTML apunta a `#contacto`.
 - El menú móvil depende de JavaScript: `#mobile-nav` nace con `hidden` y la navegación de escritorio desaparece hasta 760 px. La prueba sin JavaScript existente comprueba contacto y Portfolite, no ese menú móvil.
 - La decoración móvil reserva 390 px para `.hero-sculpture` y 470 px para `.story-art`; las container queries repiten esas alturas. Reducir solo una media query no cubre ambas reglas.
 - La animación acopla pasos, ilustraciones y controles mediante `data-story-step`, `data-story-visual` y `data-scene-choice`; dispone de pausa y movimiento reducido.
 - El asistente existente declara reglas, ausencia de IA real y pérdida de ficha al recargar. Su comportamiento compartido debe preservarse.
-- `dist/config.js` configura WhatsApp y `https://tyxx-chapas.pages.dev/`. El HTML identifica Taller Norte como marca ficticia y vista previa sin envío; esto no verifica el destino externo actual.
+- Hecho inicial histórico: `dist/config.js` configuraba WhatsApp y `https://tyxx-chapas.pages.dev/`. El HTML identifica Taller Norte como marca ficticia y vista previa sin envío; esto no verifica el destino externo actual.
 - La documentación comercial histórica prioriza el asistente y conserva decisiones visuales anteriores. Para este cambio prevalece el alcance actual aprobado; no se reactivan pendientes históricos.
 - No se accedió a `.scratch/`, proyectos vecinos ni investigación externa. No se alteraron tickets históricos.
 
 ## Alcance aprobado
 - Mantener Strand como base, identidad negro/blanco/naranja y controles de movimiento; compactar espacio decorativo móvil y corregir navegación móvil sin JavaScript.
 - Hablar en español rioplatense para pymes de servicios no técnicas, sin elegir nicho. TYXX diseña, implementa y mantiene sistemas con software, automatización, IA y supervisión humana.
-- Recorrido principal: «Conversemos sobre tu negocio» → sección de contacto → «Abrir WhatsApp». Consulta inicial sin cargo con Tomás; abrir WhatsApp no confirma envío, recepción ni reserva.
+- Recorrido principal: «Conversemos sobre tu negocio» → sección de contacto → «Escribir por correo». Consulta inicial sin cargo con TYXX; abrir el correo no confirma envío, recepción ni reserva.
 - Recorrido secundario: «Ver un ejemplo» → flujo ilustrativo de una consulta, con revisión humana explícita y sin sistemas conectados.
 - Seis bloques editoriales, en orden: hero; problemas reconocibles; flujo ilustrativo; forma de trabajo; demos; FAQ/contacto.
 - Forma de trabajo: relevar, acordar alcance, implementar y mantener según acuerdo; sin SLA ni acompañamiento ilimitado implícitos.
@@ -47,13 +49,13 @@
 ## Recomendación: arquitectura mínima
 1. Evolucionar HTML semántico y CSS existentes. No crear motor de flujos, módulo de leads, adaptadores hipotéticos ni nuevas dependencias para una secuencia editorial.
 2. Mostrar el ejemplo como secuencia legible de consulta, organización, revisión humana y próximo paso. Etiquetarlo como ilustrativo; no simular un envío o una reserva exitosa.
-3. Separar anclas internas de salida externa: no usar `data-contact` en «Conversemos sobre tu negocio»; reservarlo para «Abrir WhatsApp» en contacto, conservando un href útil sin JS.
+3. Separar anclas internas de salida externa: no usar `data-contact` en «Conversemos sobre tu negocio»; reservarlo para «Escribir por correo» en contacto, conservando un href útil sin JS.
 4. Resolver el menú por mejora progresiva local a Strand. Como alternativa mínima, ofrecer navegación HTML usable sin JS y conservar el menú mejorado actual; decidir el detalle en diseño sin introducir otro controlador por anticipado.
 5. Reutilizar animación, logos, tipografía, FAQ nativa y módulo del asistente. No poner información esencial exclusivamente en Canvas o ilustraciones `aria-hidden`.
 6. Preservar los IDs del asistente y sus enlaces `#asistente`; evitar regiones con nombres duplicados al agruparlo dentro de demos.
 
 ## Seams públicos y pruebas futuras
-- **Contacto:** por nombre accesible, activar «Conversemos sobre tu negocio», comprobar llegada a contacto y enlace «Abrir WhatsApp» al número configurado; sin navegación externa prematura ni mensaje de éxito. Probar con y sin JS.
+- **Contacto:** por nombre accesible, activar «Conversemos sobre tu negocio», comprobar llegada a contacto y enlace «Escribir por correo» al correo configurado; sin navegación externa prematura ni mensaje de éxito. Probar con y sin JS.
 - **Ejemplo:** activar «Ver un ejemplo» y comprobar secuencia visible, revisión humana y rótulo ilustrativo; no depender de clases internas o píxeles animados para validar el contenido.
 - **Navegación móvil:** a 360/390 px sin JS, acceder a enlaces útiles; con JS, probar teclado, Escape, retorno de foco y estado expandido.
 - **Asistente secundario:** abrir desde demos y enlace directo, usar un ejemplo, editar ficha y cerrar/reabrir sin perderla; mantener aviso de reglas y fallback cuando falle la carga.

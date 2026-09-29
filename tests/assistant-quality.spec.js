@@ -9,7 +9,7 @@ const answer = (page) => page.getByLabel("Tu respuesta", { exact: true });
 test("rechaza vacío, doble envío y exceso de texto conservando el borrador del campo", async ({
   page,
 }) => {
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   const turns = page
     .getByRole("list", { name: "Respuestas de la conversación" })
     .getByRole("listitem");
@@ -48,7 +48,7 @@ test("la conversación y las ediciones no envían datos a la red", async ({
       data: request.postData(),
     }),
   );
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await expect(
     assistant(page).getByRole("button", {
       name: "Copio pedidos a una planilla",
@@ -76,7 +76,7 @@ test("la conversación y las ediciones no envían datos a la red", async ({
   await expect(sheet(page)).toBeHidden();
   await page.getByRole("link", { name: "Volver arriba" }).click();
   await page
-    .getByRole("link", { name: "Contame qué proceso querés mejorar" })
+    .getByRole("link", { name: /De una tarea a una ficha/ })
     .click();
   await expect(sheet(page)).toContainText("PRIVADO-TYXX-123");
   expect(
@@ -102,7 +102,7 @@ for (const unavailable of ["sin JavaScript", "módulo no disponible"]) {
       const page = await context.newPage();
       if (unavailable === "módulo no disponible")
         await page.route("**/assistant-view.js", (route) => route.abort());
-      await page.goto("http://127.0.0.1:4180/#asistente");
+      await page.goto("http://127.0.0.1:4180/index.html#asistente");
       await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
       await expect(
         assistant(page)
@@ -116,8 +116,8 @@ for (const unavailable of ["sin JavaScript", "módulo no disponible"]) {
         }),
       ).toBeHidden();
       await expect(
-        page.getByRole("link", { name: /\+54\s?9\s?230\s?451\s?4378/ }),
-      ).toHaveAttribute("href", "tel:+5492304514378");
+        page.getByRole("link", { name: "tyxxsolve@gmail.com", exact: true }),
+      ).toHaveAttribute("href", "mailto:tyxxsolve@gmail.com");
       await context.close();
     },
   );
@@ -128,7 +128,7 @@ for (const width of [360, 390, 768, 1440]) {
     "conversación y ficha utilizables a " + width + " px",
     async ({ page }) => {
       await page.setViewportSize({ width, height: 1000 });
-      await page.goto("/#asistente");
+      await page.goto("/index.html#asistente");
       await assistant(page)
         .getByRole("button", {
           name: "Me llegan consultas incompletas",
@@ -175,19 +175,29 @@ test("menú, conversación y correcciones se operan con teclado y foco visible",
   page,
 }) => {
   await page.setViewportSize({ width: 390, height: 900 });
-  await page.goto("/");
+  await page.goto("/index.html");
   await page.getByRole("button", { name: "Abrir menú", exact: true }).focus();
   await page.keyboard.press("Enter");
   await page.keyboard.press("Tab");
-  await expect(
-    page
-      .getByRole("navigation", { name: "Navegación móvil" })
-      .getByRole("link", { name: "Asistente", exact: true }),
-  ).toBeFocused();
+  const navigation = page.getByRole("navigation", { name: "Navegación móvil" });
+  await expect(navigation.getByRole("link", { name: "Asistente", exact: true })).toBeFocused();
+  for (const name of ["Soluciones", "Demos"]) {
+    await page.keyboard.press("Tab");
+    await expect(navigation.getByRole("link", { name, exact: true })).toBeFocused();
+    await expect(navigation.getByRole("link", { name, exact: true })).toBeVisible();
+  }
   await page.keyboard.press("Enter");
-  await expect(
-    page.getByRole("navigation", { name: "Navegación móvil" }),
-  ).toBeHidden();
+  await expect(navigation).toBeHidden();
+  await expect(page).toHaveURL(/#proyectos$/);
+  const demos = page.locator("#proyectos");
+  await expect(demos).toBeVisible();
+  const assistantEntry = demos.getByRole("link", { name: /De una tarea a una ficha/ });
+  await assistantEntry.focus();
+  await expect(assistantEntry).toBeFocused();
+  await expect(assistantEntry).toBeVisible();
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/#asistente$/);
+  await expect(answer(page)).toBeVisible();
   await assistant(page)
     .getByRole("button", {
       name: "Me llegan consultas incompletas",
@@ -224,7 +234,7 @@ test("texto al 200% y movimiento reducido conservan controles y orden", async ({
   page,
 }) => {
   await page.setViewportSize({ width: 768, height: 1000 });
-  await page.goto("/#asistente");
+  await page.goto("/index.html#asistente");
   await page.addStyleTag({ content: "html { font-size: 200%; }" });
   await assistant(page)
     .getByRole("button", {

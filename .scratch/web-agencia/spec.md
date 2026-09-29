@@ -1,10 +1,12 @@
 # MVP del sitio comercial de TYXX
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Estado: implementado a partir de las bases comerciales aceptadas y la instrucción del usuario de avanzar para ver el MVP con su celular actual. El usuario habilitó después el acceso para cualquiera con el enlace. La revisión visual y el lanzamiento comercial con indexación siguen abiertos.
 
 ## Objetivo
 
-Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las cinco líneas de servicio, mostrar trabajo demostrable y facilitar una consulta con Tomás por WhatsApp.
+Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las cinco líneas de servicio, mostrar trabajo demostrable y facilitar una consulta con TYXX por WhatsApp.
 
 ## Recorrido
 
@@ -16,7 +18,7 @@ Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las c
 
 ## Contenido
 
-- Portada, servicios, proyecto demostrativo, proceso, presentación de Tomás, preguntas frecuentes y contacto en una página.
+- Portada, servicios, proyecto demostrativo, proceso, presentación de TYXX, preguntas frecuentes y contacto en una página.
 - Voz rioplatense con voseo, cercana y profesional.
 - Consulta inicial sin cargo; propuesta si hay encaje; cotización a medida con costos externos identificados y mantenimiento opcional.
 - Compromisos aceptados: contacto directo, relevamiento, entregas por etapas y documentación.
@@ -25,7 +27,7 @@ Presentar a TYXX ante dueños de pymes de servicios de Argentina, explicar las c
 
 ## Funcionamiento
 
-- El contacto general y los cinco servicios generan enlaces de WhatsApp al número temporal autorizado `5492304514378`.
+- El contacto general y los cinco servicios generan enlaces de WhatsApp al número temporal autorizado `[contacto personal retirado]`.
 - El número, mensaje general y URL de la demo están centralizados en `dist/config.js`.
 - Menú móvil con estado accesible, cierre al navegar y con Escape.
 - Preguntas frecuentes expandibles.
@@ -43,7 +45,7 @@ El usuario pidió conservar la base y adaptar la página a `https://ex-coders.co
 - Fondo negro, naranja de marca y títulos grandes con contornos.
 - Portada tipográfica con imagen circular, líneas verticales, franjas tipográficas y botones circulares.
 - Logos reales del usuario en navegación, portada y presentación de TYXX.
-- Presentación de Tomás después de la portada; proyecto demostrativo destacado; servicios en filas numeradas.
+- Presentación de TYXX después de la portada; proyecto demostrativo destacado; servicios en filas numeradas.
 - Oferta, consulta sin cargo, FAQs, proceso, demo, número temporal y metadato de no indexación conservados.
 - Implementación propia a partir de la referencia visual; sin copiar código, fotos, logos ni afirmaciones comerciales de Xpovio.
 

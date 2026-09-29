@@ -1,5 +1,7 @@
 # Descubrimiento del sitio comercial de TYXX
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Estado: bases comerciales acordadas y MVP solicitado. El 2026-09-10 el usuario pidió usar su celular actual para empezar a ver la página y dejar la línea empresarial para después. El alcance implementado está en `spec.md`.
 
 ## Pedido confirmado
@@ -19,7 +21,7 @@ Estado: bases comerciales acordadas y MVP solicitado. El 2026-09-10 el usuario p
 
 1. Fundamentos comerciales, recomendaciones de la primera ronda aceptadas:
    - Público inicial: dueños de pymes de servicios de Argentina.
-   - Marca dirigida por Tomás, con contacto directo y responsabilidades claras.
+   - Marca dirigida por TYXX, con contacto directo y responsabilidades claras.
    - Definiciones de infraestructura y sistemas de IA registradas en `CONTEXT.md`.
    - Taller Norte autorizado como proyecto demostrativo.
    - Contacto personalizado como fuente inicial de visitantes.
@@ -52,9 +54,9 @@ Respuesta del usuario: «acepto todas las recomendaciones».
 | Pregunta | Acuerdo |
 | --- | --- |
 | Q1: cliente inicial | Usar dueños de pymes de servicios de Argentina como público inicial durante los próximos tres meses. Los talleres pueden aparecer como ejemplo; no se acordó una especialización exclusiva en ese rubro. |
-| Q2: capacidad de entrega | Publicar como contratables los servicios que Tomás pueda implementar, verificar y mantener. La aceptación fija ese criterio; no aporta ejemplos ni acredita capacidades adicionales a la demo existente. |
+| Q2: capacidad de entrega | Publicar como contratables los servicios que TYXX pueda implementar, verificar y mantener. La aceptación fija ese criterio; no aporta ejemplos ni acredita capacidades adicionales a la demo existente. |
 | Q3: términos | Infraestructura es el entorno donde funcionan las herramientas, con configuración y mantenimiento. Sistema de IA es una solución que integra datos, herramientas y capacidades de IA dentro de un proceso de negocio. |
-| Q4: quién está detrás | Presentar TYXX como agencia dirigida por Tomás, con contacto directo y responsabilidades claras. No se confirmó la existencia de otros integrantes. |
+| Q4: quién está detrás | Presentar TYXX como agencia dirigida por TYXX, con contacto directo y responsabilidades claras. No se confirmó la existencia de otros integrantes. |
 | Q5: pruebas | Incluir Taller Norte identificado como proyecto demostrativo, explicando el trabajo y permitiendo recorrerlo. Agregar casos de clientes cuando haya trabajos y resultados documentados. |
 | Q6: llegada al sitio | Respaldar el contacto personalizado con una web que presenta la oferta, muestra trabajo y facilita el siguiente paso. |
 
@@ -86,23 +88,23 @@ Respuesta del usuario: «acepto todas las recomendaciones».
 | Q8: alcance de la oferta | Mostrar las cinco líneas, explicar para qué sirve cada una y definir las implementaciones a medida después de evaluar el negocio. Cada propuesta tendrá entregables concretos. Los ejemplos deberán representar capacidades sostenibles; todavía no se aportaron ejemplos nuevos de IA, automatizaciones o infraestructura. |
 | Q9: primer contacto | CTA «Contame tu proyecto» que abre WhatsApp, consulta inicial sin cargo, conversación breve y propuesta si hay encaje. El primer mensaje puede pedir qué negocio tiene el interesado y qué quiere mejorar. El trabajo detallado se define después de la consulta. |
 | Q10: cobro | Cotizar por proyecto según alcance, detallando implementación, costos de herramientas externas y mantenimiento opcional. Explicar el proceso de presupuesto sin publicar importes todavía. |
-| Q11: compromisos | Contacto directo con Tomás, relevamiento antes de proponer, entregas por etapas y documentación para el cliente. Son compromisos de trabajo aceptados; no acreditan antigüedad ni resultados anteriores. |
+| Q11: compromisos | Contacto directo con TYXX, relevamiento antes de proponer, entregas por etapas y documentación para el cliente. Son compromisos de trabajo aceptados; no acreditan antigüedad ni resultados anteriores. |
 | Q12: primera entrega y resultado | La primera versión permitirá entender la oferta, recorrer la demo y contactar. Medir consultas con una necesidad concreta y propuestas enviadas; ajustar el contenido con lo aprendido de las conversaciones. No se fijó fecha límite ni meta numérica. |
 
 No se interpretará un clic en WhatsApp como mensaje enviado, consulta recibida o venta. Las consultas y propuestas se podrán registrar manualmente; todavía no se decidió incorporar medición al sitio.
 
 ### Contacto comercial: celular actual autorizado para el MVP
 
-- En `C:\agencia\webs\chapas\tyxx-chapas\docs\verification-ticket-03.md:29` figura el WhatsApp comercial que Tomás autorizó para aquella demo: `+54 9 230 451 4378`, formato de enlace `5492304514378`.
-- El usuario primero pidió una nueva línea empresarial y después indicó: «por ahora agregarme mi celular para ir viendo el MVP de la pagina. Luego vemos eso». Esa última instrucción autoriza usar `5492304514378` en el MVP. El cambio a una línea exclusiva queda pendiente para más adelante.
+- En `C:\agencia\webs\chapas\tyxx-chapas\docs\verification-ticket-03.md:29` figura el WhatsApp comercial que TYXX autorizó para aquella demo: `[contacto personal retirado]`, formato de enlace `[contacto personal retirado]`.
+- El usuario primero pidió una nueva línea empresarial y después indicó: «por ahora agregarme mi celular para ir viendo el MVP de la pagina. Luego vemos eso». Esa última instrucción autoriza usar `[contacto personal retirado]` en el MVP. El cambio a una línea exclusiva queda pendiente para más adelante.
 - No se confirmó un email, perfil social ni dominio propio de TYXX. Los correos de prospectos del otro proyecto no son contactos de la agencia.
 
 ### Ronda 3 — Punto de partida del MVP
 
-- Q13: una página con presentación, cinco servicios, demo de Taller Norte, proceso, presentación de Tomás, preguntas frecuentes y contacto; navegación por secciones.
+- Q13: una página con presentación, cinco servicios, demo de Taller Norte, proceso, presentación de TYXX, preguntas frecuentes y contacto; navegación por secciones.
 - Q14: identidad propia de TYXX, con marca tipográfica, marfil y grafito, acento naranja, tipografía grande y recursos gráficos que expliquen conexiones entre herramientas.
 - Q15: español rioplatense con voseo, tono profesional y cercano; explicar los términos técnicos mediante situaciones del negocio.
-- Q16: usar temporalmente el celular actual `5492304514378`, autorizado por la última instrucción. Abrir un mensaje editable sobre el negocio y la mejora buscada; el visitante decide si lo envía. La configuración permitirá cambiar el número en un solo archivo.
+- Q16: usar temporalmente el celular actual `[contacto personal retirado]`, autorizado por la última instrucción. Abrir un mensaje editable sobre el negocio y la mejora buscada; el visitante decide si lo envía. La configuración permitirá cambiar el número en un solo archivo.
 - Q17: animaciones breves y sutiles, con respeto del movimiento reducido y lectura usable en móvil.
 - Q18: entregar una versión completa para revisar antes de hacerla pública, y comenzar registrando consultas/propuestas manualmente. Formularios, agenda, chat propio y analítica quedan fuera de esta primera versión. La prueba interactiva en navegador formaba parte de la recomendación; no se registró una solicitud explícita de esa prueba. La validación realizada se documentará sin atribuir verificaciones que no se hayan ejecutado.
 

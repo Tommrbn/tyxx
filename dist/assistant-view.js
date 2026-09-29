@@ -118,7 +118,7 @@ export function mountAssistant() {
       definition.append(
         element(
           "p",
-          "Posibilidad a evaluar con Tomás, incluso si editás el texto.",
+          "Posibilidad a evaluar con TYXX, incluso si editás el texto.",
           "assistant-help",
         ),
       );
@@ -187,7 +187,7 @@ export function mountAssistant() {
       node.textContent = state.values[key].trim()
         ? state.values[key]
         : key === "improvement"
-          ? "Pendiente de evaluar con Tomás"
+          ? "Pendiente de evaluar con TYXX"
           : "Todavía no informado";
     });
     question.textContent = state.question;

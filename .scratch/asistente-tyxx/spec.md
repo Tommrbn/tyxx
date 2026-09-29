@@ -1,5 +1,7 @@
 # TYXX — Página comercial y Asistente de TYXX
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Status: ready-for-agent
 Fecha: 2026-09-12
 Versión: 1
@@ -13,15 +15,15 @@ El 2026-09-12 el usuario pidió una página con menos texto y confirmó Portfoli
 
 ## Problem Statement
 
-Tomás necesita presentar su trabajo de automatización de procesos, sistemas y asistentes de IA, integraciones e infraestructura a dueños y responsables de pymes de servicios de Argentina. El sitio existente organiza la oferta en cinco líneas, con las webs en primer plano, y conduce directamente a WhatsApp. No permite que un visitante describa su proceso y prepare información útil antes de conversar.
+TYXX necesita presentar su trabajo de automatización de procesos, sistemas y asistentes de IA, integraciones e infraestructura a dueños y responsables de pymes de servicios de Argentina. El sitio existente organiza la oferta en cinco líneas, con las webs en primer plano, y conduce directamente a WhatsApp. No permite que un visitante describa su proceso y prepare información útil antes de conversar.
 
-TYXX está comenzando y no tiene clientes, testimonios, experiencia profesional ni resultados comerciales acreditados que pueda utilizar como prueba. Necesita explicar aplicaciones concretas y mostrar demostraciones cuyo funcionamiento y límites se puedan comprobar. La persona interesada debe entender qué puede evaluar con Tomás y preparar una consulta incluso cuando todavía desconoce sus herramientas, frecuencia o solución técnica.
+TYXX está comenzando y no tiene clientes, testimonios, experiencia profesional ni resultados comerciales acreditados que pueda utilizar como prueba. Necesita explicar aplicaciones concretas y mostrar demostraciones cuyo funcionamiento y límites se puedan comprobar. La persona interesada debe entender qué puede evaluar con TYXX y preparar una consulta incluso cuando todavía desconoce sus herramientas, frecuencia o solución técnica.
 
 ## Solution
 
 Adaptar el sitio existente a una página comercial con navegación por secciones y un Asistente de TYXX integrado. La oferta se presenta desde los problemas del negocio; las webs aparecen como interfaz de una solución cuando corresponde. Se mantienen los logos propios, negro, blanco y naranja, con una portada más directa y espacio suficiente para la conversación y la Ficha de proceso.
 
-El recorrido principal es: comprender la oferta → entrar al asistente → describir un proceso → aclarar información relevante → revisar y corregir la ficha → copiarla o preparar voluntariamente un mensaje para Tomás. El contacto directo continúa disponible para quien prefiera conversar sin completar la demostración.
+El recorrido principal es: comprender la oferta → entrar al asistente → describir un proceso → aclarar información relevante → revisar y corregir la ficha → copiarla o preparar voluntariamente un mensaje para TYXX. El contacto directo continúa disponible para quien prefiera conversar sin completar la demostración.
 
 La primera versión del asistente será una simulación reproducible, identificada como tal, porque no se acreditó un proveedor de IA configurado y autorizado en este proyecto. La ficha, sus correcciones, conservación durante la sesión y exportación funcionarán realmente. El resultado reconoce información pendiente y no promete integraciones, ahorros, cotizaciones ni contrataciones.
 
@@ -36,7 +38,7 @@ Taller Norte constituye la segunda demostración, con una descripción vinculada
 5. Como visitante, quiero acceder al asistente desde la portada y la navegación, para describir el proceso que quiero mejorar.
 6. Como visitante, quiero acceder a las demostraciones desde una acción secundaria, para probar antes de iniciar una conversación.
 7. Como visitante, quiero recorrer las secciones y volver al inicio sin perder mi borrador, para consultar el contenido mientras preparo mi caso.
-8. Como visitante, quiero conocer a Tomás como responsable de TYXX, para saber con quién voy a hablar.
+8. Como visitante, quiero conocer a TYXX como responsable de TYXX, para saber con quién voy a hablar.
 9. Como visitante, quiero entender las etapas de trabajo y la posibilidad de comenzar por algo acotado, para anticipar cómo se evaluaría un proyecto.
 10. Como visitante, quiero distinguir la consulta inicial de una Propuesta comercial, para entender que la ficha no es un presupuesto ni una contratación.
 11. Como visitante, quiero encontrar respuestas sobre conocimientos técnicos, costos, herramientas actuales, plazos y mantenimiento, para resolver dudas antes del contacto.
@@ -57,19 +59,19 @@ Taller Norte constituye la segunda demostración, con una descripción vinculada
 26. Como visitante, quiero ver la ficha completarse con mis respuestas, para comprobar qué entendió la demostración.
 27. Como visitante, quiero identificar los campos no informados, para distinguir mis datos de suposiciones del asistente.
 28. Como visitante, quiero corregir respuestas anteriores, para ajustar mi caso sin reiniciar la conversación.
-29. Como visitante, quiero editar directamente todos los campos de la ficha, para tener control sobre lo que compartiría con Tomás.
+29. Como visitante, quiero editar directamente todos los campos de la ficha, para tener control sobre lo que compartiría con TYXX.
 30. Como visitante, quiero que mis correcciones se conserven al continuar, para evitar que reaparezca información que ya cambié.
 31. Como visitante, quiero que se revise una mejora que dejó de corresponder después de una corrección, para no compartir una conclusión basada en datos anteriores.
 32. Como visitante, quiero ver una Mejora propuesta separada de los hechos que conté, para comprender que requiere evaluación.
 33. Como visitante, quiero ver qué falta conocer antes de implementar, para preparar una conversación útil y realista.
 34. Como visitante con un caso ambiguo, quiero que se conserve mi texto y se pida una aclaración concreta, para que la simulación no invente mi situación.
-35. Como visitante, quiero poder recibir «Pendiente de evaluar con Tomás», para avanzar aun cuando no haya fundamento para sugerir una mejora.
+35. Como visitante, quiero poder recibir «Pendiente de evaluar con TYXX», para avanzar aun cuando no haya fundamento para sugerir una mejora.
 36. Como visitante, quiero que una solución sencilla pueda plantearse sin IA, para que la recomendación dependa de mi proceso.
 37. Como visitante, quiero copiar una ficha parcial identificada como incompleta, para consultar con lo que sé hasta el momento.
 38. Como visitante, quiero copiar la versión actual de la ficha, para conservar exactamente mis últimas correcciones.
 39. Como visitante, quiero saber si la copia funcionó y tener una alternativa manual si falla, para no perder mi resultado.
-40. Como visitante, quiero preparar un mensaje para Tomás con mi ficha, para revisar su contenido antes de decidir enviarlo.
-41. Como visitante, quiero contactar directamente a Tomás con el medio autorizado, para conversar sin estar obligado a completar el asistente.
+40. Como visitante, quiero preparar un mensaje para TYXX con mi ficha, para revisar su contenido antes de decidir enviarlo.
+41. Como visitante, quiero contactar directamente a TYXX con el medio autorizado, para conversar sin estar obligado a completar el asistente.
 42. Como visitante, quiero conservar conversación y ficha al recargar esa pestaña, para continuar ante una recarga accidental.
 43. Como visitante, quiero borrar la conversación y la ficha con una acción explícita, para comenzar un caso nuevo.
 44. Como visitante, quiero recibir un aviso si el navegador no puede conservar el borrador y seguir trabajando, para poder copiarlo antes de salir.
@@ -78,15 +80,15 @@ Taller Norte constituye la segunda demostración, con una descripción vinculada
 47. Como visitante que usa tecnologías de asistencia, quiero etiquetas, regiones y avisos comprensibles, para reconocer preguntas, errores y cambios de estado.
 48. Como visitante sensible al movimiento, quiero que las animaciones respeten mi preferencia, para leer y usar la página sin molestias.
 49. Como visitante, quiero mensajes de error y reintentos que preserven mis datos, para recuperarme de fallos sin empezar otra vez.
-50. Como Tomás, quiero cambiar el contacto, la URL de la demo y su descripción de capacidades desde una configuración clara, para mantenerlos coherentes.
+50. Como TYXX, quiero cambiar el contacto, la URL de la demo y su descripción de capacidades desde una configuración clara, para mantenerlos coherentes.
 51. Como responsable de mantenimiento, quiero una separación sencilla entre conversación, ficha y proveedor, para poder integrar IA desde servidor sin rehacer el recorrido.
-52. Como Tomás, quiero recibir la página local, instrucciones y evidencia de verificación, para entender qué funciona, qué está simulado y qué falta antes de publicar.
+52. Como TYXX, quiero recibir la página local, instrucciones y evidencia de verificación, para entender qué funciona, qué está simulado y qué falta antes de publicar.
 
 ## Implementation Decisions
 
 1. **Continuidad del proyecto.** Extender el sitio estático existente de TYXX, conservando su identidad, recursos, scripts y alojamiento asociado. No crear otra copia por las rutas antiguas del documento ni alterar el proyecto del taller. La especificación nueva prevalece sobre la del MVP anterior en oferta, recorrido y demostraciones.
 
-2. **Página y contenido.** Una página con portada, problemas y soluciones, demostraciones, asistente integrado, proceso de trabajo, presentación de Tomás, preguntas frecuentes y contacto. Conservar o adaptar las capacidades existentes que siguen siendo pertinentes; no añadir páginas, campañas ni formularios comerciales adicionales.
+2. **Página y contenido.** Una página con portada, problemas y soluciones, demostraciones, asistente integrado, proceso de trabajo, presentación de TYXX, preguntas frecuentes y contacto. Conservar o adaptar las capacidades existentes que siguen siendo pertinentes; no añadir páginas, campañas ni formularios comerciales adicionales.
 
 3. **Portada.** Usar como punto de partida «Automatización e inteligencia artificial aplicada a tu empresa» y la explicación en primera persona de analizar el trabajo y desarrollar soluciones para reducir tareas manuales, organizar información y conectar herramientas. CTA principal «Contame qué proceso querés mejorar», hacia el asistente; secundario «Ver demostraciones». La redacción final puede mejorar manteniendo el significado y el voseo.
 
@@ -106,7 +108,7 @@ Taller Norte constituye la segunda demostración, con una descripción vinculada
 
 11. **Ficha de proceso.** Contiene proceso actual, dificultad descrita, herramientas mencionadas, frecuencia informada, Mejora propuesta y aspectos pendientes. Mostrar «Todavía no informado» donde corresponda. Los campos editables son la fuente de la exportación; «incompleta» identifica la falta de proceso o dificultad, mientras herramientas y frecuencia pueden seguir pendientes sin impedir una consulta inicial. El rótulo de la Mejora propuesta mantiene visible que requiere evaluación, aunque el visitante edite su texto.
 
-12. **Límites de las sugerencias.** Asociar propuestas condicionales solo con hechos respaldados por el caso. Puede corresponder evaluar un formulario, una conexión basada en reglas o una mejor organización de información, sin IA. Ante falta de fundamento, usar «Pendiente de evaluar con Tomás». No prometer disponibilidad de conectores, precisión, ahorro, precio, plazo, contratación ni puesta en marcha.
+12. **Límites de las sugerencias.** Asociar propuestas condicionales solo con hechos respaldados por el caso. Puede corresponder evaluar un formulario, una conexión basada en reglas o una mejor organización de información, sin IA. Ante falta de fundamento, usar «Pendiente de evaluar con TYXX». No prometer disponibilidad de conectores, precisión, ahorro, precio, plazo, contratación ni puesta en marcha.
 
 13. **Exportación y contacto.** Copiar una representación de texto legible con títulos de campo, valores actuales, información pendiente y carácter propuesto de la mejora. Incluir contenido parcial cuando exista, sin exigir completar todos los campos. Preparar WhatsApp con esa misma ficha y el contacto ya autorizado; abrirlo únicamente por acción del visitante. No marcar una consulta como recibida ni un mensaje como enviado. Si el contacto está ausente o es inválido, mantener la copia y una indicación clara de contacto no configurado, sin enlaces rotos. Si preparar o abrir un mensaje falla, conservar la ficha y ofrecer copia.
 
@@ -143,17 +145,17 @@ La cobertura se apoya en la verificación pedida explícitamente en el documento
 | ID | Escenario | Resultado esperado |
 | --- | --- | --- |
 | A01 | Abrir portada y usar ambas acciones principales | La oferta central es automatización e IA; el CTA principal lleva al asistente y el secundario a demostraciones. Navegación y menú móvil apuntan a destinos existentes. |
-| A02 | Revisar contenido comercial y proceso | Tomás es el responsable; las aplicaciones son posibilidades a evaluar. No aparecen clientes, testimonios, métricas, experiencia, precios o compromisos inventados. Las cuatro etapas y consulta inicial están claras. |
+| A02 | Revisar contenido comercial y proceso | TYXX es el responsable; las aplicaciones son posibilidades a evaluar. No aparecen clientes, testimonios, métricas, experiencia, precios o compromisos inventados. Las cuatro etapas y consulta inicial están claras. |
 | A03 | Abrir cada ejemplo de inicio | Los tres ejemplos inician un caso coherente, visible en la ficha. La demostración pregunta una sola cosa relevante por turno. |
 | A04 | Escribir una tarea, herramientas y frecuencia claras en un mismo mensaje | Conserva los datos que reconoce inequívocamente y pregunta solo por lo que falta; no inventa dificultad ni repite preguntas ya resueltas. |
-| A05 | Describir un caso fuera de los ejemplos o ambiguo | Preserva el texto, pide aclaración concreta y permite completar manualmente. Si no puede fundamentar una mejora, muestra «Pendiente de evaluar con Tomás». |
+| A05 | Describir un caso fuera de los ejemplos o ambiguo | Preserva el texto, pide aclaración concreta y permite completar manualmente. Si no puede fundamentar una mejora, muestra «Pendiente de evaluar con TYXX». |
 | A06 | No informar herramientas o frecuencia | La ficha muestra pendientes y permite continuar, editar y copiar. Con proceso y dificultad, la base para la consulta está disponible. |
 | A07 | Copiar una ficha con solo parte del caso | Se exporta el contenido existente con rótulo de incompleta cuando falta proceso o dificultad y pendientes explícitos. No se inventan valores para completar. |
 | A08 | Corregir una respuesta y luego editar la ficha directamente | La ficha y la exportación reflejan los valores más recientes. Continuar no restaura datos obsoletos. |
 | A09 | Cambiar el proceso después de obtener una Mejora propuesta | Se retira o revisa la sugerencia incompatible; los campos editados manualmente no se sustituyen silenciosamente. La incertidumbre queda visible. |
 | A10 | Introducir acentos, saltos, marcado y texto extenso | Se conservan como texto en ficha y copia, sin ejecución ni creación de elementos a partir de la entrada y sin desbordamiento horizontal. |
 | A11 | Copiar con portapapeles disponible y con rechazo controlado | El éxito solo se anuncia tras una copia exitosa. El rechazo ofrece reintento y copia manual sin perder la ficha. |
-| A12 | Preparar mensaje y revisar contacto directo | El destinatario es el configurado y el texto preparado corresponde a la ficha actual. No hay apertura automática, envío real ni confirmación de recepción. En pruebas se intercepta o inspecciona la salida sin contactar a Tomás. |
+| A12 | Preparar mensaje y revisar contacto directo | El destinatario es el configurado y el texto preparado corresponde a la ficha actual. No hay apertura automática, envío real ni confirmación de recepción. En pruebas se intercepta o inspecciona la salida sin contactar a TYXX. |
 | A13 | Contacto o demo sin configurar, mal formados o declarados no disponibles | No hay enlaces ficticios ni acciones hacia destinos vacíos. Se explica el estado; la ficha y su copia siguen funcionando. |
 | A14 | Recargar con un caso parcialmente completado y corregido | Se recuperan conversación, ficha, correcciones y progreso de esa sesión. No vuelve información anterior. |
 | A15 | Borrar conversación y recargar | El asistente vuelve al inicio y su borrador anterior no reaparece. La acción no altera otros datos del navegador. |
@@ -191,7 +193,7 @@ Registrar comandos, resultados y alcance real de las comprobaciones de implement
 - La ubicación real del proyecto y el mapa de archivos están registrados en la continuidad del repositorio. Usar esa información actual, sin recrear las rutas antiguas incluidas en el texto original.
 - La URL pública verificada de Taller Norte es https://tyxx-chapas.pages.dev/. Una petición anónima comprobó el 2026-09-12 estado 200, identidad y rótulos de simulación. La copia local fue actualizada posteriormente con registro, bandeja y SQLite: su código y continuidad ahora lo reflejan. Esa nueva implementación no fue publicada. Esta distinción actualiza el hallazgo inicial de la entrevista, que describía el estado anterior.
 - La verificación de disponibilidad HTTP no sustituye probar interacciones. Antes de la entrega, volver a contrastar destino y descripción si la demo cambia; no ejecutar pruebas mutantes contra la demo pública.
-- El contacto temporal autorizado de Tomás continúa centralizado en la configuración actual. Su reemplazo por una línea empresarial propia queda para una fase posterior.
+- El contacto temporal autorizado de TYXX continúa centralizado en la configuración actual. Su reemplazo por una línea empresarial propia queda para una fase posterior.
 - La etiqueta `ready-for-agent` indica que el alcance está documentado para desglosarlo o implementarlo cuando se solicite; no acredita implementación, tests aprobados ni autorización de efectos externos.
 - La integración futura de IA debe conservar la creación y edición reales de la ficha. No basta con cambiar un rótulo de la simulación ni con introducir una clave en el navegador.
 - No se requiere un ADR nuevo: la arquitectura propuesta conserva el sitio estático y establece una extensión reversible. Los compromisos de producto se conservan en la especificación y el descubrimiento; el glosario contiene únicamente términos del dominio.

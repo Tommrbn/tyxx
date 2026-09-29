@@ -1,8 +1,33 @@
 # Continuar el sitio de TYXX
 
-Actualizado: 14 de septiembre de 2026.
+Actualizado: 23 de septiembre de 2026.
 
-## Acceso local recuperado y consulta sobre GitHub
+## Contacto vigente — 23 de septiembre de 2026
+
+La identidad pública de contacto es TYXX, sin nombre personal. La única mención personal nueva está en la evidencia profesional de Novartech: Tomás Desia · Developer, enlazada a la sección oficial #team. Strand y Portfolite usan tyxxsolve@gmail.com mediante «Escribir por correo», con dirección visible y fallback mailto aunque JavaScript/configuración/asistente no estén disponibles. El asunto y cuerpo configurados se codifican por separado; no se envían mensajes ni se exporta la ficha. El contacto telefónico anterior está retirado. Las referencias a ese canal en la historia describen su fecha, no el comportamiento vigente ni pruebas actuales de correo.
+
+La verificación nueva se registra en `../../odd/tasks/brand-email-contact.md`; no reemplaza los límites históricos de lector de pantalla ni del diagnóstico del puntero. Sin publicación ni operaciones Git de entrega.
+## Estado actual — renovación local de Strand
+
+Actualización de posicionamiento local: Strand ahora abre con «Hacé crecer tu negocio con IA.» y propone evaluar atención de consultas, seguimiento de oportunidades y tareas repetitivas. No ofrece desarrollo web como servicio visible ni promete ventas o ahorros. Novartech conserva evidencia de agentes y visión por computadora; Vision Latina sigue como proyecto digital MYOPIALATAM, sin atribuirle IA. La demo flotante acompaña esta orientación y conserva su simulación local, límites y contacto. Portfolite y los registros históricos permanecen intactos. Validación de esta actualización: pendiente de registrar; los resultados más abajo son históricos.
+
+### Estado anterior de esta sección (histórico)
+
+Actualización local de la tarjeta comercial: Strand ahora presenta sitios web y agentes de IA primero, junto con sistemas de IA a medida. La tarjeta ficticia de Taller Norte fue reemplazada por Novartech, cliente con el que el usuario informa trabajar hace varios años en sitios web, agentes de IA y visión por computadora para detectar armazones y lentes y obtener medidas para laboratorio. La sección oficial #team acredita el vínculo profesional, no la autoría de todo el sitio o los productos ni métricas de precisión. Vision Latina es el segundo cliente mostrado: el usuario informa que desarrolló su sitio MYOPIALATAM (Congreso Latinoamericano de Miopía), enlazado directamente a https://www.myopialatam.com/. No se atribuyen métricas ni resultados al proyecto. El enlace directo no usa `data-demo`, que la configuración compartida sobreescribiría. Portfolite sigue intacta. Strand reemplazó el asistente integrado por una demo flotante local que ahora responde consultas sobre servicios, proyectos y forma de trabajo de TYXX, sin selector de rubro. Es una simulación determinista: no hay modelo, API, reservas ni envíos; la charla solo vive en memoria hasta recargar. La tarjeta del asistente ya no aparece en Demos: solo el botón flotante «Probá un agente» abre la simulación. Sin JavaScript o con el módulo bloqueado quedan los enlaces de contacto y correo estáticos. Se retiró la frase explicativa bajo «Escribir por correo», sin cambiar el destino mailto. Ver `docs/agent-demo.md`. Las comprobaciones históricas de abajo corresponden al estado anterior. Las comprobaciones históricas de abajo corresponden al estado anterior, no a esta tarjeta.
+
+`/` y `/strand.html` muestran la renovación desde procesos: seis bloques, contacto interno antes de «Escribir por correo», ejemplo hipotético y asistente secundario en Demos. `/index.html` conserva Portfolite. No se publicó, no hubo commits/PRs ni cambios de backend, IA real, persistencia o exportación.
+
+Unidades comerciales y navegación completadas. Composición compacta verificada a 360/390/768/1440 px, texto real 100/200% y contenedor600: hero decorativo280 px, gráfica300 px y escenas395 px al100%; texto ampliado puede crecer. Se corrigieron targets44 px, contraste hover y fondos de controles sobre Canvas, sin cambiar el motor ni sus drivers.
+
+Comprobaciones actuales: `npm run check` PASS; Strand44/44 (1,3 min); suite65/65 (1,6 min). Inspección visual del modelo sobre PNG y árbol AX/teclado disponibles; **no equivalen a revisión humana ni lector de pantalla real**. Registro: `docs/verification-renovacion-tyxx.md` y `openspec/changes/renovacion-tyxx-sistemas-ia/apply-progress.md`.
+
+Pendientes: tarea8 conserva revisión humana NVDA/Narrator no ejecutada;10/11 conservan timeout histórico del puntero sin reparación causal, reservado a diagnóstico separado. Los pases actuales no cierran esos pendientes ni los tickets históricos03–05 del asistente. No declarar aceptación global ni publicar. Retomar desde el estado nativo SDD fresco, no desde los próximos pasos históricos de abajo. Los servidores temporales propios se cerraron; iniciar la vista con `Abrir TYXX.cmd` o `npm run dev`.
+
+## Historia conservada — registros anteriores al 21 de septiembre
+
+Los apartados siguientes preservan decisiones, resultados y próximos pasos de sus fechas; no sustituyen el estado actual anterior.
+
+## 14 de septiembre de 2026 — acceso local recuperado y consulta sobre GitHub
 
 El usuario indicó que la página no cargaba o mostraba el diseño anterior. Se reprodujo el rechazo de conexión en `127.0.0.1:4180`: el servidor estaba apagado. Además, el servidor local dirigía `/` a Portfolite. Ahora `/` sirve Strand, igual que `/strand.html`, y Portfolite permanece intacta en `/index.html`. No se cambió el contenido de ninguno de los diseños para esta corrección.
 
@@ -23,7 +48,7 @@ El 2026-09-12 el usuario pidió otra versión como https://strand.framer.website
 - Estilo Strand: portada a la izquierda, bordes verticales finos, negro cálido, títulos grandes de peso fuerte, hilos/partículas a la derecha y escenas que acompañan los tres servicios al desplazarse.
 - La animación es una recreación propia en Canvas del efecto observado, no el componente original del template. Tiene movimiento continuo, respuesta suave al puntero, cambios de forma entre escenas y pausa. Respeta movimiento reducido. En móvil, las escenas se pueden elegir con 01/02/03.
 - Corrección posterior del mismo día: el usuario aclaró que faltaba el efecto original. Se reemplazó la superficie genérica por una silueta plegada con filamentos independientes, estelas curvas, pulsos y puntas luminosas con matices ámbar/azul. La interacción ahora empuja e ilumina las fibras cercanas con retorno elástico. Se inspeccionó el comportamiento público de Strand; el código, las curvas y el dibujo de TYXX siguen siendo propios.
-- Se conservan tres servicios principales, web complementaria, demostraciones identificadas, asistente plegable, contacto de Tomás y FAQs. Sigue siendo una simulación guiada por reglas, sin persistencia ni exportación nueva.
+- Se conservan tres servicios principales, web complementaria, demostraciones identificadas, asistente plegable, contacto de TYXX y FAQs. Sigue siendo una simulación guiada por reglas, sin persistencia ni exportación nueva.
 - La entrega sigue local. No se publicó, no se hicieron commits ni push, no se guardaron versiones en Sites y no se modificó ni inició Taller Norte. La solicitud de panel de vista previa respondió `queued`; la revisión visual se realizó en una pestaña de Chrome.
 
 La corrección de movimiento pasó las 28 pruebas existentes (18,6 s). Tras el ajuste visual final, pasaron las nueve pruebas específicas de Strand (26,0 s), incluida una prueba nueva de deformación localizada; el total de pruebas disponibles ahora es 29. La verificación estática recorre ambos HTML y sus recursos. El registro de comprobaciones y límites está en `docs/verification-strand.md`. Se volvió a contrastar la preservación de los nueve archivos originales por SHA-256 contra `docs/strand-preserved-files.json`, sin cambios. Los tickets 03/04 y los criterios restantes de 05 continúan pendientes; este pedido es una alternativa visual, no una elección definitiva entre los diseños.
@@ -52,7 +77,7 @@ La adaptación anterior a Xpovio se guardó como versión 2 sin publicar. Esa ve
 
 El 2026-09-12 el usuario aceptó las cuatro recomendaciones de la primera ronda: pymes de servicios de Argentina; logos y paleta de Xpovio con portada ajustada; ficha progresiva junto a la conversación y debajo en móvil; borrador durante la sesión de la pestaña que resiste recargas, con borrado y sin historial permanente.
 
-También aceptó las dos decisiones finales: proceso y dificultad como base útil, con herramientas y frecuencia opcionales y posibilidad de copiar una ficha incompleta identificada; ante casos abiertos, conservar lo escrito, pedir una aclaración concreta y dejar la mejora «Pendiente de evaluar con Tomás» cuando no exista fundamento. No quedan preguntas abiertas de la entrevista. Ver `.scratch/asistente-tyxx/discovery.md`.
+También aceptó las dos decisiones finales: proceso y dificultad como base útil, con herramientas y frecuencia opcionales y posibilidad de copiar una ficha incompleta identificada; ante casos abiertos, conservar lo escrito, pedir una aclaración concreta y dejar la mejora «Pendiente de evaluar con TYXX» cuando no exista fundamento. No quedan preguntas abiertas de la entrevista. Ver `.scratch/asistente-tyxx/discovery.md`.
 
 La investigación confirmó la ubicación actual de los proyectos y no encontró IA configurada en TYXX. El nuevo documento prevé una simulación identificada en ese caso. Taller Norte tiene dos estados distintos: su enlace público conserva la vista previa simulada anterior; su copia local actual ya incluye recepción, registro, bandeja y persistencia SQLite, también con asistente simulado. La implementación nueva del taller no se publicó. La descripción comercial debe corresponder al destino realmente enlazado.
 
@@ -61,7 +86,7 @@ La investigación confirmó la ubicación actual de los proyectos y no encontró
 - Público: dueños de pymes de servicios de Argentina.
 - Oferta visible: webs, automatizaciones, agentes de IA, sistemas de IA e infraestructura; cada proyecto requiere evaluar el alcance.
 - Consulta inicial sin cargo; presupuesto a medida; mantenimiento opcional.
-- Tomás dirige TYXX y es el contacto directo.
+- TYXX dirige TYXX y es el contacto directo.
 - Taller Norte aparece como proyecto demostrativo, con captura real y enlace. No es un cliente ni acredita resultados de negocio.
 - Usar temporalmente el celular actual configurado en `dist/config.js`. La línea empresarial propia queda para después.
 - Dirección visual de esa entrega: Xpovio, con contornos, líneas verticales y enlaces circulares. Fue reemplazada por Portfolite en el pedido activo completado.

@@ -91,7 +91,7 @@ export function createAssistant({ interpret = simulateTurn } = {}) {
       ...requiredPending,
       values.pending.trim()
         ? values.pending
-        : "Alcance y viabilidad por evaluar con Tomás.",
+        : "Alcance y viabilidad por evaluar con TYXX.",
     ].join("\n");
     return structuredClone({
       values: displayValues,

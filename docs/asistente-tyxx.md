@@ -12,7 +12,7 @@ Las reglas reconocen algunos verbos de tarea, expresiones explícitas de dificul
 
 Los bloques etiquetados conservan las líneas y puntuación hasta la siguiente etiqueta. En los casos reconocidos se separan herramientas y frecuencia de la tarea para que no queden duplicados obsoletos al corregirlos. El mensaje original permanece íntegro en la conversación. Si una descripción escrita explícitamente todavía menciona un dato anterior después de editar herramientas o frecuencia, se muestra un pendiente de revisión y se retira la sugerencia automática. Editar esa descripción permite resolver el aviso conservando el control sobre sus palabras.
 
-Las sugerencias condicionales cubren traslado repetitivo de pedidos/datos, consultas incompletas y búsqueda de información cuando proceso y dificultad aportan fundamento. Admiten alternativas sin IA; no prometen ahorros, conectores, precios, plazos o contrataciones. Otros casos quedan como «Pendiente de evaluar con Tomás». La Mejora propuesta es orientativa y no es una Propuesta comercial.
+Las sugerencias condicionales cubren traslado repetitivo de pedidos/datos, consultas incompletas y búsqueda de información cuando proceso y dificultad aportan fundamento. Admiten alternativas sin IA; no prometen ahorros, conectores, precios, plazos o contrataciones. Otros casos quedan como «Pendiente de evaluar con TYXX». La Mejora propuesta es orientativa y no es una Propuesta comercial.
 
 ## Correcciones y fuente vigente
 
@@ -27,7 +27,7 @@ Se preservan acentos, saltos y marcado como texto mediante `textContent` y valor
 - `assistant-model.js` expone `createAssistant({ interpret })` con `snapshot()`, `answer(message)`, `correct(index, message)` y `edit(field, value)`. Coordina la ficha, procedencia de datos, pendientes, preguntas y correcciones. Los snapshots son copias; la presentación no mantiene otra ficha.
 - `assistant-view.js` consume el coordinador, ofrece editores con foco predecible y anuncia solo cambios recientes en una región de estado. El historial completo no es una región viva.
 - `assistant-simulator.js` implementa `simulateTurn(input)`, la estrategia síncrona predeterminada. Se puede sustituir en el punto real de construcción del coordinador, sin sustituir los controles de la ficha.
-- `assistant-loader.js` carga los módulos de forma independiente. Si no hay JavaScript o un módulo falla, se mantiene la explicación de indisponibilidad y el contacto telefónico legible.
+- `assistant-loader.js` carga los módulos de forma independiente. Si no hay JavaScript o un módulo falla, se mantiene la explicación de indisponibilidad y el correo tyxxsolve@gmail.com legible con enlace mailto estático.
 
 Entrada de la estrategia: `{ message, target, values }`. `target` es `process`, `difficulty`, `tools`, `frequency` o `null`; `values` contiene la ficha vigente. Con `message: ''` se revisa una sugerencia después de modificar su fundamento. Se entrega una copia para evitar que la estrategia mute el estado.
 
@@ -45,4 +45,4 @@ No se implementaron ni verificaron estas llamadas de servidor. Las pruebas de fa
 
 ## Límites de esta entrega
 
-Los datos viven en memoria de la pestaña. Se puede navegar por secciones sin perderlos, pero se pierden al recargar. La persistencia y borrado son el ticket 03; la copia y WhatsApp con la ficha son 04; el reposicionamiento completo y las tarjetas de demostraciones son 05. No hay controles inactivos que aparenten ofrecerlos. No se cambió ni inició Taller Norte y no se publicó TYXX.
+Los datos viven en memoria de la pestaña. Se puede navegar por secciones sin perderlos, pero se pierden al recargar. La persistencia y borrado son el ticket 03; la copia y exportación de la ficha por correo siguen pendientes en 04 (el canal telefónico original está retirado); el reposicionamiento completo y las tarjetas de demostraciones son 05. No hay controles inactivos que aparenten ofrecerlos. No se cambió ni inició Taller Norte y no se publicó TYXX.

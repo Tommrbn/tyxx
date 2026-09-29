@@ -1,10 +1,12 @@
 # Propuesta — renovación TYXX: sistemas e IA
 
+> Actualización autorizada de contacto (2026-09-23): la marca pública es TYXX y el destinatario vigente es tyxxsolve@gmail.com. Se revisan referencias editoriales del cambio existente; no se ejecutan fases SDD ni se alteran estados de tareas, resultados históricos o pendientes de aceptación.
+
 ## Estado y fuentes
 - Formaliza decisiones de producto ya aprobadas; no abre otra entrevista ni autoriza implementación.
 - Autoridad: `../../config.yaml` y [exploración](exploration.md), que detalla evidencia, superficies y seams posibles sin duplicarlos aquí.
 - Leídos `AGENTS.md`, `CONTINUAR.md`, `docs/agents/domain.md`, `CONTEXT.md` y `.agents/product-marketing.md` (v8), sin modificarlos; `docs/adr/` no existe.
-- Contraste actual: `dist/strand.html`, `dist/app.js`, `dist/config.js` y `scripts/serve.mjs` conservan el CTA al asistente, la transformación de `[data-contact]` a WhatsApp y las rutas documentadas. El recorrido propuesto aún no está implementado.
+- Contraste inicial (histórico; no describe el contacto vigente): `dist/strand.html`, `dist/app.js`, `dist/config.js` y `scripts/serve.mjs` conservan el CTA al asistente, la transformación de `[data-contact]` a WhatsApp y las rutas documentadas. El recorrido propuesto aún no está implementado.
 - El alcance aprobado prevalece sobre la prioridad histórica del asistente y las direcciones visuales anteriores del contexto comercial.
 - `skill_resolution: paths-injected`: leídas product-marketing, landing-page-design y ui-ux-expert; se aplica el contrato del ejecutor sin buscar otra skill de fase.
 
@@ -13,7 +15,7 @@ Evolucionar Strand para que dueños de pymes de servicios de Argentina, sin cono
 
 Posicionamiento: **TYXX diseña, implementa y mantiene sistemas con software, automatización, IA y supervisión humana, según el proceso y el alcance acordados.** No presupone que todo negocio necesite IA ni acredita integraciones ya realizadas. Las webs son una interfaz cuando el proceso la requiere, no un catálogo adicional.
 
-Usar español rioplatense con voseo, mensajes breves y trato directo con Tomás. Presentar tareas repetitivas, información dispersa y consultas incompletas como situaciones posibles, no como hallazgos de clientes entrevistados. El resultado buscado es un recorrido comprensible hacia una consulta inicial; no se promete una mejora numérica de conversión, ahorro o ventas.
+Usar español rioplatense con voseo, mensajes breves y trato directo con TYXX. Presentar tareas repetitivas, información dispersa y consultas incompletas como situaciones posibles, no como hallazgos de clientes entrevistados. El resultado buscado es un recorrido comprensible hacia una consulta inicial; no se promete una mejora numérica de conversión, ahorro o ventas.
 
 ## Alcance editorial: seis secciones, en este orden
 | Sección | Función y límites |
@@ -23,10 +25,10 @@ Usar español rioplatense con voseo, mensajes breves y trato directo con Tomás.
 | 3. Flujo ilustrativo | Consulta → organización de información → revisión humana → próximo paso. Rotular como ejemplo hipotético, sin sistemas conectados ni envío o reserva simulados como exitosos. |
 | 4. Forma de trabajo | Relevar, acordar alcance, implementar y mantener según acuerdo. Distinguir implementación, herramientas externas y mantenimiento opcional, sin SLA ni acompañamiento ilimitado. |
 | 5. Demos | Asistente de TYXX secundario, guiado por reglas y sin IA real. Chapas/Taller Norte como proyecto demostrativo ficticio, nunca cliente o caso de éxito; disponibilidad externa actual no verificada. |
-| 6. FAQ/contacto | Aclarar evaluación, presupuesto a medida, herramientas, plazos según alcance, mantenimiento y necesidad de IA. Consulta inicial sin cargo con Tomás y salida explícita «Abrir WhatsApp». |
+| 6. FAQ/contacto | Aclarar evaluación, presupuesto a medida, herramientas, plazos según alcance, mantenimiento y necesidad de IA. Consulta inicial sin cargo con TYXX y salida explícita «Escribir por correo». |
 
 ## Recorridos y reglas de producto
-- Principal: «Conversemos sobre tu negocio» lleva a contacto dentro de la página; solo «Abrir WhatsApp» inicia la salida externa al contacto autorizado. Abrir la aplicación no acredita mensaje enviado, recibido ni turno reservado.
+- Principal: «Conversemos sobre tu negocio» lleva a contacto dentro de la página; solo «Escribir por correo» inicia la salida externa al contacto autorizado. Abrir la aplicación no acredita mensaje enviado, recibido ni turno reservado.
 - Secundario: «Ver un ejemplo» lleva al flujo ilustrativo, no obliga a usar el asistente ni sustituye la consulta inicial.
 - La revisión humana es un paso visible del ejemplo y una condición de evaluación de las sugerencias; la ficha no es presupuesto, contratación ni confirmación de viabilidad.
 - El asistente conserva conversación, ficha editable, correcciones, apertura por `#asistente`, conservación al cerrar/reabrir y aviso de pérdida al recargar. No agrega persistencia ni exportación.
@@ -55,17 +57,17 @@ Mantener HTML/CSS/JavaScript estáticos, fuentes editables en `dist/`, logos pro
 
 ## Criterios de aceptación de la renovación
 1. Se reconocen las seis secciones en el orden acordado, con lenguaje de negocio y sin catálogo ampliado ni pruebas comerciales no respaldadas.
-2. Con y sin JavaScript, el CTA principal llega a contacto sin abrir un destino externo; «Abrir WhatsApp» apunta al número autorizado y no muestra confirmación de envío, recepción o reserva.
+2. Con y sin JavaScript, el CTA principal llega a contacto sin abrir un destino externo; «Escribir por correo» apunta al correo tyxxsolve@gmail.com y no muestra confirmación de envío, recepción o reserva.
 3. «Ver un ejemplo» llega a una secuencia legible rotulada como ilustrativa, con revisión humana explícita y sin afirmar conexiones activas.
 4. El asistente sigue siendo secundario, accesible desde demos y `#asistente`, conserva edición y cierre/reapertura sin pérdida, y explica reglas, ausencia de IA real y pérdida al recargar; el fallo de carga mantiene una alternativa útil.
 5. A 360/390 px, la navegación ofrece enlaces utilizables sin JS; con JS conserva teclado, Escape, retorno de foco y estado expandido correcto.
 6. A 360/390/768/1440 px y con texto al 200%, no hay desborde horizontal ni contenido/control esencial recortado. La decoración móvil ocupa menos altura que la base registrada, sin reducir legibilidad ni identidad.
 7. Se mantienen orden de lectura, nombres accesibles, foco visible, pausa y movimiento reducido; el texto esencial existe fuera de Canvas. Comprobar contraste de texto normal ≥4,5:1 y texto grande/controles ≥3:1 en las superficies modificadas.
-8. `/` y `/strand.html` conservan Strand; `/index.html` conserva Portfolite, su contacto y asistente compartidos. No se cambia el teléfono ni se añade envío de datos o almacenamiento.
+8. `/` y `/strand.html` conservan Strand; `/index.html` conserva Portfolite, su contacto y asistente compartidos. Se sustituye el contacto telefónico por correo sin añadir envío de datos ni almacenamiento.
 9. Toda mención de Chapas/Taller Norte identifica su carácter ficticio y no promete disponibilidad o funcionalidad externa sin evidencia actual del destino enlazado.
 
 ## Riesgos y mitigaciones
-- **Salida prematura a WhatsApp:** `[data-contact]` reescribe enlaces; conservar el CTA intermedio como ancla interna independiente.
+- **Salida prematura al correo:** `[data-contact]` reescribe enlaces; conservar el CTA intermedio como ancla interna independiente.
 - **Regresión compartida:** aislar cambios en Strand y verificar contacto/asistente en ambas páginas; no refactorizar compartidos por conveniencia.
 - **Contenido y movimiento desalineados:** conservar contratos DOM y revisar correspondencias de escenas; nunca dejar información solo en la animación.
 - **Expectativas comerciales excesivas:** separar propuesta de servicio, ejemplo y demo real; revisión humana y mantenimiento delimitado explícitos.

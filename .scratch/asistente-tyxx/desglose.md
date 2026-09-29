@@ -1,5 +1,7 @@
 # Desglose del Asistente de TYXX y la página comercial
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Fecha: 2026-09-12.
 Estado: 01 y 02 autorizados mediante `implement`, registrados en `issues/`, implementados y cerrados el 2026-09-12. 03 y 04 siguen pendientes. Un pedido directo posterior adelantó parte visual/comercial de 05 con Portfolite, sin cerrar ese ticket; ver `docs/verification-portfolite.md`.
 
@@ -10,7 +12,7 @@ Estado: 01 y 02 autorizados mediante `implement`, registrados en `issues/`, impl
 | 01 | Describir un proceso y ver la Ficha de proceso | Ninguna | Entrar al asistente, empezar con un ejemplo o caso propio y obtener una ficha visible mediante preguntas guiadas. |
 | 02 | Corregir la ficha y aclarar casos sin inventar soluciones | 01 | Editar y corregir el caso sin perder cambios, con propuestas condicionadas o evaluación pendiente. |
 | 03 | Recuperar y borrar el borrador de la conversación | 02 | Recargar conservando las correcciones, borrar el caso y recuperarse de fallos de almacenamiento. |
-| 04 | Copiar la ficha y preparar el contacto con Tomás | 02 | Copiar lo corregido o preparar WhatsApp, incluso con información parcial y alternativas si falla la copia. |
+| 04 | Copiar la ficha y preparar el contacto con TYXX | 02 | Copiar lo corregido o preparar WhatsApp, incluso con información parcial y alternativas si falla la copia. |
 | 05 | Presentar la oferta y las demostraciones de TYXX | 01 | Recorrer una página comercial coherente, con acceso al asistente y una demo descrita según el enlace disponible. |
 
 ## Dependencias reales

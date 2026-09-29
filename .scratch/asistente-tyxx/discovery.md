@@ -1,5 +1,7 @@
 # Descubrimiento: enfoque en procesos y asistente de TYXX
 
+> Nota de privacidad (2026-09-23): identidad personal anonimizada; contacto anterior retirado. El contacto vigente es tyxxsolve@gmail.com. Las menciones del canal anterior describen decisiones o pruebas de su fecha, no una verificación del correo actual.
+
 Estado: entrevista cerrada; ambas rondas aceptadas y entendimiento confirmado. Actualizado: 2026-09-12. Especificación publicada en el tracker local como `spec.md`, con etiqueta `ready-for-agent`; implementación no iniciada.
 
 ## Fuentes y alcance de esta fase
@@ -48,7 +50,7 @@ Respuesta del usuario: «acepto las recomendaciones».
 Respuesta del usuario: «acepto las recomendaciones», después de presentar estas dos decisiones como las restantes para cerrar el comportamiento del asistente. Esta aceptación cierra el entendimiento de la entrevista.
 
 5. Información mínima: el proceso que realiza la persona y la dificultad que encuentra constituyen la base útil para el primer contacto. Herramientas y frecuencia pueden quedar pendientes. Permitir copiar una ficha incompleta, identificándola como tal e indicando qué habría que aclarar.
-6. Casos abiertos y límite de la simulación: conservar lo escrito por el visitante y pedir una aclaración concreta si falta contexto. Si no hay fundamento para proponer una mejora, indicar «Pendiente de evaluar con Tomás» y preparar la ficha para revisión. No inventar soluciones ni recomendar IA por defecto.
+6. Casos abiertos y límite de la simulación: conservar lo escrito por el visitante y pedir una aclaración concreta si falta contexto. Si no hay fundamento para proponer una mejora, indicar «Pendiente de evaluar con TYXX» y preparar la ficha para revisión. No inventar soluciones ni recomendar IA por defecto.
 
 ## Comportamientos ya exigidos por el documento
 
@@ -63,6 +65,6 @@ Respuesta del usuario: «acepto las recomendaciones», después de presentar est
 
 Las seis decisiones de las dos rondas fueron aceptadas. La frontera de preguntas está vacía: no quedaron decisiones de producto pendientes para redactar una primera especificación. Las elecciones menores de implementación se resolverán con criterio dentro del alcance acordado, según el documento del usuario.
 
-Se conserva la base del sitio existente y se reorienta el recorrido hacia describir un proceso, preparar una ficha y decidir si se contacta a Tomás. El primer asistente será simulado y declarado como tal; la creación, edición y copia de la ficha deberán funcionar realmente. Taller Norte se presentará con su recorrido comprobado y sus límites.
+Se conserva la base del sitio existente y se reorienta el recorrido hacia describir un proceso, preparar una ficha y decidir si se contacta a TYXX. El primer asistente será simulado y declarado como tal; la creación, edición y copia de la ficha deberán funcionar realmente. Taller Norte se presentará con su recorrido comprobado y sus límites.
 
 La fase `/to-spec` produjo la especificación local con 52 historias de usuario, decisiones de implementación y 23 criterios de aceptación. El 2026-09-12 el usuario respondió «confirmo» al enfoque de pruebas del recorrido integrado desde la página local, incluyendo móvil, teclado, correcciones y copia. La especificación y su enfoque de verificación están cerrados, con etiqueta `ready-for-agent`. Próxima fase recomendada: `/to-tickets`; la implementación y los efectos externos no se ejecutan por guardar o confirmar la especificación.
